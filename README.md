@@ -31,7 +31,10 @@ filled in, skills that need a role stop and tell you to run setup.
 
 ## Skills
 
-Each skill carries a `-pi` suffix so it can sit next to other pstack ports.
+Each skill carries a `-pi` suffix. Another package that ships skills with the
+same names will clash: Pi keeps the first one it finds and warns. To load this
+package's copies, exclude the other package's duplicates in your Pi settings,
+for example `{ "source": "npm:other-package", "skills": ["!skills/*-pi"] }`.
 
 - `architect-pi`
 - `arena-pi`

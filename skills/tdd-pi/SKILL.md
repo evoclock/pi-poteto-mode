@@ -7,7 +7,7 @@ license: MIT; see ../how/LICENSE
 
 # TDD bug fix for Pi
 
-Adapted from Lauren Tan's unchanged `tdd` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md` and existing `../diagnosing-bugs/SKILL.md` for bug investigations. The source allows **skipping a new automated test** when the seam is impractical; it does **not** waive this project's stricter authorized red-capable reproduction requirement before a bug hypothesis/fix. No install, production access or broad harness follows from this skill.
+Adapted from Lauren Tan's unchanged `tdd` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The source allows **skipping a new automated test** when the seam is impractical; it does **not** waive this project's stricter authorized red-capable reproduction requirement before a bug hypothesis/fix. No install, production access or broad harness follows from this skill.
 
 Use when the user explicitly asks for TDD, a failing/regression test, or an obvious cheap local bug test. Otherwise skip this method when the only candidate needs broad harness setup, brittle mocks, slow end-to-end infrastructure, production-only state, vague repro or large fixture churn. First identify intended behavior, observed failure, affected entry and smallest observable reproduction. Choose the narrowest existing unit/component/integration/regression seam that exercises **behavior**; do not create a new framework to clear a process checkbox. For an actual bug, if no authorized red-capable seam exists, stop the diagnosis/fix at its existing gate and report the needed permission or artifact; a proposed closest check is not observed red.
 

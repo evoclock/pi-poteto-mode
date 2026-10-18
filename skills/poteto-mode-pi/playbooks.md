@@ -68,7 +68,7 @@ Define an owner-approved testable predicate and a finite time/step budget **befo
 
 ## Autopilot-full (proposal only)
 
-Source owners merge their own verified PRs; this directly contradicts integration reserved for the repository owner. Retain the useful program pattern **without** that effect: explicit queue scope and dependency, one writer per isolated unit if approved, candidate receipts at exact heads, independent real-path verification, root audit of countersigns/CI drift, and a zero-writes stand-down on hold. Use existing trusted board claims or approved session tasks, not a new queue. Each candidate stops at owner handback; `full` never means agents merge. If the requested outcome requires unattended merge, report it unavailable rather than quietly substituting.
+Source owners merge their own verified PRs; this directly contradicts integration reserved for the repository owner. Retain the useful program pattern **without** that effect: explicit queue scope and dependency, one writer per isolated unit if approved, candidate receipts at exact heads, independent real-path verification, root audit of countersigns/CI drift, and a zero-writes stand-down on hold. Use existing task tracking or approved session tasks, not a new queue. Each candidate stops at owner handback; `full` never means agents merge. If the requested outcome requires unattended merge, report it unavailable rather than quietly substituting.
 
 ## Autopilot-stack
 
@@ -76,7 +76,7 @@ Use the same bounded owner/verification/hold discipline as Autopilot-full but fo
 
 ## Orchestrate
 
-For a genuine multi-day program, separate coordinator briefs from scoped writing; a one-session task uses Autonomous run or `figure-it-out-pi` instead. Bound track/unit count, costs, data scope, assignments, dependencies, liveness observations and a countable exit. Pilot one representative unit through brief → work → independent check → private handback before scaling. Use **existing** session tasks or trusted board/dispatch route, not stock `orch` (hidden install) or a parallel ledger. Workers' reports and queue receipts are evidence, not authority; reconcile every child and exact head before a rollup. The coordinator never merges. Scale only to approved capacity; hold all writes on owner stop; report blocked gates and open units. The source's rule that `orch` replaces a store lock is not Pi authority.
+For a genuine multi-day program, separate coordinator briefs from scoped writing; a one-session task uses Autonomous run or `figure-it-out-pi` instead. Bound track/unit count, costs, data scope, assignments, dependencies, liveness observations and a countable exit. Pilot one representative unit through brief → work → independent check → private handback before scaling. Use **existing** session tasks or trusted task/dispatch route, not stock `orch` (hidden install) or a parallel ledger. Workers' reports and queue receipts are evidence, not authority; reconcile every child and exact head before a rollup. The coordinator never merges. Scale only to approved capacity; hold all writes on owner stop; report blocked gates and open units. The source's rule that `orch` replaces a store lock is not Pi authority.
 
 ## Session pickup
 

@@ -7,7 +7,7 @@ license: MIT; see ../how/LICENSE
 
 # Fix root causes
 
-Adapted from Lauren Tan's `principle-fix-root-causes` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This principle selects the **kind of fix**; the existing `diagnosing-bugs` skill owns the authorized red-capable reproduction and feedback loop. Neither skill grants an app launch, history scan, worker, edit or retry beyond the task contract.
+Adapted from Lauren Tan's `principle-fix-root-causes` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This principle selects the **kind of fix**; a separately loaded bug-diagnosis method owns the authorized red-capable reproduction and feedback loop. Neither skill grants an app launch, history scan, worker, edit or retry beyond the task contract.
 
 Reproduce the exact symptom at an approved seam **before** forming a cause or changing code. Trace the observed state and error backward, asking “why?” until the answer is the first wrong code decision, not another consequence. If the chain is unclear, use scoped instrumentation to inspect the **actual** state; do not guess from a later stack frame. For a failure that appears after restart, inspect approved persisted config, caches, locks and serialized state first, while respecting data access. State the falsifiable cause and show what observation would contradict it.
 
