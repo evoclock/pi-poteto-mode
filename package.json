@@ -18,6 +18,7 @@
   "files": [
     "skills/",
     "docs/pstack-pi-ports-comparison.md",
+    "docs/adaptation-guide.md",
     "config/pstack-model-roles.v1.example.json",
     "README.md",
     "LICENSE",
@@ -83,7 +84,8 @@
   },
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "sync:upstream": "node scripts/sync-upstream.mjs"
+    "sync:upstream": "node scripts/sync-upstream.mjs",
+    "adaptation:report": "node scripts/adaptation-report.mjs"
   },
   "repository": {
     "type": "git",

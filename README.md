@@ -53,6 +53,8 @@ filled in, skills that need a role stop and tell you to run setup.
 
 ## What's missing compared with upstream
 
+[docs/adaptation-guide.md](docs/adaptation-guide.md) lists every Cursor tool or feature the skills had to adapt, with the affected skills, the Pi handling and its status.
+
 These upstream features do not map to Pi yet:
 
 - **Subagents.** Upstream ships Cursor agents (`agents/poteto-agent.md`,
