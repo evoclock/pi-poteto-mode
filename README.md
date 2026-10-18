@@ -176,6 +176,14 @@ version. It only reads. I port upstream changes by hand and review each one.
 valid, that no model names or personal paths ship, and what `npm pack` would
 publish.
 
+## How I use it
+
+My preferred setup is open source and on-device: Pi, with Herdr panes for
+parallel work, and OpenMausBot. Much of pstack's power comes from running it
+inside a full bot like Grok Bot, with background workers, routines and memory
+around it. This port covers what Cursor can't for me: local models and a free
+choice of providers, set through the two model roles.
+
 ## Licence
 
 MIT; see [LICENSE](LICENSE). The upstream skills are by Lauren Tan,
