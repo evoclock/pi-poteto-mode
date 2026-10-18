@@ -1,0 +1,27 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Private scan terms (optional)
+        # Optional repo variable PUBLIC_SCAN_TERMS: a JSON array of names that must
+        # never ship. When unset, only the public list in the tests applies.
+        env:
+          TERMS: ${{ vars.PUBLIC_SCAN_TERMS }}
+        run: |
+          if [ -n "$TERMS" ]; then printf '%s' "$TERMS" > scan-terms.local.json; fi
+      - name: Tests, strict public scan and pack contents
+        run: npm test

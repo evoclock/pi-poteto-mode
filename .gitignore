@@ -1,0 +1,5 @@
+node_modules/
+*.tgz
+.pi/
+.review/
+scan-terms.local.json
