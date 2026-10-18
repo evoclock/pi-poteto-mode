@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // List where upstream pstack skills rely on Cursor tools or features, and what
-// the matching -pi skill says about the same feature. Read-only.
+// the matching -pi skill says about the same topic. The quoted sentence is a
+// keyword match for a human to check, not a verdict. Read-only.
 // Usage: node scripts/adaptation-report.mjs <path-to-upstream-pstack> [--markdown]
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
@@ -37,7 +38,7 @@ export function report(upstreamDir, root = ROOT) {
       const piDir = join(root, "skills", `${skill}-pi`);
       let excerpt = "";
       for (const f of existsSync(piDir) ? files(piDir) : []) {
-        const sentence = readFileSync(f, "utf8").replace(/\n/g, " ").split(/(?<=[.!?])\s+/).find((x) => piRe.test(x) && !/^(name|description):/.test(x));
+        const sentence = readFileSync(f, "utf8").replace(/^---\n[\s\S]*?\n---\n/, "").replace(/\n/g, " ").split(/(?<=[.!?])\s+/).find((x) => piRe.test(x));
         if (sentence) { excerpt = `${f.slice(root.length).replace(/^\/?/, "")}: ${sentence.trim().slice(0, 220)}`; break; }
       }
       out[feature].push({ skill, upstreamFiles: up.map((f) => f.slice(join(upstreamDir, "skills", skill).length + 1)), piHandling: excerpt });
@@ -57,7 +58,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   for (const [feature, rows] of Object.entries(r)) {
     console.log(`### ${feature}\n`);
     if (!rows.length) { console.log("No upstream skill uses this.\n"); continue; }
-    console.log("| Upstream skill | Upstream files | Pi handling today (first matching sentence) |\n|---|---|---|");
+    console.log("| Upstream skill | Upstream files | First `-pi` sentence on the topic (evidence to check, not a verdict) |\n|---|---|---|");
     for (const x of rows) console.log(`| ${x.skill} | ${x.upstreamFiles.join(", ")} | ${(x.piHandling || "no matching text").replace(/\|/g, "\\|")} |`);
     console.log("");
   }

@@ -78,5 +78,6 @@ test("sync script reports drift against an upstream copy", () => {
 test("adaptation report finds each feature in an upstream copy", async () => {
   const { report } = await import("../scripts/adaptation-report.mjs");
   const r = report(join(ROOT, "tests/fixtures/upstream"));
-  assert.ok(Object.keys(r).includes("Task / subagents"));
+  assert.deepEqual(r["Task / subagents"].map((x) => x.skill), ["alpha"]);
+  assert.deepEqual(r["MCP"], []);
 });
