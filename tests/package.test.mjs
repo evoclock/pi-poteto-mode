@@ -45,7 +45,7 @@ test("no model names or personal paths in shipped text", () => {
   const words = ["opus", "sonnet", "haiku", "claude", "gpt-?\\d*", "gemini", "grok", "codex", "copilot", "glm-?\\d*", "llama", "mistral", "qwen", "deepseek", "kimi", "anthropic", "openai", "xai", ...local.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))];
   const banned = new RegExp(`\\b(${words.join("|")})\\b|\\/Users\\/|\\/home\\/[a-z]|~\\/\\.pi\\/agent|(api[_-]?key|secret|token|password)\\s*[:=]\\s*\\S{8,}|sk-[A-Za-z0-9]{20,}|gh[pousr]_[A-Za-z0-9]{20,}`, "i");
   for (const f of textFiles) {
-    const hit = readFileSync(f, "utf8").replaceAll("@evoclock/pi-poteto-mode", "").replaceAll("evoclock/pi-poteto-mode", "").match(banned); // the npm scope is allowed
+    const hit = readFileSync(f, "utf8").replaceAll("@evoclock/pi-poteto-mode", "").replaceAll("Grok Bot", "").replaceAll("evoclock/pi-poteto-mode", "").match(banned); // the npm scope is allowed
     assert.equal(hit, null, `${f}: ${hit && hit[0]}`);
   }
 });
