@@ -1,9 +1,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { existsSync, readdirSync, readFileSync, statSync, mkdtempSync, mkdirSync, cpSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
-import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
 import { compare } from "../scripts/sync-upstream.mjs";
 
@@ -53,6 +52,7 @@ test("no model names or personal paths in shipped text", () => {
 test("role example uses placeholders only", () => {
   const ex = JSON.parse(readFileSync(join(ROOT, "config/pstack-model-roles.v1.example.json"), "utf8"));
   assert.deepEqual(Object.values(ex.roles), [null, null]);
+  assert.deepEqual(ex, JSON.parse(readFileSync(join(ROOT, "skills/setup-pstack-pi/assets/pstack-model-roles.v1.example.json"), "utf8")), "the two role examples must match");
 });
 
 test("package has no install scripts", () => {

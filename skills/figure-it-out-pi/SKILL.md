@@ -9,7 +9,7 @@ license: MIT; see ../how/LICENSE
 
 Adapted from Lauren Tan's pstack `figure-it-out` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Preserve Frame → Design → Run the loop → Audit trail → Verify and hand back. This designs **one** scoped playbook, not a standing scheduler, a new board or permission to commit, revert, delegate, launch or publish. Read `../how/WORKFLOW_BOUNDARIES.md` first. This private bundle requires both that sibling boundary file and `../how/LICENSE` at the effective Pi load path; if a separately copied skill lacks either, report it unusable rather than assuming a package included them. For relevant principles, read their individual reviewed Pi leaf skills before citing them; a drafted `poteto-mode-pi` or source mention is not proof a leaf loaded.
 
-Use the already loaded Pi session `tasks` for the phase list; first item checks applicable `poteto-mode-pi`/principle guidance and records unavailable resources. If tasks are not loaded, keep an explicit checklist inside the approved evidence file rather than creating a second task store. Board cards stay with Board Pulse and their trusted writer. The signed task contract supplies scope, model/data/effect route, budget and stopping point. No implied `/loop-until-done` extension or worker fan-out.
+Use the already loaded Pi session `tasks` for the phase list; first item checks applicable `poteto-mode-pi`/principle guidance and records unavailable resources. If tasks are not loaded, keep an explicit checklist inside the approved evidence file rather than creating a second task store. The signed task contract supplies scope, model/data/effect route, budget and stopping point. No implied `/loop-until-done` extension or worker fan-out.
 
 ## A. Frame
 
@@ -17,7 +17,7 @@ Ground the affected system through the approved `how` route or bounded source in
 
 ## B. Design the workflow
 
-Split work into independently verifiable units, riskiest unknown first. Capture a pre-change baseline and establish a usable verification seam before a feature change, with effects authorized separately. Invoke reviewed `architect-pi` for an unsettled one-way-door design only if its multiple candidate routes are approved; skip a second design arena for already settled mechanical work. Parallelize only across independent write ownership, with each worker's role, capacity and path actually granted. A Treehouse lease is not containment. Put concrete unit checks and safe exit between C and E in the session plan; the human can inspect this designed workflow before code starts. No new PR stack, worktree or scheduler follows by implication.
+Split work into independently verifiable units, riskiest unknown first. Capture a pre-change baseline and establish a usable verification seam before a feature change, with effects authorized separately. Invoke reviewed `architect-pi` for an unsettled one-way-door design only if its multiple candidate routes are approved; skip a second design arena for already settled mechanical work. Parallelize only across independent write ownership, with each worker's role, capacity and path actually granted. A workspace lease is not containment. Put concrete unit checks and safe exit between C and E in the session plan; the human can inspect this designed workflow before code starts. No new PR stack, worktree or scheduler follows by implication.
 
 ## C. Run a falsifiable loop
 
@@ -29,7 +29,7 @@ Use the reviewed private `show-me-your-work` Pi adaptation **only when its actua
 
 ## E. Verify and hand back
 
-Check the **whole** product against the Phase A predicate at the approved real entry point; a passing harness, dispatch terminal state, exhausted loop or agent report alone cannot certify it. For a recurring correction, propose a scoped executable gate only after prior-art and red-capable verification; prose-only rules do not enforce themselves. Hand back the designed playbook, rigor rationale, trail path, actual VERIFIED/NOT VERIFIED/INCONCLUSIVE outcomes and precisely unrun paths. Richard's accepted user-path QA, independent exact-artifact review and the repository owner's merge decision stay separate.
+Check the **whole** product against the Phase A predicate at the approved real entry point; a passing harness, dispatch terminal state, exhausted loop or agent report alone cannot certify it. For a recurring correction, propose a scoped executable gate only after prior-art and red-capable verification; prose-only rules do not enforce themselves. Hand back the designed playbook, rigor rationale, trail path, actual VERIFIED/NOT VERIFIED/INCONCLUSIVE outcomes and precisely unrun paths. Accepted user-path QA, independent exact-artifact review and the repository owner's merge decision stay separate.
 
 - **Positive BDD:** Given an approved complex task, loaded relevant Pi resources and a real verification seam, when the playbook runs within its budget, then each unit has a falsifiable hypothesis and recorded result, the audit trail links decisions to exact artifacts and the whole task is checked against its initial predicate.
 - **Refusal BDD:** Given missing scope, resource, reviewer, safe exit, runtime grant or user predicate, when the next phase needs it, then label that phase `blocked`/`unrun` or the outcome INCONCLUSIVE; do not invent completion, auto-revert, spawn a worker, install a tool or commit.

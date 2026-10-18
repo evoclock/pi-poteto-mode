@@ -2,8 +2,7 @@
 // Compare this port with a local copy of upstream pstack.
 // Usage: node scripts/sync-upstream.mjs <path-to-upstream-pstack>
 // Prints the upstream version, skills missing from the port, port skills with
-// no upstream match, and the upstream skill files changed since this port's
-// recorded baseline (UPSTREAM_VERSION). It only reads; it never edits files.
+// no upstream match, and the baseline version this port tracks. It only reads; it never edits files.
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";

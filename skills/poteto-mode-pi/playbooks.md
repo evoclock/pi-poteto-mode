@@ -1,6 +1,6 @@
 # Pi playbooks: source-to-method map
 
-Adapted from all 23 `pstack/skills/poteto-mode/playbooks/*.md` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT, Lauren Tan). Read the matched section **with** `SKILL.md` and the approved task contract. This is a method map, not runnable automation or 23 extra commands. Each playbook starts from the same task grant, uses `TaskCreate` only for session work when loaded, and stops before any unapproved effect. No stock executable, Cursor subagent, `/tmp` file, forge operation, package install or merge is imported. For each unit record its real check, source and unrun paths; only the repository owner merges.
+Adapted from all 23 `pstack/skills/poteto-mode/playbooks/*.md` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT, Lauren Tan). Read the matched section **with** `SKILL.md` and the approved task contract. This is a method map, not runnable automation or 23 extra commands. Each playbook starts from the same task grant, uses session tasks only for session work when loaded, and stops before any unapproved effect. No stock executable, Cursor subagent, `/tmp` file, forge operation, package install or merge is imported. For each unit record its real check, source and unrun paths; only the repository owner merges.
 
 ## Investigation
 
@@ -92,4 +92,4 @@ This delivers a plan, not code. Skip a plan when a tiny change has an obvious ap
 
 ## Worktree and simulator cleanup (audit first)
 
-Take read-only inventory of repository worktrees/merge state, dirty and untracked files, active or pinned sessions and any simulator/resource owner. A classifier's `safe` bucket is advice, not authority. The approved Treehouse owner/provider handles worktree lifecycle; after **human-confirmed** merge, promptly request the trusted prune route. Never run stock force removal, recursive shell deletion, simulator wipe or package-cache clear on this playbook's authority. Report recoverable/held candidates, uncertainty and actual reclaimed space only if an authorized cleanup really ran.
+Take read-only inventory of repository worktrees/merge state, dirty and untracked files, active or pinned sessions and any simulator/resource owner. A classifier's `safe` bucket is advice, not authority. The approved workspace manager handles worktree lifecycle; after **human-confirmed** merge, promptly request the trusted prune route. Never run stock force removal, recursive shell deletion, simulator wipe or package-cache clear on this playbook's authority. Report recoverable/held candidates, uncertainty and actual reclaimed space only if an authorized cleanup really ran.

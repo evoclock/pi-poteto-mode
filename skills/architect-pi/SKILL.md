@@ -30,7 +30,7 @@ Normally continue within the approved contract. If the invoker asked for a check
 
 ## D. Implement against the sketch
 
-Fill in the approved design in verifiable units. Compare actual call sites and test results with the usage and types. A surprising new parameter or writer is evidence to inspect the design or requirement, not something to hide with an escape-hatch type. Check the real entry point and capture failures. Independent exact-artifact Standards and Spec review through the configured different-model `independent-review` role and Richard's applicable QA remain separate.
+Fill in the approved design in verifiable units. Compare actual call sites and test results with the usage and types. A surprising new parameter or writer is evidence to inspect the design or requirement, not something to hide with an escape-hatch type. Check the real entry point and capture failures. Independent exact-artifact Standards and Spec review through the configured different-model `independent-review` role and separate user-path QA remain separate.
 
 ## E. Scrap if the shape fails
 

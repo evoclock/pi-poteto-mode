@@ -27,7 +27,7 @@ Read every report and check its load-bearing pointers against source and authori
 
 ## 5. Hand back
 
-Report accepted intent, exact candidate identity, configured reviewer roles and what actually ran, attributed findings and evidence, disagreements, triage and unresolved checks. Independent Standards and Spec contexts for the accepted port and Richard's user-path QA are separate from a task's interrogation. Owner-only merge/publication still requires its own grant. Never confuse a self-audit, model agreement, worker report or static review with a deployed journey.
+Report accepted intent, exact candidate identity, configured reviewer roles and what actually ran, attributed findings and evidence, disagreements, triage and unresolved checks. Independent Standards and Spec contexts for the accepted port and user-path QA are separate from a task's interrogation. Owner-only merge/publication still requires its own grant. Never confuse a self-audit, model agreement, worker report or static review with a deployed journey.
 
 - **Positive BDD:** Given an approved exact artifact, owner-selected distinct reviewer routes and a common brief, when Pi interrogates it, then separate read-only findings are checked against source, attributed, triaged with reasons, and any genuine disagreement survives in the handback.
 - **Refusal BDD:** Given a missing different-model reviewer, artifact, model/data grant or approved route, when a reviewer handoff is attempted, then independent interrogation is `blocked`; a self-review may be labelled advisory but cannot generate a pass, extra provider call or invented consensus.

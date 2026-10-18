@@ -87,5 +87,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/evoclock/pi-poteto-mode.git"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
