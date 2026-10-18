@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Figure it out for Pi
 
 Adapted from Lauren Tan's pstack `figure-it-out` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Preserve Frame → Design → Run the loop → Audit trail → Verify and hand back. This designs **one** scoped playbook, not a standing scheduler, a new board or permission to commit, revert, delegate, launch or publish. Read `../how/WORKFLOW_BOUNDARIES.md` first. This package requires both that sibling boundary file and `../how/LICENSE` at the effective Pi load path; if a separately copied skill lacks either, report it unusable rather than assuming a package included them. For relevant principles, read their individual reviewed Pi leaf skills before citing them; a drafted `poteto-mode-pi` or source mention is not proof a leaf loaded.
@@ -25,7 +27,7 @@ For each unit state a hypothesis and the observation that would disprove it. Mak
 
 ## D. Keep a decision trail
 
-Use the reviewed private `show-me-your-work` Pi adaptation **only when its actual loaded path has been checked**; an unchanged upstream skill with the same command name is not proof it loaded. In its absence, maintain a small append-only private record only if the task permits that destination. If neither resource nor an approved evidence destination exists, mark the audit phase `blocked` and stop before a long run; do not invent a path or silently omit the trail. Record hypothesis, pivot, actual check, failure, owner decision and artifact identity as each unit ends; do not reconstruct a green story only at handback. No commit or transcript scan is implied. If the task needs independent trail review, resolve the configured different-model `independent-review` role and approved transcript range separately.
+Use the `show-me-your-work-pi` adaptation **only when its actual loaded path has been checked**; an unchanged upstream skill with the same command name is not proof it loaded. In its absence, maintain a small append-only private record only if the task permits that destination. If neither resource nor an approved evidence destination exists, mark the audit phase `blocked` and stop before a long run; do not invent a path or silently omit the trail. Record hypothesis, pivot, actual check, failure, owner decision and artifact identity as each unit ends; do not reconstruct a green story only at handback. No commit or transcript scan is implied. If the task needs independent trail review, resolve the configured different-model `independent-review` role and approved transcript range separately.
 
 ## E. Verify and hand back
 

@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Technical writing for Pi
 
 Adapted from Lauren Tan's `technical-writing` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This skill combines **Diátaxis mode, Google developer style, STE-informed instructions and Global English syntax**; the rules serve the reader rather than a mechanical sentence limit. Writing does not grant public publication, document scope, product-copy changes or permission to reveal internal evidence. An actually loaded `unslop-pi` can polish a draft; if absent, apply plain wording directly and do not claim invocation.

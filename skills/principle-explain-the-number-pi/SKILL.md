@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Explain the number
 
 Adapted from Lauren Tan's `principle-explain-the-number` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. A proposed measurement is not authority to launch a benchmark, profile a host, change settings, consume private trial data or publish a claim. `principle-prove-it-works` checks whether an output is real; this principle asks **why the measured magnitude is plausible**.

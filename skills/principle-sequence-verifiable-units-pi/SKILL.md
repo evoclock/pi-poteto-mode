@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Sequence work into verifiable units
 
 Adapted from Lauren Tan's `principle-sequence-verifiable-units` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This principle orders accepted work and its review story; it does not authorize a rebase, extra worktree, commit, push, stacked PR or owner-held merge. Use a clean, approved baseline from the actual target revision; a task's existing dirty files cannot be reset away to manufacture one.

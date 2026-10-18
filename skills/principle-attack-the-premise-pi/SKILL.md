@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Attack the premise
 
 Adapted from Lauren Tan's `principle-attack-the-premise` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. A principle changes one decision; it does not authorize a test, app launch or refactor.

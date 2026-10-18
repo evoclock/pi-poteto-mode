@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Automate a user's working style for Pi
 
 Adapted from Lauren Tan's pstack `automate-me` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Retain its existing-mode check, bounded history patterns, direct interview, clustering, Pi skill authoring, prose revision and user feedback. Do not use Cursor `AskQuestion`, built-in `create-skill`, transcript globbing, automatic PR or any stock helper. Read Pi's skill format in the installed `skills.md` before authoring. Use `unslop` only once its reviewed Pi port is loaded; otherwise write short concrete sentences, remove boilerplate and keep the user's meaning without claiming a skill invocation.

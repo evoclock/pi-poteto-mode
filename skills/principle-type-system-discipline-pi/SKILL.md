@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Type system discipline
 
 Adapted from Lauren Tan's **pinned live** `principle-type-system-discipline` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The live source differs from the preserved installed body, so preserve the live brand/boundary/schema rules rather than silently substituting older examples. Compiler types help reject impossible states, mismatched primitives and unhandled variants **inside typed code**; a type is not runtime validation, containment or authorization. For TypeScript syntax consult a reviewed `typescript-best-practices-pi` only when it actually loads, not a planned command.

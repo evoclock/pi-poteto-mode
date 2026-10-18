@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Create a Pi verification skill
 
 Adapted from Lauren Tan's Poteto/pstack `create-verification-skill` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). The original generates a project-local Cursor skill with launch, read-only doctor, drive, evidence, cleanup and a maintained feature map, then proves one mapped journey. This Pi creator does not start an app by implication. Read `../how/WORKFLOW_BOUNDARIES.md` first. A loaded journey-verification method, if present, already defines how to check an approved user path; write a new project-local skill only when a repeatable project-specific route is missing.

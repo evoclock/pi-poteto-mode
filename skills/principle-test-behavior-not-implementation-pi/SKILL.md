@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Test behavior, not implementation
 
 Adapted from Lauren Tan's `principle-test-behavior-not-implementation` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. A test is a claim about what a **caller, end user or external service** can observe: return values, error types, state read back and effects such as sent requests, rows or messages. Internal helper order, private data and collaborator choice are not user behavior unless the accepted contract makes them observable. This skill does not authorize a new harness, mock service, runtime effect or deletion of a safety test.

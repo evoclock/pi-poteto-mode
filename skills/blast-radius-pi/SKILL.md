@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Blast radius for Pi
 
 Read `../how/WORKFLOW_BOUNDARIES.md` first. Adapted from Lauren Tan's pstack `blast-radius` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). The separate name avoids collision with the unchanged upstream skill installed for inspection. The earlier adaptation is retired as a skill; package registration of `blast-radius-pi` still does not prove actual Pi loading.

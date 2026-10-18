@@ -14,7 +14,7 @@ const skillDirs = readdirSync(join(ROOT, "skills")).filter((n) => n.endsWith("-p
 function walk(dir) {
   return readdirSync(dir).flatMap((n) => (statSync(join(dir, n)).isDirectory() ? walk(join(dir, n)) : [join(dir, n)]));
 }
-const textFiles = walk(join(ROOT, "skills")).concat(["README.md", "config/pstack-model-roles.v1.example.json"].map((f) => join(ROOT, f)));
+const textFiles = walk(join(ROOT, "skills")).concat(["README.md", "docs/pstack-pi-ports-comparison.md", "config/pstack-model-roles.v1.example.json"].map((f) => join(ROOT, f)));
 
 test("every upstream pstack 0.15.25 skill has a port and the manifest lists it", () => {
   assert.equal(upstream.length, 54);
@@ -32,6 +32,7 @@ test("each SKILL.md has valid frontmatter whose name matches its folder", () => 
     assert.ok(m, `${dir}: no frontmatter`);
     const fields = Object.fromEntries(m[1].split("\n").filter((l) => /^[a-z-]+:/.test(l)).map((l) => [l.slice(0, l.indexOf(":")), l.slice(l.indexOf(":") + 1).trim()]));
     assert.equal(fields.name, dir);
+    assert.ok(text.includes("Adapted from pstack by Lauren Tan (MIT)."), `${dir}: attribution line`);
     assert.match(fields.name, /^[a-z0-9-]{1,64}$/);
     assert.ok(fields.description && fields.description.length <= 1024, `${dir}: description`);
   }
@@ -62,7 +63,7 @@ test("package has no install scripts", () => {
 test("npm pack contents are the whitelist only", () => {
   const out = JSON.parse(execFileSync("npm", ["pack", "--dry-run", "--json"], { cwd: ROOT, encoding: "utf8" }));
   const files = out[0].files.map((f) => f.path);
-  assert.ok(files.every((f) => /^(skills\/|config\/pstack-model-roles\.v1\.example\.json$|README\.md$|LICENSE$|NOTICE$|package\.json$)/.test(f)), files.join(","));
+  assert.ok(files.every((f) => /^(skills\/|config\/pstack-model-roles\.v1\.example\.json$|README\.md$|LICENSE$|NOTICE$|docs\/pstack-pi-ports-comparison\.md$|package\.json$)/.test(f)), files.join(","));
   assert.ok(!files.some((f) => f.includes("node_modules") || f.startsWith("tests/") || f.startsWith("scripts/")));
   assert.ok(files.includes("skills/how/LICENSE"));
 });

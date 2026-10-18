@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Maintain a Pi verification skill
 
 Adapted from Lauren Tan's pstack `maintain-verification-skill` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). `create-verification-skill-pi` writes a project-local verifier; this method maintains one. The outcome is **clean**, **changed** or **blocked**, not an automatic PR. Source inspection, app launch, shared-instance drive, retry, cleanup and external publication each need their own approved boundary. Read `../how/WORKFLOW_BOUNDARIES.md` and the target verifier before touching an app.

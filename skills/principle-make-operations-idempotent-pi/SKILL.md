@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Make operations idempotent
 
 Adapted from Lauren Tan's `principle-make-operations-idempotent` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. A convergent design is **not** permission to retry, replay a remote effect, clean another run's files or assume an owner-approved effect grant. This principle applies to commands, lifecycle steps and processing loops that may stop or repeat.

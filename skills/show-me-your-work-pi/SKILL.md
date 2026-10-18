@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Show your work for Pi
 
 Adapted from Lauren Tan's `show-me-your-work`, its six-column TSV template and append-only `scripts/log.sh` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This leaf maps the full pinned run-boundary/TSV/audit method without creating a second writer or automatically executing the stock shell helper. Keep the **single** approved private record for an assignment; existing Markdown records need not be converted to TSV. No transcript access, reviewer or Git commit follows from reading a skill.

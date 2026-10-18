@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Fix root causes
 
 Adapted from Lauren Tan's `principle-fix-root-causes` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This principle selects the **kind of fix**; a separately loaded bug-diagnosis method owns the authorized red-capable reproduction and feedback loop. Neither skill grants an app launch, history scan, worker, edit or retry beyond the task contract.

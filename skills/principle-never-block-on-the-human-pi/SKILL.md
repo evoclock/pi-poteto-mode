@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Never block on the human
 
 Adapted from Lauren Tan's `principle-never-block-on-the-human` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The human supplies product direction and the actual task contract; this principle cannot turn a missing grant into permission. Reversibility means a scoped change can be reviewed and corrected, not that a private-data read, network effect or cleanup becomes harmless.

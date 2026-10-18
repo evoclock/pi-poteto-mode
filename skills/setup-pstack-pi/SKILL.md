@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Set up pstack roles for Pi
 
 This mapping adapts Lauren Tan's live `setup-pstack` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md` and `assets/pstack-model-roles.v1.example.json`. **This `/skill:setup-pstack-pi` is the sole packaged role-setup route.** It owns one project-local map; no previous skill, alternate writer or duplicate same-name loader is required.

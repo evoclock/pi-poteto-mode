@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Help with the pstack-to-Pi route
 
 Adapted from Lauren Tan's `poteto-help` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT), including its `references/prompting.md` and `references/recipes.md`. Help answers are **not** requests to start work. Answer, give one prompt the user could send, and link the actual source used. For an explicit work request, hand off to the **loaded, owner-approved** working method instead of answering it as help; loading this file never starts a task, worker or app. Read `../how/WORKFLOW_BOUNDARIES.md`.

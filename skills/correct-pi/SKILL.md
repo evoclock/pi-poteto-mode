@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Correct repeated mistakes for Pi
 
 Adapted from Lauren Tan's pstack `correct` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Preserve evidence-based mistake classes, architecture-before-prose, a failing check against an actual mistake and a rule/enforcer map. This method is not permission to read unrelated conversations, alter project instructions, install a lint tool, rewrite a repository, commit, run CI or push. Read `../how/WORKFLOW_BOUNDARIES.md` before effectful work.

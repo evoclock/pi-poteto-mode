@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Make a bot UI for Pi
 
 Adapted from Lauren Tan's pstack `make-bot-ui` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Preserve the core path: **user clicks page → local server sends bounded JSON to an approved webhook routine → bot wakes and parses outside data**. The original assumes Cursor `update_state`, `SendToUser` secret-request, a source-specific bot, specific webhook headers and a Tailscale installer. Those are **not Pi APIs or effect grants**. Do not issue stock commands, fetch an install script, invent a secret connector or silently substitute another bot/computer route.

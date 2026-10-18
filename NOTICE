@@ -1,9 +1,13 @@
 # NOTICE
 
-The skills in this package are adapted from **pstack** by Lauren Tan,
-version 0.15.25, published in https://github.com/cursor/plugins/tree/main/pstack
-under the MIT License. Each skill names its upstream source in its own text.
-`skills/how/LICENSE` keeps the upstream copyright notices that the skills refer to.
+The skills in this package are **pstack by Lauren Tan**, version 0.15.25,
+published in https://github.com/cursor/plugins/tree/main/pstack under the MIT
+License. Copyright stays with Lauren Tan.
+
+I (Julen Gamboa) adapted them for the Pi coding agent, to keep a port that is
+maintainable and close to upstream, and to cover the gaps I found in other
+existing Pi ports (see `docs/pstack-pi-ports-comparison.md`). Each skill names
+its upstream source. `skills/how/LICENSE` keeps the upstream copyright notices.
 
 Upstream licence:
 

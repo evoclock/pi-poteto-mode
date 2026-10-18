@@ -17,6 +17,7 @@
   },
   "files": [
     "skills/",
+    "docs/pstack-pi-ports-comparison.md",
     "config/pstack-model-roles.v1.example.json",
     "README.md",
     "LICENSE",

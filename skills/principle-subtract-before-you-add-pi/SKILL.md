@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Subtract before you add
 
 Adapted from Lauren Tan's `principle-subtract-before-you-add` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. Subtraction is a **sequence and design choice**, not permission to delete safety guards, legal notices, evidence, public APIs, tests or another owner's work. A smaller surface should still satisfy the full accepted specification.

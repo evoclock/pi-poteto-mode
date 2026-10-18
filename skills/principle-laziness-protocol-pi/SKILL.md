@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Laziness protocol
 
 Adapted from the **pinned live** Lauren Tan `principle-laziness-protocol` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The live body has only two rules: consolidate decisions and minimize the diff. The older installed source has extra flat-hierarchy and signal-threading advice; do not turn those older thresholds into mandatory Pi rules. Shorter code is a goal only after behavior, compatibility and safety remain intact; line count is a diagnostic, not a veto.

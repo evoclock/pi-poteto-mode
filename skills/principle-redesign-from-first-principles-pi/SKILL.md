@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Redesign from first principles
 
 Adapted from Lauren Tan's `principle-redesign-from-first-principles` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. A redesign thought experiment does **not** grant a broad rewrite, public-document edit, worker fan-out or a new owner decision. Distinguish this from challenging a failed assumption: here an **accepted new requirement** changes the intended design.

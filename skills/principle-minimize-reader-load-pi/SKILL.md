@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Minimize reader load
 
 Adapted from Lauren Tan's `principle-minimize-reader-load` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. Reader load has **two independent axes**: layers between a question and its answer, and hidden/mutable state a reader must hold. A flat module with many globals can be as hard as many pass-through adapters. LOC, cyclomatic complexity and an architecture label are proxies, not automatic rejection thresholds. This is the human counterpart of `principle-guard-the-context-window-pi` **only when that actual Pi leaf is loaded**.

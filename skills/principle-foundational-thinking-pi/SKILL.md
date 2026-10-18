@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Foundational thinking
 
 Adapted from Lauren Tan's unchanged `principle-foundational-thinking` body at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. Structural decisions protect future options; local code decisions protect simplicity. This principle does not authorize a redesign, deletion, CI change, worker, commit or broad refactor.

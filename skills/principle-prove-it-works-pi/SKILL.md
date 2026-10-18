@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Prove it works
 
 Adapted from Lauren Tan's `principle-prove-it-works` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This is the direct-artifact completion rule, not permission to start an app, instrument a host, install a verifier, write to an unapproved evidence location or mark a task done. A separately loaded journey-verification method details user-facing BDD drives when that method is actually loaded and the target/effects are approved.

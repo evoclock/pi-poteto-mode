@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Migrate callers, then delete legacy APIs
 
 Adapted from Lauren Tan's **pinned live** `principle-migrate-callers-then-delete-legacy-apis` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The current source is shorter than the older installed version: its description favors a same-wave internal migration over compatibility layers, while its body specifies new-contract tests and three applicability conditions. Do not treat the older source's “delete immediately” wording as a blanket authority to remove a public API.

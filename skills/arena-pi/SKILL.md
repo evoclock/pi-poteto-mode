@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Arena for Pi
 
 Adapted from Lauren Tan's pstack `arena` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Preserve Frame → Fan out → Cross-judge → Pick → Graft → Verify. Do not import Cursor `Task` defaults, Cursor model rules, background fan-out or `/tmp/arena-*`. Read `../how/WORKFLOW_BOUNDARIES.md` first.

@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Bro for Pi
 
 Adapted from Lauren Tan's pstack `bro` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). This is a small conversational skill: it restates **the assistant's immediately preceding message**, not a history digest, a new answer, a user's private conversation or a permission grant. Use `agentic_aidr` for broader writing review only if actually loaded and requested; do not claim it ran here.

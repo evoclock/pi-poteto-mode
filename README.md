@@ -1,10 +1,14 @@
 # @evoclock/pi-poteto-mode
 
-pstack for Pi, published as pi-poteto-mode. I ported all 54 skills of Lauren Tan's
-[pstack](https://github.com/cursor/plugins/tree/main/pstack) **v0.15.25** to the
-[Pi coding agent](https://pi.dev), keeping each skill as close to the upstream
-text as Pi allows. This package holds only the port. It adds no extensions and
-no workflows of my own.
+The skills in this package are **[pstack](https://github.com/cursor/plugins/tree/main/pstack)
+by Lauren Tan** (v0.15.25, MIT). Copyright stays with Lauren Tan. I adapted all
+54 skills for the [Pi coding agent](https://pi.dev) to keep a port that is
+maintainable and close to the upstream text, and to cover the gaps I found in
+other Pi ports. This package holds only the adaptation; it adds no extensions or
+workflows of my own.
+
+I compared the other published Pi ports in
+[docs/pstack-pi-ports-comparison.md](docs/pstack-pi-ports-comparison.md).
 
 ## Install
 

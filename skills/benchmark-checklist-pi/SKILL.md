@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Benchmark checklist for Pi
 
 Adapted from Lauren Tan's pstack `benchmark-checklist` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). These questions are a judgment method, not permission to run a benchmark, profiler, server, script or host telemetry. Load and data effects remain inside the approved task; avoid touching GPU/CUDA or another user's running workload. Do not put an unreviewed number in public copy.

@@ -4,6 +4,8 @@ description: For an approved non-trivial Pi task, select a source-mapped playboo
 license: MIT; see LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Poteto mode for Pi sessions
 
 Adapted from Lauren Tan's pstack `poteto-mode` and its **23** playbooks at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). The separate Pi name avoids the unchanged installed upstream skill. Read `../how/WORKFLOW_BOUNDARIES.md` and the matching section in [`playbooks.md`](playbooks.md) before acting. These are methods, not an import of Cursor Task, `poteto-agent`, Custom Modes, `/loop`, its permissive MCP autonomy, its tools or its executable scripts. The existing draft agent-profile line is final as **wording only**; do not claim a live Pi profile loads this skill. Only the repository owner merges.

@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Architect for Pi
 
 Adapted from Lauren Tan's pstack `architect` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). This Pi port preserves Ground → Sketch → Agree → Implement → Scrap and the source's caller-first sketch, competing whole-shape candidates, red-flag screening and rationale. It cannot import Cursor's `Task`, `arena` runner configuration, default models, `/tmp` runner paths or automatic commits. Read `../how/WORKFLOW_BOUNDARIES.md` before an effectful or delegated step.

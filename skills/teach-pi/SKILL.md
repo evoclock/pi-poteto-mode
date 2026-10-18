@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Teach for Pi
 
 Adapted from Lauren Tan's unchanged `teach` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. Teaching is **read-only**. The pinned method invokes `how` for mechanics and `why` for historical reasons; in Pi, use each only if its reviewed skill actually loaded and the source/history/data route is approved. A planned `why-pi` file or temporary skill discovery is not proof Pi loaded it. Do not invent a motive from code shape, launch an image generator, read private chats or edit the system because teaching mentions those routes.

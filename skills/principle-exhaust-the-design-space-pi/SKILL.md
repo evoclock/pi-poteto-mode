@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Exhaust the design space
 
 Adapted from Lauren Tan's `principle-exhaust-the-design-space` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. A design claim, a three-option prose list or an AI vote is not a prototype. Look for a codebase precedent first and avoid ceremony when an established solution applies.

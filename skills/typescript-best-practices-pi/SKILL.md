@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # TypeScript best practices for Pi
 
 Adapted from Lauren Tan's unchanged `typescript-best-practices` and its `references/patterns.md` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. Apply the **actual loaded** `principle-type-system-discipline-pi` first if available; its drafted directory or a source citation is not proof it loaded. The source's Cursor `paths` trigger does not automatically register this Pi skill for every `.ts` or `.tsx` file. This is a method for approved scope, not an automatic repository-wide rewrite, package install or runtime validation guarantee.

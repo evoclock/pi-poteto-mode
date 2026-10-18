@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Guard the context window
 
 Adapted from the **pinned live** Lauren Tan `principle-guard-the-context-window` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). The live body is shorter than the older installed source: it specifies sizing phases, scope and turn budgets, not a mandatory subagent fan-out or inlining rule. Read `../how/WORKFLOW_BOUNDARIES.md`. Context overflow can degrade reasoning, create compression artifacts and halt work; reducing output volume must not conceal a decisive failure.

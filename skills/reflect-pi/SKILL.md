@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Reflect for Pi
 
 Adapted from Lauren Tan's `reflect` and its judgment, tooling, divergent and synthesizer references at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The original Cursor transcript layout, `Task` agent tool, fixed provider defaults, MCP availability, auto-backlog filing and `create-skill` command are not Pi grants or APIs. This is a **propose-then-approve** workflow: do not edit an organization-wide skill, create a backlog card or publish a lesson from a reviewer report alone.

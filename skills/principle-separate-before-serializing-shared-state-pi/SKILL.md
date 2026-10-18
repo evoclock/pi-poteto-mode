@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Separate before serializing shared state
 
 Adapted from Lauren Tan's `principle-separate-before-serializing-shared-state` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. Instructions like “don't both write” are not synchronization. A workspace lease reserves a worktree, not process containment or exclusive ownership of an external state object; a reviewed principle grants no lock installation, worker fan-out or mutation of a trusted shared writer.

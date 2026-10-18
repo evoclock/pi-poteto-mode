@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # No comments for Pi
 
 Adapted from Lauren Tan's pstack `no-comments` and its `pstack/agents/comment-sicko.md` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Preserve the source's adversarial **comment-only** reviewer, evidence-backed exceptions, `MUST KILL` workaround flags, accepted root-cause fixes and rule-encoding offers. Do not import its persona as permission to delete comments, safety constraints or code. The existing `code-review` skill covers broader Standards/Spec review; it is not a substitute for this targeted method. Read `../how/WORKFLOW_BOUNDARIES.md` first.

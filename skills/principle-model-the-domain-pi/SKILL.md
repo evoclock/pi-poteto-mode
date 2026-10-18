@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Model the domain
 
 Adapted from Lauren Tan's `principle-model-the-domain` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. A domain structure should remove invalid representable states, duplicated rules or scattered lifecycle branches, not merely add an abstraction. Types do not validate untrusted runtime input or grant a migration outside approved scope.

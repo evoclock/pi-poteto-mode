@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # In your own words
 
 Adapted from Lauren Tan's pstack `in-your-own-words` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). The `-pi` suffix avoids the installed upstream command's name collision.

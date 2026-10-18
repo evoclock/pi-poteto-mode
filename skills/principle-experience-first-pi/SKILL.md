@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Experience first
 
 Adapted from Lauren Tan's `principle-experience-first` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The live `SKILL.md` blob was unchanged from the preserved source pin in the approved census; the installed source body was inspected. A preference for delight is **not** authority to expand a product brief or skip a needed safety check.

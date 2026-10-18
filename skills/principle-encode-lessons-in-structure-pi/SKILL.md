@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Encode lessons in structure
 
 Adapted from Lauren Tan's `principle-encode-lessons-in-structure` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. Unlike `principle-build-the-lever-pi`, which builds a rerunnable work artifact, this method makes a **repeated rule** hard to violate in future work.

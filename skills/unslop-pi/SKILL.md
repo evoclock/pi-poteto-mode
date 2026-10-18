@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Unslop for Pi
 
 Adapted from Lauren Tan's `unslop` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. Preserve the source's **stable rule numbers and intentional gaps** so sibling skills can cite them. This is a language edit, not permission to alter product behavior, evidence, legal/licence text, quoted user words, code identifiers, owner-approved public copy or publication destination. Preserve meaning, necessary uncertainty, human warmth and the intended voice. A heuristic finding is not an automatic deletion.

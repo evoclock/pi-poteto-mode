@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Swarm for Pi
 
 Adapted from Lauren Tan's `swarm` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This method is **not** a worker, cloud environment, capacity, containment or model-selection grant. The Cursor source's default worker provider, `auto`/parent fallback, cloud/local switch, `cloud_base_branch` and background `Task` calls are not Pi APIs. A workspace lease is not runtime isolation, and a worker report cannot authorize effects or certify the result.

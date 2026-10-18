@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Ketchup for Pi
 
 Adapted from Lauren Tan's pstack `ketchup` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). This is a **read-only reply**, not `bro-pi`'s last-answer restatement, an all-project status survey or permission to update a report. Borrow the short plain voice from `bro-pi` only if that reviewed skill is loaded; otherwise use short everyday sentences without jargon. Never claim its invocation solely from this reference.

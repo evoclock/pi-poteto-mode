@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # How for Pi
 
 Adapted from Lauren Tan's pstack `how` and its explorer/explainer reference templates **as of** `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). The earlier `how` adaptation was retired; use this packaged `how-pi` entry point without relying on skill-name precedence. It adapts the pinned-live source's explorer/explainer output fields without copying Cursor prompt templates, hardcoded models or automatic spawn. Read `../how/WORKFLOW_BOUNDARIES.md` first. The sibling MIT licence and boundaries must be present in the effective Pi bundle, otherwise report the resource missing. For any delegate, resolve `development` via `/skill:setup-pstack-pi` from the owner-approved project role map and use only the already approved Pi coordinator/worker dispatch route; a role map alone does not enable that route. Keep `independent-review` for separate exact-artifact review, not an explainer author.

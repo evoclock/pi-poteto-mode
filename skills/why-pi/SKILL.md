@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Why for Pi
 
 Adapted from Lauren Tan's `why` and its `references/` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. `how` answers what code does; `why` investigates the forces behind its shape. Investigate cautiously. No default subagent identity, Task tool, MCP access, source permissions or worker route transfers from Cursor. Resolve configured `development` and `independent-review` roles via `../setup-pstack-pi/SKILL.md` when those roles are actually required. Do not assume that a Pi search tool implies access to private tickets, chat or analytics. This is read-only investigation, not authority to alter code or a decision.

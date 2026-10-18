@@ -5,6 +5,8 @@ disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
+> Adapted from pstack by Lauren Tan (MIT).
+
 # Interrogate for Pi
 
 Adapted from Lauren Tan's pstack `interrogate` and its current reviewer, rubric, code-quality and lead-judgment references at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). The earlier `interrogate` adaptation is retired as a skill. The packaged `interrogate-pi` entry point does not establish which other external resources Pi loads. Read `../how/WORKFLOW_BOUNDARIES.md` first; both that file and sibling `../how/LICENSE` must be present at the actual Pi load location.
