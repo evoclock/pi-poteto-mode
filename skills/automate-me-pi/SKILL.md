@@ -25,7 +25,7 @@ Offer one or two concise multi-choice questions in the available Pi chat/UI, wit
 
 Combine direct answers with supported repeated evidence; distinguish observed habits, user-stated choices and uncertain inference. Use only sections that capture specific actionable differences such as response style, autonomy **within existing grants**, investigation, delegation, review/verification, process and prose. Reference other loaded skills by name rather than copying them. Do not codify one contradictory incident or make an agent's self-report into the user's preference.
 
-Once the user confirms the destination and writing scope, draft one Pi `skills/<handle>-mode/SKILL.md` (or their approved category/personal path), with portable name, routing description mentioning the handle and working style, and `disable-model-invocation: true` unless the owner explicitly wants automatic selection. Check for name collisions and read-back in the effective Pi resource context. A user mode guides behavior but cannot expand repo, data, provider, task, install, PR or merge authority. the repository owner alone merges in this project.
+Once the user confirms the destination and writing scope, draft one Pi `skills/<handle>-mode/SKILL.md` (or their approved category/personal path), with portable name, routing description mentioning the handle and working style, and `disable-model-invocation: true` unless the owner explicitly wants automatic selection. Check for name collisions and read-back in the effective Pi resource context. A user mode guides behavior but cannot expand repo, data, provider, task, install, PR or merge authority. The repository owner alone merges in this project.
 
 ## 4. Edit with the user, then hand back
 
