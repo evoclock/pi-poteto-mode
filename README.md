@@ -17,8 +17,8 @@ workflows of my own.
 For what pstack is and how its workflows fit together, read Lauren Tan's
 [upstream pstack README](https://github.com/cursor/plugins/blob/main/pstack/README.md).
 This README covers the Pi skills package and shows how it fits into the wider
-coding system. The surrounding integrations are separate projects and are still
-being built.
+coding system in which I use it. The surrounding integrations are separate projects and are still
+under active development.
 
 ## System overview
 
@@ -207,10 +207,9 @@ publish.
 ## How I use it
 
 My preferred setup is open source and on-device: Pi, with Herdr panes for
-parallel work, and OpenMausBot. Much of pstack's power comes from running it
-inside a full bot like Grok Bot, with background workers, routines and memory
-around it. This port covers what Cursor can't for me: local models and a free
-choice of providers, set through the two model roles.
+parallel work, and OpenMausBot for automated work in very much the same way you use Grok Bot. 
+Much of pstack's power comes from running it inside a full bot like Grok Bot, with background workers, routines and memory around it. This port covers what Cursor can't for me: local models and a free
+choice of providers, set through the two model roles along with custom seams to other tools I run in my scientific and software development work.
 
 ## Licence
 
