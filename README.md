@@ -1,5 +1,12 @@
 # @evoclock/pi-poteto-mode
 
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat" alt="License: MIT"/></a>
+  <a href="https://pi.dev/docs/latest/packages"><img src="https://img.shields.io/badge/Pi-package-06b6d4?style=flat" alt="Pi package"/></a>
+  <img src="https://img.shields.io/badge/skills-54-79c39e?style=flat" alt="54 adapted skills"/>
+  <img src="https://img.shields.io/badge/status-pre--release-orange?style=flat" alt="Pre-release"/>
+</p>
+
 The skills in this package are **[pstack](https://github.com/cursor/plugins/tree/main/pstack)
 by Lauren Tan** (v0.15.25, MIT). Copyright stays with Lauren Tan. I adapted all
 54 skills for the [Pi coding agent](https://pi.dev) to keep a port that is
@@ -9,7 +16,28 @@ workflows of my own.
 
 For what pstack is and how its workflows fit together, read Lauren Tan's
 [upstream pstack README](https://github.com/cursor/plugins/blob/main/pstack/README.md).
-This README only covers how the skills work in Pi.
+This README covers the Pi skills package and shows how it fits into the wider
+coding system. The surrounding integrations are separate projects and are still
+being built.
+
+## System overview
+
+![The bot host and scientific workbench connect to Pi; an engineering playbook loop and separate tool workflows share a planned resumability layer.](assets/coding-system-external-work-loop-and-internal-playbook-loop.webp)
+
+[Download the interactive HTML](assets/pi-coding-system.html) to explore it
+locally. The project-local role map belongs to the bot's working repository,
+not to a bot identity or a running service. OpenMausBot uses it for readiness
+checks; skills consult it for model roles. The shared resumability connections
+are agreed design work, not verified crash recovery.
+
+## Inside pi-poteto-mode
+
+![A task enters poteto-mode-pi, consults relevant pstack principles, routes to one of six illustrated playbooks, then reaches verification and reporting.](assets/pi-poteto-mode-routing.png)
+
+The six branches are common examples from upstream's
+[poteto-mode guide](https://github.com/cursor/plugins/blob/main/pstack/docs/guide/02-poteto-mode.md);
+the full method has 23 playbooks. The principles are adapted from pstack;
+they are not built into Pi.
 
 ## Install
 
