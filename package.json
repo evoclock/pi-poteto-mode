@@ -16,6 +16,7 @@
     "node": ">=22"
   },
   "files": [
+    "assets/",
     "skills/",
     "docs/pstack-pi-ports-comparison.md",
     "docs/adaptation-guide.md",

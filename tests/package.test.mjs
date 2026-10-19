@@ -63,7 +63,13 @@ test("package has no install scripts", () => {
 test("npm pack contents are the whitelist only", () => {
   const out = JSON.parse(execFileSync("npm", ["pack", "--dry-run", "--json"], { cwd: ROOT, encoding: "utf8" }));
   const files = out[0].files.map((f) => f.path);
-  assert.ok(files.every((f) => /^(skills\/|config\/pstack-model-roles\.v1\.example\.json$|README\.md$|LICENSE$|NOTICE$|docs\/pstack-pi-ports-comparison\.md$|docs\/adaptation-guide\.md$|package\.json$)/.test(f)), files.join(","));
+  const diagrams = [
+    "assets/coding-system-external-work-loop-and-internal-playbook-loop.webp",
+    "assets/pi-coding-system.html",
+    "assets/pi-poteto-mode-routing.png",
+  ];
+  assert.ok(files.every((f) => diagrams.includes(f) || /^(skills\/|config\/pstack-model-roles\.v1\.example\.json$|README\.md$|LICENSE$|NOTICE$|docs\/pstack-pi-ports-comparison\.md$|docs\/adaptation-guide\.md$|package\.json$)/.test(f)), files.join(","));
+  for (const diagram of diagrams) assert.ok(files.includes(diagram), `missing ${diagram}`);
   assert.ok(!files.some((f) => f.includes("node_modules") || f.startsWith("tests/") || f.startsWith("scripts/")));
   assert.ok(files.includes("skills/how/LICENSE"));
 });
