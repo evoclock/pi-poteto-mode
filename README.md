@@ -2,9 +2,9 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat" alt="License: MIT"/></a>
+  <a href="https://www.npmjs.com/package/@evoclock/pi-poteto-mode"><img src="https://img.shields.io/npm/v/@evoclock/pi-poteto-mode?style=flat" alt="npm version"/></a>
   <a href="https://pi.dev/docs/latest/packages"><img src="https://img.shields.io/badge/Pi-package-06b6d4?style=flat" alt="Pi package"/></a>
   <img src="https://img.shields.io/badge/skills-54-79c39e?style=flat" alt="54 adapted skills"/>
-  <img src="https://img.shields.io/badge/status-pre--release-orange?style=flat" alt="Pre-release"/>
 </p>
 
 The skills in this package are **[pstack](https://github.com/cursor/plugins/tree/main/pstack)
