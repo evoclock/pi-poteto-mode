@@ -1,0 +1,11 @@
+# Host-only backup checks; GitHub Actions stays active.
+steps:
+  - label: "Tests and strict public scan"
+    agents: { queue: mac-mini }
+    command: "npm test"
+  - label: "PR wording"
+    agents: { queue: mac-mini }
+    command: ".buildkite/pr-checks.sh wording"
+  - label: "PR review gate"
+    agents: { queue: mac-mini }
+    command: ".buildkite/pr-checks.sh review"
