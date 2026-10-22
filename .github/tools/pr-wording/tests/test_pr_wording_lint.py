@@ -261,20 +261,12 @@ class PrWordingLint(unittest.TestCase):
         result = subprocess.run([sys.executable, str(SCRIPT), "--help"], capture_output=True, text=True, check=True)
         self.assertNotRegex(result.stdout, r"--(?:path|paths|glob|files?|dir)\b")
 
-    def test_workflow_runs_only_on_pull_requests(self) -> None:
-        text = (ROOT / ".github" / "workflows" / "pr-wording.yml").read_text(encoding="utf-8")
-        on_block = text.split("\non:\n", 1)[1].split("\npermissions:", 1)[0]
-        triggers = [line.strip().rstrip(":") for line in on_block.splitlines() if line.startswith("  ") and not line.startswith("   ")]
-        self.assertEqual(triggers, ["pull_request"])
-        self.assertIn("contents: read", text)
-        self.assertIn(".github/tools/pr-wording/pr_wording_lint.py", text)
-        # Trusted code only: the lint runs from the base commit, never the PR head.
-        self.assertIn("github.event.pull_request.base.sha", text)
-        self.assertNotRegex(text, r"head\.(?:sha|ref)")
-        # The lint gets only the event payload and the optional repo config.
-        self.assertIn('ARGS=(--event "$GITHUB_EVENT_PATH")', text)
-        self.assertIn("--config .github/pr-wording.json", text)
-        self.assertEqual(text.count('python3 "$LINT"'), 1)
+    def test_buildkite_wording_uses_base_branch_rules(self) -> None:
+        text = (ROOT / ".buildkite" / "pr-checks.sh").read_text(encoding="utf-8")
+        self.assertIn('git show "$base_sha:$base/$name"', text)
+        self.assertIn('args=(--event "$scratch/event.json")', text)
+        self.assertIn('git show "$base_sha:.github/pr-wording.json"', text)
+        self.assertIn('python3 "$scratch/pr-wording/pr_wording_lint.py"', text)
 
     def test_no_personal_config_is_committed(self) -> None:
         self.assertFalse((ROOT / ".github" / "pr-wording.json").exists())
