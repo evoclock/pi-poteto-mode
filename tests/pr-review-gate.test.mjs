@@ -166,28 +166,10 @@ test("CLI exits 1 on failure and 0 on pass from a snapshot", () => {
   assert.throws(() => execFileSync("node", [script, "--snapshot", bad], { encoding: "utf8", stdio: "pipe" }), (e) => e.status === 1 && /FAIL/.test(e.stdout));
 });
 
-test("workflow: base checkout without the gate script emits a notice and passes; with it, runs the gate", async () => {
-  const { readFileSync, mkdirSync, copyFileSync } = await import("node:fs");
-  const wf = readFileSync(new URL("../.github/workflows/pr-review-gate.yml", import.meta.url), "utf8");
-  assert.doesNotMatch(wf, /head\.sha|head\.ref/, "the gate must never check out the PR head");
-  const m = wf.match(/run: \|\n((?: {10}.*\n?)+)/);
-  assert.ok(m, "gate step uses an inline run block");
-  const script = m[1].replace(/^ {10}/gm, "");
-  const env = { ...process.env, GITHUB_REPOSITORY: "o/r", PR_NUMBER: "1" };
-
-  const empty = mkdtempSync(join(tmpdir(), "gate-boot-"));
-  const out = execFileSync("bash", ["-e", "-c", script], { cwd: empty, env, encoding: "utf8" });
-  assert.match(out, /^::notice title=PR review gate::.*not on the base branch/m);
-
-  // With the script present the step runs it and propagates its failure.
-  const base = mkdtempSync(join(tmpdir(), "gate-base-"));
-  mkdirSync(join(base, ".github/tools"), { recursive: true });
-  copyFileSync(new URL("../.github/tools/pr_review_gate.js", import.meta.url), join(base, ".github/tools/pr_review_gate.js"));
-  const snap = join(base, "s.json");
-  writeFileSync(snap, JSON.stringify(pr({ headSha: B })));
-  const ran = script.replace('--repo "$GITHUB_REPOSITORY" --pr "$PR_NUMBER"', `--snapshot ${snap}`);
-  assert.throws(() => execFileSync("bash", ["-e", "-c", ran], { cwd: base, env, encoding: "utf8", stdio: "pipe" }),
-    (e) => e.status === 1 && /FAIL/.test(e.stdout) && !/::notice/.test(e.stdout));
+test("Buildkite runs the gate from the trusted PR base", () => {
+  const script = readFileSync(new URL("../.buildkite/pr-checks.sh", import.meta.url), "utf8");
+  assert.match(script, /git show "\$base_sha:\.github\/tools\/pr_review_gate\.js"/);
+  assert.match(script, /node "\$scratch\/pr_review_gate\.js"/);
 });
 
 const SOLE = { author: "Maint1", maintainers: ["maint1"] };
@@ -287,8 +269,7 @@ test("CLI reads maintainers from PR_GATE_MAINTAINERS and --maintainers", () => {
   assert.match(execFileSync("node", [script, "--snapshot", snap, "--maintainers", "maint1"], { encoding: "utf8", env: env("") }), /PASS/);
 });
 
-test("workflow passes the optional maintainer list from a repo variable", () => {
-  const wf = readFileSync(new URL("../.github/workflows/pr-review-gate.yml", import.meta.url), "utf8");
-  assert.match(wf, /PR_GATE_MAINTAINERS: \$\{\{ vars\.PR_GATE_MAINTAINERS \}\}/);
-  assert.match(wf, /pull-requests: read/);
+test("Buildkite gate runs on the host queue", () => {
+  const pipeline = readFileSync(new URL("../.buildkite/pipeline.yml", import.meta.url), "utf8");
+  assert.match(pipeline, /label: "gate"[\s\S]*?queue: mac-mini[\s\S]*?pr-checks\.sh review/);
 });

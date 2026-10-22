@@ -1,11 +1,17 @@
-# Host-only backup checks; GitHub Actions stays active.
+# PR checks run on Buildkite; the host queue has no Docker dependency.
 steps:
-  - label: "Tests and strict public scan"
-    agents: { queue: mac-mini }
+  - label: "test"
+    key: test
+    agents: { queue: linux-small }
+    if: build.pull_request.id != null
     command: "npm test"
-  - label: "PR wording"
-    agents: { queue: mac-mini }
+  - label: "lint"
+    key: lint
+    agents: { queue: linux-small }
+    if: build.pull_request.id != null
     command: ".buildkite/pr-checks.sh wording"
-  - label: "PR review gate"
+  - label: "gate"
+    key: gate
     agents: { queue: mac-mini }
+    if: build.pull_request.id != null
     command: ".buildkite/pr-checks.sh review"
