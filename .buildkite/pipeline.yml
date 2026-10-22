@@ -7,7 +7,7 @@ steps:
     command: "npm test"
   - label: "lint"
     key: lint
-    agents: { queue: linux-small }
+    agents: { queue: mac-mini }
     if: build.pull_request.id != null
     command: ".buildkite/pr-checks.sh wording"
   - label: "gate"

@@ -22,5 +22,5 @@ test("Buildkite wording uses the base revision and the PR payload", () => {
   assert.match(script, /git show "\$base_sha:\$base\/\$name"/);
   assert.match(script, /--event "\$scratch\/event.json"/);
   assert.match(script, /python3 "\$scratch\/pr-wording\/pr_wording_lint.py"/);
-  assert.match(pipeline, /label: "lint"[\s\S]*?queue: linux-small[\s\S]*?pr-checks\.sh wording/);
+  assert.match(pipeline, /label: "lint"[\s\S]*?queue: mac-mini[\s\S]*?pr-checks\.sh wording/);
 });
