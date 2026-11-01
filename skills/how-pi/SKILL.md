@@ -1,35 +1,90 @@
 ---
 name: how-pi
-description: Explain how an approved subsystem works and where behavior belongs using traced entry points, ownership and runtime boundaries. Use explicitly for code walkthroughs, placement questions and onboarding explanations; use why for design motivation.
+description: "Pi adaptation: Use for \"how does X work\", code walkthroughs before changing something, and placement / ownership / layering questions (\"where should this live\", \"which package owns this\", \"is this the right layer\"). Explains subsystem architecture, runtime flow, onboarding mental models. Use why for motivation."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# How for Pi
+## Pi adaptation contract
 
-Adapted from Lauren Tan's pstack `how` and its explorer/explainer reference templates **as of** `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). The earlier `how` adaptation was retired; use this packaged `how-pi` entry point without relying on skill-name precedence. It adapts the pinned-live source's explorer/explainer output fields without copying Cursor prompt templates, hardcoded models or automatic spawn. Read `../how/WORKFLOW_BOUNDARIES.md` first. The sibling MIT licence and boundaries must be present in the effective Pi bundle, otherwise report the resource missing. For any delegate, resolve `development` via `/skill:setup-pstack-pi` from the owner-approved project role map and use only the already approved Pi coordinator/worker dispatch route; a role map alone does not enable that route. Keep `independent-review` for separate exact-artifact review, not an explainer author.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+# How
+
+Explore the codebase to answer "how does X work?" questions. Produce architectural explanations at the level of a senior engineer onboarding onto a subsystem, enough to build a working mental model, not so much that it reads like annotated source code.
+
+Every spawn is a Task subagent with `subagent_type: generalPurpose` and `readonly: true`. Explorers use the `how explorer` line in the `pstack-models.mdc` rule (default `grok-4.7-xhigh-fast`), and every explainer uses the `how explainer` line (default `claude-opus-5-5-xhigh`). Set `model` to that line's value, or to the default if the rule or the line is missing. Leave `model` unset when the value is `auto` or `inherit-parent`. If the Task tool rejects a slug, use the default and say so. If it rejects the default, use the closest valid slug of the same family from its error message. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
 ## 1. Assess complexity
 
-State the user's bounded question. If ambiguous, state the interpretation and explore inside granted scope; the user can redirect. A narrow function/module question is **simple**; a multi-process or cross-cutting subsystem is **complex**. When in doubt, choose the simple path. Find entry points, definitions, callers and imports with Pi `asgrep` tooling only if actually loaded, then read exact source and contracts. If code search is unavailable, report the gap and use only other authorized navigation without implying a complete trace. Filenames, inventories and worker reports are leads, not runtime proof.
+If the scope is ambiguous, state your interpretation and explore. The user can redirect.
 
-The upstream simple path asks one read-only explainer to investigate and explain. If the approved Pi task provides a `development` worker role, data route and budget, assign a single fresh read-only explainer with the question, exact scope, required boundaries and the output shape below. Do **not** make the independent reviewer the author. If that route is absent, investigate directly and label the delegated source-path check `unrun`; still answer the user's read-only question from verified citations rather than pretending a spawn happened.
+<!-- pstack-source:end -->
 
-## 2. Explore only when complex
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Decompose the question into **two to four non-overlapping angles**, such as entry/dispatch, state/persistence, effects/boundaries and failure/reconciliation. Each approved read-only explorer gets the same question, one exact angle, immutable source revision, allowed repository paths and no write authority. Request: key components with file path and one-line role; ordered trigger-to-result flow with data passed; all files read; boundary inputs/outputs; surprising behavior; and open questions. Parallel workers require actual approved role/capacity/data grants; when absent, inspect angles sequentially and state the missing delegation evidence. Do not search private chats or fan out simply because this skill suggests it.
+<!-- pstack-source:start -->
+- **Simple** (a single module, a small utility, a narrow question such as "how does function X work"): no explorers. Spawn one explainer that explores and explains in one pass, built from `references/explainer-prompt.md` without the explorer-findings section. Go to step 4.
+<!-- pstack-source:end -->
 
-## 3. Synthesize
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-After exploration, pass every bounded finding to one separately approved read-only explainer, if available. Ask it to reconcile overlap and apparent contradictions **against source**, not consensus. The author verifies load-bearing citations and gaps; an explainer summary is not authority. When no approved explainer route exists, synthesize directly and mark the source's explainer step `unrun`, without relabeling your answer as independent. Different-model Standards/Spec review of this port remains separate from task-specific explorer/explainer roles.
+<!-- pstack-source:start -->
+- **Complex** (a subsystem spanning multiple files or services, a cross-cutting feature, a full architectural overview): go to step 2.
 
+When in doubt, take the simple path.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## 2. Explore (complex only)
+
+Decompose the question into 2 to 4 angles, each a distinct slice of the subsystem. Spawn all explorers in a single message, each with `references/explorer-prompt.md` and its angle filled in.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## 3. Synthesize (complex only)
+
+Once all explorers have returned, spawn one explainer with `references/explainer-prompt.md` and every explorer's findings filled in.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
 ## 4. Present
 
-Give a senior engineer a useful mental model, not annotated source: a short **Overview**; needed **Key Concepts**; concrete trigger, transformation, decision and effect flow in **How It Works**; a small **Where Things Live** map; and real **Gotchas**. Omit sections that add no value. Include a small Mermaid or text flow only when it clarifies multi-component behavior, not by default. Cite paths/functions/lines and revision, distinguish code observed from a loaded/deployed route, name unresolved links and the smallest authorized next check. `why` owns historical motivation; do not invent it from code shape. Do not start an atlas project, edit files, install resources or publish by implication.
+Present the explainer's output. Light edits for clarity or context from the conversation are fine. Do not substantially rewrite it.
 
-- **Positive BDD:** Given an approved bounded ownership question and readable source, when Pi invokes `how-pi`, then a cited trigger-to-result explanation identifies state/effect owners, process boundaries and unanswered runtime questions; on an approved complex route two to four distinct explorer angles feed a reconciled explainer.
-- **Refusal BDD:** Given missing worker role, tool, repository access or runtime evidence, when a delegated or live claim would depend on it, then the affected step is `blocked`/`unrun` and the answer labels its source-only limit without silent model fallback, private-data read or invented application proof.
+<!-- pstack-source:end -->
 
-Reading this file does not load it into Pi. Temporary Pi command discovery does not grant a worker route or prove an actual subsystem walkthrough.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Output format
+
+The explanation uses the sections defined in `references/explainer-prompt.md`, dropping any that do not apply: Overview, Key Concepts, How It Works, Where Things Live, Gotchas.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

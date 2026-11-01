@@ -1,23 +1,56 @@
 ---
 name: principle-make-operations-idempotent-pi
-description: Design an approved state-mutating command or lifecycle step to converge across duplicate runs and crashes by reconciling actual state. Use explicitly before a retriable effect.
+description: "Pi adaptation: Apply when designing commands, lifecycle steps, or processing loops that run amid crashes, restarts, and retries. Converge to the same end state regardless of partial prior runs."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Make operations idempotent
+## Pi adaptation contract
 
-Adapted from Lauren Tan's `principle-make-operations-idempotent` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. A convergent design is **not** permission to retry, replay a remote effect, clean another run's files or assume an owner-approved effect grant. This principle applies to commands, lifecycle steps and processing loops that may stop or repeat.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-For each proposed state mutation, name the target end state and the actual state it can observe after a partial run. Ask “what if it runs twice?” and “what if the prior run stopped after **each** observable write, claim or send?” Derive each next step from **current state versus desired state**, not from a previous run's intent. Apply only the proved difference, then re-read the real boundary to check convergence. Identify the operation's stable identity and owner; do not turn a transient marker or worker receipt into proof an outside effect did or did not occur.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-For every artifact left behind (lock, temporary file, partial record or claimed job), specify evidence of liveness/ownership and a staleness decision valid at **all possible crash points**. Prefer an atomic publish of a prepared file or content comparison when that matches the actual filesystem contract, rather than assuming creation order is authoritative. A marker that cannot be judged after restart requires reconciliation or an explicit hold, not automatic cleanup. An ambiguous network send, shared process or committed external action is **uncertain**, not safe to send again merely because a local record is missing. Reconcile it using an approved read-only target query and explicit idempotency contract, or stop for the owner.
+<!-- pstack-source:start -->
 
-Under an approved isolated test seam, check a normal run, immediate duplicate, and controlled stop/restart at the reachable transition boundaries; require the same final observable state, no extra externally visible effect and no run-owned residue without a supported recovery path. Never inject crashes, repeat real sends or reset shared resources without a separate data/effect/safe-exit grant. If a step's result depends on ambiguous partial state, add a scoped reconciliation step or report the gap as `blocked`/`unrun`, not an invented exactly-once guarantee.
+<!-- pstack-source:end -->
 
-- **Positive BDD:** Given an approved stateful operation, stable identity, observable end state and authorized isolated interruption seam, when Pi compares current with desired state across a normal run, duplicate and partial-run recovery, then all converge to the same observed result with no duplicate external effect or orphaned run-owned state.
-- **Refusal BDD:** Given an ambiguous prior send, unjudgeable stale marker, shared owner or absent crash-test grant, when repetition or cleanup is proposed, then hold the effect `blocked`/`unrun`, name the reconciliation evidence needed and do not replay, delete or claim convergence from a receipt.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-This draft skill is not proof of crash recovery, a real duplicate-safe effect or Pi loading.
+<!-- pstack-source:start -->
+# Make Operations Idempotent
+
+Design operations so they converge to the correct state regardless of how many times they run or where the previous run stopped. Every state-mutating operation should answer: "What happens if this runs twice? What happens if the previous run crashed halfway?"
+
+**Why:** Commands, lifecycle operations, and processing loops run where crashes, restarts, and retries are normal. If partial state changes the next run's outcome, every restart becomes a debugging session.
+
+**The idea:** derive each step from the state that exists, not from what the previous run meant to do. Read the current state, compare it to the goal, and apply only the difference. A step written this way is safe to repeat, because a repeat finds nothing left to do.
+
+Anything a run leaves behind, such as a lock, a temporary file, a half-written record, or a claimed job, must be recognizable as stale by the next run. Judge staleness by evidence that stays true wherever the previous run could have stopped, not only in the common case. A marker that the next run cannot judge turns every crash into manual cleanup. For example, write to a temporary path and rename it into place, or compare artifacts by content instead of by creation order.
+
+**The test:**
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+1. What happens if this runs twice in a row?
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+2. What happens if the previous run crashed at every possible point?
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+3. Does re-execution converge to the same end state?
+
+If any answer is "it depends on what state was left behind," the operation needs a reconciliation step.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

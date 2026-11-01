@@ -1,21 +1,50 @@
 ---
 name: principle-separate-before-serializing-shared-state-pi
-description: When approved concurrent actors may write one file, branch, key or object, separate their write ownership before choosing a lock. Use explicitly when diagnosing shared-state races.
+description: "Pi adaptation: Apply when concurrent actors might write to the same file, branch, key, or state object. Eliminate the sharing first; serialize structurally only when one shared writer is a real invariant."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Separate before serializing shared state
+## Pi adaptation contract
 
-Adapted from Lauren Tan's `principle-separate-before-serializing-shared-state` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. Instructions like “don't both write” are not synchronization. A workspace lease reserves a worktree, not process containment or exclusive ownership of an external state object; a reviewed principle grants no lock installation, worker fan-out or mutation of a trusted shared writer.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-Map the actual concurrent actors and the mutable objects they read/write: files, branches, keys, API definitions, database records and task state. Identify each writer, the canonical owner and a plausible interleaving. First ask whether the actors **need the same object** or merely publish independent facts. If facts are independent, give each actor an owned file, key, branch or state directory and combine only at an approved read/reporting boundary. Two actors writing different fields of one `state.json` still share one mutation target; independent `indexer-state.json` and `metrics-state.json` do not. Verify ownership and merge semantics, not just distinct filenames.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Only if one shared write target is a proved domain invariant, choose a **structural** serialization mechanism appropriate to the actual store: exclusive owner/single-writer actor, ordered phases, lockfiles with robust stale-owner handling, or atomic compare-and-swap where supported. Before adding a lock, state why ownership separation fails, how the real process/store makes exclusion enforceable, what happens after a crash, and how competing writes are rejected. Do not duplicate or bypass a trusted shared-state writer with a local lock or convention. Test an approved conflicting interleaving and recovery at the real boundary, including that the loser cannot silently overwrite the winner; if no safe concurrent test is granted, label the concurrency conclusion `unrun` instead of asserting isolation.
+<!-- pstack-source:start -->
 
-- **Positive BDD:** Given two approved actors writing related state, when Pi gives independent facts separate write targets and merges at a read boundary, or serializes a proved canonical target using its actual trusted owner, then controlled concurrent writes retain both intended facts without a lost update.
-- **Refusal BDD:** Given unknown writer ownership, an unproven need to share, a lease mistaken for a lock or no grant for a concurrent test, when a shared mutable write is proposed, then hold that change `blocked`/`unrun`; do not rely on agent instructions, blindly add locks or claim race freedom.
+<!-- pstack-source:end -->
 
-Skill discovery is not a concurrent write test or proof of process isolation.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+# Separate Before Serializing Shared State
+
+When concurrent actors might share mutable state, first ask whether they need the same mutable object. If not, eliminate the sharing. When sharing is real, enforce serialization structurally: lockfiles, sequential phases, exclusive ownership. Instructions and conventions are not concurrency control.
+
+**Why:** Concurrent writes to shared state create race conditions that are intermittent, hard to reproduce, and expensive to debug.
+
+**Pattern:**
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+1. **Identify shared mutable state** (files both read and write, branches both push to, APIs both define and consume).
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+2. **Default: eliminate the shared write target.** Ask: do these actors need one canonical object, or are they publishing independent facts? Give each actor its own owned file, key, branch, or state directory, and merge only at the read/reporting boundary. Two workers writing their own `lastX` field into one `state.json` is still shared mutation. `indexer-state.json` + `metrics-state.json` is not.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+3. **Only when one shared write target is a real invariant, serialize access structurally** (lockfiles, sequential phases, single-writer actor, or atomic compare-and-swap). Treat "we need a lock" as a design smell to check, not as the default answer.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

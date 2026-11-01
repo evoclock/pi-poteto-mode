@@ -1,27 +1,162 @@
 ---
 name: setup-pstack-pi
-description: Configure and verify owner-selected Pi development and independent-review roles in one project-local map without changing Pi defaults. Use only on an explicit role-setup request.
-disable-model-invocation: true
+description: "Pi adaptation: Configure which models pstack uses per role and at what reasoning budget. Detects your available models and writes an always-applied rule that overrides the skill defaults. Use for /setup-pstack, \"configure pstack models\", \"pstack budget\", or changing pstack's model choices."
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Set up pstack roles for Pi
+## Pi adaptation contract
 
-This mapping adapts Lauren Tan's live `setup-pstack` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md` and `assets/pstack-model-roles.v1.example.json`. **This `/skill:setup-pstack-pi` is the sole packaged role-setup route.** It owns one project-local map; no previous skill, alternate writer or duplicate same-name loader is required.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-The Cursor original enumerates `Task`-subagent slugs, picks `unlimited`/`large`/`medium`/`small` effort, keeps per-role model-family overrides and panels, allows `auto`/`inherit-parent`, and writes an always-applied `~/.cursor/rules/pstack-models.mdc`. Those defaults, fixed providers, alias/family fallbacks, fan-out and reasoning ladder are **not** a Pi role registry or permission to add models. The approved Pi contract has only owner-selected, distinct `development` and `independent-review` exact identities in the **project-local** `.pi/pstack-model-roles.v1.json`. Additional worker/panel roles, effort budgets and route capacity need separately chosen Pi identities and an approved extension of that contract; this port cannot silently squeeze the Cursor role list into two values or claim the budget knob works. If the owner asks about cost, show the requested task budget and available Pi reasoning controls as **choices** after verifying actual session support; do not mutate the Pi default model or rewrite a role on an assumed effort suffix.
+The supported destination is the project-local .pi/pstack-model-roles.v1.json, not a Cursor rule or Pi defaults. Preserve unknown keys. Preview and obtain approval before writing exact, available, distinct development and independent-review identities. Additional panel roles, budgets and fallback aliases remain unsupported until explicitly configured. Read assets/pstack-model-roles.v1.example.json. After setup, offer real-app and formal verification skills separately and only once; neither offer authorizes execution.
 
-On an explicit setup request, find the Git repository root and read its existing `.pi/pstack-model-roles.v1.json`, if present. The bundled example gives the schema only; its nulls are **not configured roles**. Ask the owner to choose or confirm exact `provider/modelId` identities for `development` and `independent-review`. Check that both identities are distinct, resolvable in the intended Pi environment (the owner's `/model` picker can help), and allowed by the task's model/data route. If availability cannot be verified, leave the role unconfigured rather than guessing.
+<!-- pstack-source:start -->
 
-Preview the exact before/after JSON and destination for owner approval. Only after the owner approves the contents and location, write **only** the project-local map; preserve unrelated state, unknown keys and earlier choices unless separately approved for migration. Read the result back and validate `schema: "pstack-model-roles.v1"`, two nonempty exact identities and distinctness. Keep project-specific choices out of public packages. Pi does not read this map as a setting: it is data for skill role lookups, not a credential, dispatcher or execution grant. An unavailable role or model leaves dependent work blocked, with `pstack role <role> is not configured at .pi/pstack-model-roles.v1.json; run /skill:setup-pstack-pi` when the role is missing or malformed. No guessed fallback, `auto`, parent inheritance, provider install, Pi default change, independent review or worker spawn follows from this file.
+<!-- pstack-source:end -->
 
-After successful setup, report only what was configured, actually verified and still unsupported; the new choices apply only to future role lookups, not to a running agent automatically. If a project-local real app verifier is absent, an approved loaded `create-verification-skill-pi` can be offered **once**, not generated, launched or registered on setup authority. Pi package registration and real Pi loading are separate owner-held gates.
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
 
-After successful setup, offer a separate, optional next step: review the host bot's Pi readiness and standing instructions (Soul). In OpenMausBot, point to the relevant bot's Settings → Overview Pi readiness card, then Settings → Soul for standing instructions. In other hosts, guide the owner to the available settings without assuming the same interface. OpenMausBot's `SOUL.md` is a private mirror of the bot record, outside the coding repository; never write it during role setup. Readiness shows Pi discovery and role selection only; it does not prove successful inference or independent review, and it grants no permission to dispatch work. Approval of the role map alone never authorizes writing Soul or starting bot setup. Either action requires a separate, bot-specific owner instruction and the host's existing approval flow.
+<!-- pstack-source:start -->
+# Setup pstack
 
-- **Positive BDD:** Given an owner-selected development/reviewer pair and a permitted Pi identity/data route, when this loaded skill previews and writes the explicitly approved project-local map, then readback shows two distinct available identities without changing Pi defaults or granting effects.
-- **Refusal BDD:** Given an unavailable setup resource, invalid/missing identity, absent model/data grant, unsupported effort/panel request or no owner approval, when a config write or reviewer use would depend on it, then leave the map unchanged and label that step `blocked`/`unrun`; do not invent a provider slug, `auto` fallback, worker or review pass.
+Write `~/.cursor/rules/pstack-models.mdc`, an always-applied rule that sets pstack's model per role.
 
-A discoverable skill is not a configured Pi profile, a model-availability check or a live reviewer journey.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+## Steps
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+### 1. Detect available models
+
+Enumerate the model slugs you can pass to a `Task` subagent in this session. That is the dependable source. If Cursor also exposes a models API or CLI that lists the user's entitled models, prefer it for completeness. If you cannot detect any, ask the user to paste the slugs they have access to. Never write a real slug you have not confirmed is available. The aliases `inherit-parent` and `auto` are always valid even though they are not detected slugs.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+### 2. Load current state
+
+The default role-to-model mapping is the rule shape shown in step 5 below. If `~/.cursor/rules/pstack-models.mdc` already exists, read it and treat its `# budget` line and its role values as the current choices. Otherwise start from those defaults. A line whose role is not in step 5, such as `how critics`, is from a retired role. Drop it.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+### 3. Budget, map, and confirm
+
+**(a) Ask for a budget.** Prefer AskQuestion over free text. Offer these four options with these exact labels, and name the current budget when the rule records one. With no rule, say that `large` matches the skill defaults.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+- `unlimited — max reasoning`
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+- `large — xhigh reasoning`
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+- `medium — high reasoning`
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+- `small — medium reasoning`
+
+**(b) Apply it.** Build the working table from the skill defaults, and on a re-run keep any role you changed by family, list, or alias (`inherit-parent`, `auto`). `unlimited`, `large`, `medium`, and `small` set the effort token of every real slug, panel entries included, to `max`, `xhigh`, `high`, or `medium`. The effort token is the last token, or the one before a trailing `fast`, on the ladder `max` > `xhigh` > `high` > `medium` > `low`. If the result is not a detected slug, use the same family's detected slug with the highest effort at or below the target, else mark the role as needing a choice. `inherit-parent` and `auto` do not change. So `unlimited` turns `claude-opus-5-5-xhigh` into `claude-opus-5-5-max`. Grok slugs top out at `xhigh`, so under `unlimited` the fallback puts Grok at `xhigh` and keeps `grok-4.7-xhigh-fast` as it is. `large` keeps both defaults. `small` turns them into `claude-opus-5-5-medium` and `grok-4.7-medium-fast`.
+
+**(c) Show the roles and confirm.** Show every role with its model, marking any real slug not in the detected set as needing a choice. Also list each line step 2 dropped. Ask whether to accept as-is or change specific roles, offering the detected models plus `inherit-parent` and `auto` (both mean: this role runs on the parent chat model, which is how Auto users stay on Auto) as the options. Prefer AskQuestion over free text. For panel roles (arena runners, architect runners, interrogate reviewers) the value is a list, and one subagent runs per entry, alias entries included, so the list length sets the count. `arena cross-judge pool` is also a list, but Arena runs one judge. It tries only values from a family other than the parent's, in list order, so order it by preference. An `inherit-parent` or `auto` value never judges. `swarm workers` is the default model for every worker unless a race or comparison assigns another model per arm.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+### 4. Validate
+
+Every real slug written must be in the detected set. `inherit-parent` and `auto` always pass. If a chosen real slug is not available, stop and ask again.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+### 5. Write the rule
+
+Write `~/.cursor/rules/pstack-models.mdc` with `alwaysApply: true`, a `# budget` line with the chosen label and its target effort, and one line per role, using the same labels poteto-mode uses. Overwrite the whole file so re-runs stay idempotent. Shape:
+
+```
+---
+description: pstack per-role model choices (overrides skill defaults)
+alwaysApply: true
+---
+# pstack model configuration. One line per role. Delete a line to fall back to the skill default.
+# `inherit-parent` or `auto` as a value: the role runs on the parent chat model (omit Task `model`). Alias entries in a panel list still count toward its fan-out.
+# budget: large (xhigh)
+feature, refactoring: grok-4.7-xhigh-fast
+bug-fix: grok-4.7-xhigh-fast
+perf-issue: grok-4.7-xhigh-fast
+hillclimb: grok-4.7-xhigh-fast
+judgment and prose: claude-opus-5-5-xhigh
+hardest tasks: claude-opus-5-5-xhigh
+how explorer: grok-4.7-xhigh-fast
+how explainer: claude-opus-5-5-xhigh
+why investigators: grok-4.7-xhigh-fast
+why synthesizer: claude-opus-5-5-xhigh
+reflect tooling: grok-4.7-xhigh-fast
+reflect judgment, divergent, synthesizer: claude-opus-5-5-xhigh
+arena runners: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
+arena cross-judge pool: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
+swarm workers: grok-4.7-xhigh-fast
+architect runners: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
+interrogate reviewers: claude-opus-5-5-xhigh, grok-4.7-xhigh-fast
+```
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+### 6. Confirm
+
+Tell the user the rule was written and that it applies to new sessions. Re-running this skill updates it.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+### 7. Offer a verification skill (optional)
+
+Check whether the project has a way to drive the real app for proof (a `verify-*` skill, or an existing harness). If not, offer once: "want a project-local verification skill, so agents can drive the app the way a user does and prove changes work? I can generate one with /create-verification-skill." On yes, invoke `/create-verification-skill` (resolves wherever pstack is installed: workspace, user, or plugin). On no, move on without pushing.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.
+
+<!-- pstack-source:start -->
+### 8. Offer a formal verification skill (optional)
+
+Check whether the project already has a formal verification skill (a project skill that runs a model checker, a proof, or another verifier against the code). If not, offer once: "want a formal verification skill, so agents can prove a key property of your code holds in every case in scope, not only the cases tests reach? I can generate one with /create-formal-verification-skill." On yes, invoke `/create-formal-verification-skill` (resolves wherever pstack is installed: workspace, user, or plugin). On no, move on without pushing.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Use only the approved project-local exact-role map and preview writes. Source model defaults, budget aliases and Cursor rule destinations are not Pi configuration.

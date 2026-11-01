@@ -1,23 +1,80 @@
 ---
 name: principle-fix-root-causes-pi
-description: During an approved bug investigation, trace a reproduced symptom to the first wrong decision and correct that decision rather than hiding the failure. Use explicitly before choosing a fix.
+description: "Pi adaptation: Apply when debugging. Trace each symptom back to the first place the system went wrong and fix it there. A guard is a fix only when the state it handles is legitimate."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Fix root causes
+## Pi adaptation contract
 
-Adapted from Lauren Tan's `principle-fix-root-causes` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This principle selects the **kind of fix**; a separately loaded bug-diagnosis method owns the authorized red-capable reproduction and feedback loop. Neither skill grants an app launch, history scan, worker, edit or retry beyond the task contract.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-Reproduce the exact symptom at an approved seam **before** forming a cause or changing code. Trace the observed state and error backward, asking “why?” until the answer is the first wrong code decision, not another consequence. If the chain is unclear, use scoped instrumentation to inspect the **actual** state; do not guess from a later stack frame. For a failure that appears after restart, inspect approved persisted config, caches, locks and serialized state first, while respecting data access. State the falsifiable cause and show what observation would contradict it.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Ask whether the state at the failure is **legitimate**. If it can correctly occur, handle it at the code that broke: that guard can be the root-cause fix. If the state must never occur, trace its producer and repair that producer; a catch, retry, clamped value, discarded state or local guard that merely masks the producer is not a fix. Preserve the red-capable behavior check, fix the cause within approved scope, and observe both the minimized check and original scenario turn green. Look for other reachable instances of the **same proved fault** inside the approved paths and verify the repaired pattern; unknown/out-of-scope callers stay reported, not silently rewritten.
+<!-- pstack-source:start -->
 
-If a workaround needs a paragraph-long comment, challenge the workaround rather than writing an explanation for broken behavior. If the decisive fact was hard to uncover, **propose** a cheap always-on signal at the appropriate boundary, with prior-art and effect checks; do not install a global hook or telemetry from this principle. Record genuine negative cases where the new guard must still reject invalid input. An unrun repro, green-only test or changed mock is not evidence of a root-cause fix.
+<!-- pstack-source:end -->
 
-- **Positive BDD:** Given a reproduced approved failure and a red-capable behavioral check, when Pi traces backward to a proved first wrong decision, then an in-scope cause fix (including a legitimate-state handler when appropriate) turns the minimized and original paths green and checks the same fault pattern without hiding errors.
-- **Refusal BDD:** Given no authorized reproduction, inaccessible persisted data, uncertain state legitimacy or an out-of-scope producer, when a masking guard or retry is proposed, then leave that change `blocked`/`unrun`, name the missing observation or grant and do not claim root-cause resolution or sweep other repositories.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Pi discovering this file is not a reproduced bug, an applied fix or a live Pi test.
+<!-- pstack-source:start -->
+# Fix Root Causes
+
+When debugging, fix the fault, not the place where it surfaced. The symptom is where a wrong state became visible. The root cause is the first place the system did something it should not do, or failed to handle a state it should handle.
+
+**Why:** A symptom fix hides the evidence and leaves the fault free to surface somewhere else. Each one makes the system harder to reason about, because the code now carries a workaround for a bug that nobody named.
+
+**Pattern:**
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Reproduce first.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Ask "why" at each step until the answer is a wrong decision in the code, not a consequence of an earlier one.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- When stuck, instrument. Read the actual error and the actual state. Do not guess.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Ask whether the state that triggered the symptom is legitimate. If the system may be in that state, the code that broke on it is the root cause, and handling the state there is the fix. If the state should never exist, a check where it broke hides the bug. Find what produced the state. Guards, retries, swallowed errors, clamped values, and discarded state are the usual ways to hide a bug.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- When something fails only after a restart, suspect persisted state first: config files, caches, lock files, serialized state.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Check for the pattern, not just the instance. Find every place with the same fault and fix them all.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- If a workaround needs a paragraph-long comment to justify it, the code is wrong. Fix the code, not the comment.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- If the deciding fact took a deep dig to find, propose the cheap, always-on signal that would have shown it at first look.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

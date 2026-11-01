@@ -1,21 +1,53 @@
 ---
 name: principle-migrate-callers-then-delete-legacy-apis-pi
-description: For an approved internal API replacement without external compatibility obligations, migrate every proved caller and remove the old entry in the same scoped wave. Use explicitly before retaining a legacy adapter.
+description: "Pi adaptation: Apply when introducing a new internal API while old callers still exist. Migrate callers and delete the old API in the same wave instead of preserving compatibility layers."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Migrate callers, then delete legacy APIs
+## Pi adaptation contract
 
-Adapted from Lauren Tan's **pinned live** `principle-migrate-callers-then-delete-legacy-apis` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The current source is shorter than the older installed version: its description favors a same-wave internal migration over compatibility layers, while its body specifies new-contract tests and three applicability conditions. Do not treat the older source's “delete immediately” wording as a blanket authority to remove a public API.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-Apply only after the owner accepts the new internal contract, no external users require the old path, and the project can absorb a coordinated break as part of an approved simplification/refactor. Identify the old API's **actual** callers and compatibility boundary with code search, public/exported surface review and authorized consumers. The absence of local references alone does not prove external users absent. If a consumer or owner is unknown, hold deletion and name the missing check; a code comment or deprecation label is not proof.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Within the accepted wave and file scope, update each proved caller to the new API. Update behavioral tests to assert the new contract, preserve regression/negative cases, and remove only tests that protect **solely** the obsolete implementation details. Run the relevant authorized tests and check real entry points before removing the old internal path; observe whether all approved callers resolve and no needed behavior vanished. If callers cannot be migrated together, report the partial migration and an owner-held bridge decision rather than inventing a permanent compatibility adapter. Delete the old path only with its own explicit edit grant and proved compatibility boundary; an unrun caller path or failing check blocks that step. No automatic public breaking change, PR or merge.
+<!-- pstack-source:start -->
 
-- **Positive BDD:** Given an owner-approved internal replacement with an inventoried closed caller set and no external compatibility dependency, when Pi migrates all scoped callers and tests the new contract at their real entries, then the authorized old entry is removed in the same verified wave without a dual-path implementation or lost negative behavior.
-- **Refusal BDD:** Given unknown/public consumers, an incomplete caller inventory, no deletion grant or failing/unrun compatibility checks, when old-path removal is proposed, then retain the path and label deletion `blocked`/`unrun`; do not delete behavior tests or treat a search miss as proof no one calls it.
+<!-- pstack-source:end -->
 
-This text is not evidence that a migration, test run or Pi resource loading occurred.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+# Migrate Callers Then Delete Legacy APIs
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Update tests to assert the new contract, and delete tests that only protect pre-refactor implementation details
+
+**When this applies:**
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- No external users depend on backward compatibility
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- The project can absorb coordinated breaking changes
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- The new API is part of a simplification or refactor initiative
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

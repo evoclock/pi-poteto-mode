@@ -1,38 +1,91 @@
 ---
 name: correct-pi
-description: Find a recurring, evidenced agent mistake in an approved repository and prevent it structurally, then prove the guard catches a real past failure. Use explicitly after the owner identifies a repeated correction.
+description: "Pi adaptation: Find the mistakes agents keep repeating in this repo and make each one impossible. Try architecture first, then types, then a lint whose error names the fix, then a test, and write docs last. Prove each check fails on a real past mistake. Repeat this each time the operator corrects you. Use for /correct."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Correct repeated mistakes for Pi
+## Pi adaptation contract
 
-Adapted from Lauren Tan's pstack `correct` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Preserve evidence-based mistake classes, architecture-before-prose, a failing check against an actual mistake and a rule/enforcer map. This method is not permission to read unrelated conversations, alter project instructions, install a lint tool, rewrite a repository, commit, run CI or push. Read `../how/WORKFLOW_BOUNDARIES.md` before effectful work.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-## 1. Find a repeated class
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Within the named approved repository and bounded history, inspect existing commits/reverts, review findings, authorized correction records, instruction files and comments explaining workarounds. Do not search unrelated Pi sessions or private chats. Group the exact errors by underlying class and link at least **two real occurrences** before calling one recurrent. A single incident can deserve a fix, but label it one incident, not a trend. Favor the most frequent consequential confirmed class. State how a future agent seeing only one nearby file could repeat it.
+<!-- pstack-source:start -->
 
-## 2. Prevent it at the highest workable level
+<!-- pstack-source:end -->
 
-Choose the first level that actually blocks this class, and justify why any higher one did not fit:
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-1. **Architecture:** one state owner and supported route, hidden internals and derived lists, with redundant examples/legacy paths removed **only** after authorized caller and compatibility checks. Do not delete private evidence.
-2. **Types or a focused lint/build rule:** make the bad state unrepresentable; if it still compiles, make a check fail with an error that names the correct file/type/function. If existing violations are widespread, enforce no new violations while planning an approved migration.
-3. **Behavior test:** exercise the user-visible mistake and ensure the test fails when it recurs but passes for internal refactors. Do not accept a mock that tests itself.
-4. **Documentation/agent rules:** reserve for judgment calls that a structural check cannot encode. A skipped instruction does not fail by itself; do not call prose a guard.
+<!-- pstack-source:start -->
+# Correct
 
-Inspect inventory and existing enforcement before adding a helper, function, script or rule. State: “Existing X does Y; a new one is needed because Z,” when Z is real. Do not infer from an upstream instruction to edit `AGENTS.md`, installed Pi settings or a global hook; ask for exact destination and grant. Every exception requires an inline reason, an expiry and a human decision where the authorized enforcement mechanism supports one.
+The operator keeps correcting agents in this repo for the same mistakes. Change the repo so the next agent can't make them.
 
-## 3. Prove the barrier and record ownership
+Assume every contributor is an agent that sees only the files it opened, copies the nearest example, and takes the shortest path that compiles. Design the repo so a change that looks right from one file is right for the whole repo.
 
-Reproduce a **real past mistake** at a safe, red-capable seam before claiming the new check prevents it. Record the observed failure from the same check that will guard future work, then the corrected case passing. If local and CI routes both exist and are separately approved, verify the same check in each; otherwise mark CI `unrun`. Make one verified unit per class, not an unsolicited series of commits. Document approved rules in a rule-to-enforcer table in the authorized project instruction destination, or propose the table without writing when that file is outside scope. On a later owner correction, update the fix and table; a rule with no enforcing check is a signal to improve structure. Remove an obsolete rule only after proving its mistake cannot occur.
+<!-- pstack-source:end -->
 
-Hand back each class, two source pointers, chosen enforcement level, reason higher levels failed, observed red/green output, exception and runtime/CI gaps. Only the repository owner chooses any merge or publication.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-- **Positive BDD:** Given two cited occurrences and an approved code/test seam, when Pi corrects the class, then an actual prior bad case fails against the new barrier, the good case passes and the proposed rule maps to its enforcer without changing unrelated behavior.
-- **Refusal BDD:** Given only one occurrence, no permission for history/instructions/tests, or no safe red seam, when asked to install a global rule or claim prevention, then label the class unproven or work `blocked`/`unrun`, and do not mutate instructions, commit or manufacture green evidence.
+<!-- pstack-source:start -->
+## Find the mistake classes
 
-A skill discovered in Pi is not proof that any mistake is prevented.
+First, read recent commits, reverts, review comments, agent instruction files, and comments that explain workarounds. Group the mistakes into classes. A class counts once it has happened twice.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Fix each class at the highest level that works
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+1. **Eliminate it with architecture.** Give each piece of state one owner and each task one supported way. Hide internals so the wrong import fails. Replace hand-synced lists with one source of truth. Delete old ways and dead code an agent would copy.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+2. **Enforce it with types so the bad state can't be written.** If bad code still compiles, add a lint or CI check whose error names the file, type, or function to use instead. If the pattern is already common, fail only when a change adds more.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+3. **Test the behavior.** Fix or delete any test that still passes when the behavior it checks breaks, or that fails when only the internals change.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+4. **Write docs or agent rules last, only for judgment calls.** Nothing fails when an agent skips them.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Fix and prove
+
+Then fix the most frequent classes now, one commit each. Prove each new check fails on a real past mistake. Run the same command locally and in CI. Exceptions go on the offending line with a reason, an expiry date, and a human's approval.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Keep the rule table
+
+Last, keep a table in the agent instruction file that pairs each rule with what enforces it. When the operator corrects you, fix the mistake and add the rule. If the rule was already there and nothing enforces it, that's a repeat, so fix it at the highest level in the same change. Drop a rule once its mistake can't happen.
+
+**Reply:** each class with its evidence, the level you picked, and why a higher level didn't work.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

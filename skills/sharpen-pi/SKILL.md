@@ -1,21 +1,50 @@
 ---
 name: sharpen-pi
-description: Before an approved task starts, test its expert approach, real user outcome and specification level, then retain one independent result check. Use explicitly when asked to sharpen a task.
+description: "Pi adaptation: Make a task deeper, not bigger, then rewrite the prompt. Use for /sharpen."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Sharpen the work for Pi
+## Pi adaptation contract
 
-Adapted from Lauren Tan's new `sharpen` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This is a short pre-work judgment pass, **not** a new task contract, rewritten user prompt, permission to relax owner-held safety limits or license to launch workers/effects.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-Before taking an approved task, ask three questions privately: How would a top practitioner approach this exact problem, including raw sources, actual methods and a check outside the proposed implementation? What outcome is the **user** really trying to obtain? Is the brief over- or underspecified for that outcome? Consult the named source or existing code only inside the granted data scope. Challenge busywork and speculative constraints that do not serve the goal, and add only clarifications that change a real decision. For a constraint owned by the repository owner, a safety rule or a product choice, **propose** a change; do not loosen it by yourself or substitute a preferred task.
+Answer all four questions before rewriting the prompt. Preserve choices that belong to the user. This is prompt work, not a grant to start its implementation.
 
-Retain at least one **independent, authorized outside check** of the end result, not the candidate's self-report or circular test. Name its expected observation, target and safe exit; if that check is not available, report it `blocked`/`unrun` rather than treating a plan as proof. Leave irreducible product decisions to the user, continue only reversible ordinary work that the existing grant already covers, and stop where a new owner choice is required. Fold the improved expert method and proportionate check into **the work itself** rather than narrating a framing exercise or handing back a rewritten prompt. If the user only requested a planning critique or no executable task/effect grant exists, return the smallest actionable clarification and do not implement anything.
+<!-- pstack-source:start -->
 
-- **Positive BDD:** Given an approved task with accessible raw sources and a permitted independent result check, when Pi tests expert method, underlying user purpose and spec granularity before execution, then the same scoped task proceeds with one decision-changing improvement and a named external success observation, not a longer prompt.
-- **Refusal BDD:** Given an owner-held requirement, unclear goal, absent data/check/effect permission or only a request for critique, when sharpening would broaden or change the task, then keep the existing scope, name the pending owner choice and mark the unrun check `blocked`/`unrun`; do not rewrite the contract or execute unapproved work.
+I want a deeper version of this task, not a bigger one. Before rewriting it, do four things:
 
-Discovery of this skill is not proof that an expert method, outside result or Pi task was exercised.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+1. Say what a top professional in this field would do here that I'm not asking for.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+2. Name the rawest material they would start from instead of what has already been digested for me.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+3. Name the specific methods and tools they would use.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+4. Say what, other than you or me, would show the result is right.
+
+Then rewrite my prompt to ask for exactly that.
+
+Leave choices that are mine to make open instead of deciding them.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

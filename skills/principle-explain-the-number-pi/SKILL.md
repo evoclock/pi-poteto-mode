@@ -1,23 +1,57 @@
 ---
 name: principle-explain-the-number-pi
-description: Challenge a measured speedup, regression, throughput, latency or eval score before trusting or reporting it. Use explicitly when a number drives an approved decision.
+description: "Pi adaptation: Apply before you measure, and before you trust, report, or act on a number you measured: a speedup, a regression, a throughput, a latency, or an eval result. Find what limits it, and rule out that it measured something other than the work you think."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Explain the number
+## Pi adaptation contract
 
-Adapted from Lauren Tan's `principle-explain-the-number` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. A proposed measurement is not authority to launch a benchmark, profile a host, change settings, consume private trial data or publish a claim. `principle-prove-it-works` checks whether an output is real; this principle asks **why the measured magnitude is plausible**.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-Before using a number, state the claim, unit, measured work, configuration, comparison, run count and spread. Ask **why not double?** Name the limiting resource or code path using an authorized profile or system counters **observed during a run**, then map the bottleneck to source. Include the load generator: if it saturates first, the tested service is not the demonstrated limiter. A guess based on reading code is not measured limiter evidence. If no authorized measurement exists, label the claimed difference **inconclusive** and the observation `unrun`, rather than inventing a ceiling.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-List plausible alternative explanations and rule each out with evidence: errors or timeouts; skipped, lazy or cached work; the target code never executing or its output never consumed; one side left at default settings; noisy trials; or a component too small to affect the user-visible total. Compare the time saved with the changed piece's former share of the full path. A saving larger than that piece took is a measurement problem to investigate, not a speedup to celebrate. Keep the run count, range/spread, observed limiter, units, error/work counts and private evidence pointer beside the number. Do not silently drop failed trials.
+<!-- pstack-source:start -->
 
-For a **performance** claim, use the full reviewed `benchmark-checklist-pi` only when actually loaded; otherwise check its seven source questions directly before a comparison or mark the unanswered questions `unrun`. A single authorized run may be called a **one-run ballpark** only when the user explicitly asks for one and both error and completed-work checks pass; it cannot choose a winner. For an **eval** claim, establish that every trial actually did the task, check whether the gap holds across trials and across **only approved** model routes when a cross-model comparison is in scope, and explain why the scenario matters to users. Never add providers, workers, data reads or repeated trials from this principle alone.
+<!-- pstack-source:end -->
 
-- **Positive BDD:** Given an approved comparable performance or eval measurement with real run evidence, when Pi tests the proposed number against limiter observations, alternative explanations, run count, spread and task relevance, then it reports a supported scoped claim or an explicit inconclusive result with cited evidence.
-- **Refusal BDD:** Given missing run count, spread, measured limiter, proof that work completed, comparable configuration or permission to observe, when asked to trust or publish a number, then call the claim `inconclusive` and the missing check `blocked`/`unrun`; do not launch a profiler, invent trials or present a one-run ballpark as a winner.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-This reviewed method has not measured a workload or validated a live Pi journey merely because Pi can discover its file.
+<!-- pstack-source:start -->
+# Explain the Number
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **Write the decision before you run.** Name the result that would change a decision, and the noise floor. Stop when the run-to-run spread is larger than the effect.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **Ask "why not double?"** Name the resource or code path that bounds the result, such as a core, a lock, the disk, the network, or the load generator itself. Get it from a profile or from system counters taken during a run, then map it to source. A guess from reading the code is not a limiter. If you cannot say why the number is not twice as good, you do not know what you measured.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **List what else the number could be measuring, and rule out each one with evidence.** The usual suspects are errors, skipped or cached work, code that never ran, an untuned side (one left on default settings), noise, and a piece too small to matter end to end.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **Keep the evidence with the number.** Put the run count, the spread, and the limiter in the notes or a linked artifact.
+
+For a performance number, run the full procedure with the [benchmark-checklist](../benchmark-checklist/SKILL.md) skill. For an eval result, ask the same of the trials: did every run do the task, does the gap hold across trials and models, and does the scenario matter.
+
+You skipped this when a run started without the result that would change a decision, when the evidence behind a number has no run count, no spread, or no named limiter, or when the time saved is larger than the time the changed piece took.
+
+Distinct from [Prove It Works](../principle-prove-it-works/SKILL.md), which checks that an output is real.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

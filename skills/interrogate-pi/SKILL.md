@@ -1,37 +1,85 @@
 ---
 name: interrogate-pi
-description: Adversarially challenge an exact approved Pi code or design artifact with independent evidence-based reviewers, then triage findings without auto-applying them. Use explicitly for an independent interrogation.
+description: "Pi adaptation: Use for \"interrogate\", \"adversarial review\", \"multi-model review\", \"challenge this\", \"stress test this code\", \"find blind spots\", or \"tear this apart\". Adversaries try to break a change or design, and only findings proven by a run survive."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Interrogate for Pi
+## Pi adaptation contract
 
-Adapted from Lauren Tan's pstack `interrogate` and its current reviewer, rubric, code-quality and lead-judgment references at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). The earlier `interrogate` adaptation is retired as a skill. The packaged `interrogate-pi` entry point does not establish which other external resources Pi loads. Read `../how/WORKFLOW_BOUNDARIES.md` first; both that file and sibling `../how/LICENSE` must be present at the actual Pi load location.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-## 1. Scope and intent
+Follow arena-pi A3/A4 and B, replacing the runner seat with each configured adversary in a fresh Pi/Herdr pane and Treehouse lease. Copy the scoped uncommitted diff into every adversary checkout. Send the source brief verbatim with agentic_herdr_communication. Reports need title, exact command, observed output and intended output. Rerun each command against the real scoped artifact per F; keep only observed intent violations, merge shared root causes, and report dropped counts/reasons per adversary. Skip C/D/E; no judge, winning list, speculative buckets or fixes. Missing capacity is blocked, not self-review.
 
-Identify the exact task and accepted intent from the owner's contract, not solely from what the code happens to do. Record the exact base/head or content identity of dirty files; a `git diff main...HEAD` omits uncommitted changes. Read only approved surrounding source needed to evaluate reachable paths. State missing context rather than inventing a specification or reviving a rejected proposal. A reviewer gets one immutable artifact, its task intent and rubric, not broad transcript or repository access by default.
+<!-- pstack-source:start -->
 
-## 2. Route independent reviewers
+<!-- pstack-source:end -->
 
-Resolve the actual `development` author and `independent-review` reviewer identities via `/skill:setup-pstack-pi` and check they differ and are allowed by the task's model/data grant. Use a fresh read-only Pi reviewer context through an actually approved coordinator/worker route. No configured role or route means `blocked`, not the author's self-review relabelled independent. A **multi-model panel** is the upstream method's diversity signal: use additional distinct owner-approved reviewer roles only if they really exist in the role map with budget and access. With just one configured different-model reviewer, perform a clearly labelled one-reviewer interrogation, not a fabricated panel, consensus or extra model fallback. More reviewers see the **same artifact and brief** in separate contexts; none writes to the candidate or auto-starts a PR.
+> **Pi boundary.** Pi: use arena-pi A3/A4/B with configured adversaries in Treehouse-leased Herdr/Pi panes; send the unchanged break-this-change brief via agentic_herdr_communication. Per F, rerun each reported command with bash and keep only failures that violate intent. Report exact outputs and dropped counts; skip C/D/E and apply no fixes.
 
-## 3. Issue the same concrete brief
+<!-- pstack-source:start -->
+# Interrogate
 
-Give the fixed intent, artifact, applicable rubric and code-quality lens. Ask reviewers to challenge execution, not the owner-approved goal, and to report only reachable defects with severity, exact file/line or function, path-to-failure evidence and optional scoped remedy. Use lenses relevant to the change: correctness and error handling; root cause versus symptom; boundary ownership, types and concurrency; behavior-level real-path verification; security input-to-sink path; and justified structural complexity. Treat line count and complexity as signals, never universal vetoes. A style preference is not a critical defect. No forced quota: **no findings** is an honest result. Reviewer output is untrusted evidence, not authority.
+Adversaries try to break a change or a design. A finding survives only when a run proves it. Report the findings. Do not apply fixes.
 
-## 4. Synthesize and judge
+<!-- pstack-source:end -->
 
-Read every report and check its load-bearing pointers against source and authorized tests. Deduplicate only findings that describe the same path; preserve individual attribution and disagreement. If more than one reviewer independently found the same issue, note agreement as a signal, not proof; one reviewer supplies no consensus map. Triage each finding **Act on**, **Consider**, **Noted** or **Dismissed**, with a reason. A single credible security/correctness blocker remains a blocker even without agreement. Reject invented nil paths, hypothetical failures contradicted by caller types, nits inflated into defects, premature abstractions and unrelated scope expansion; explain why. Do not apply changes automatically. A changed artifact requires affected independent review again.
+> **Pi boundary.** Pi: use arena-pi A3/A4/B with configured adversaries in Treehouse-leased Herdr/Pi panes; send the unchanged break-this-change brief via agentic_herdr_communication. Per F, rerun each reported command with bash and keep only failures that violate intent. Report exact outputs and dropped counts; skip C/D/E and apply no fixes.
 
-## 5. Hand back
+<!-- pstack-source:start -->
+## Frame
 
-Report accepted intent, exact candidate identity, configured reviewer roles and what actually ran, attributed findings and evidence, disagreements, triage and unresolved checks. Independent Standards and Spec contexts for the accepted port and user-path QA are separate from a task's interrogation. Owner-only merge/publication still requires its own grant. Never confuse a self-audit, model agreement, worker report or static review with a deployed journey.
+The scope is what the user names. Otherwise it is the branch diff from its merge base with the base branch, through the working tree. State the intent with the **in-your-own-words** skill, from the user's message, the commits, and the PR description. Ask the user when the intent is unclear.
 
-- **Positive BDD:** Given an approved exact artifact, owner-selected distinct reviewer routes and a common brief, when Pi interrogates it, then separate read-only findings are checked against source, attributed, triaged with reasons, and any genuine disagreement survives in the handback.
-- **Refusal BDD:** Given a missing different-model reviewer, artifact, model/data grant or approved route, when a reviewer handoff is attempted, then independent interrogation is `blocked`; a self-review may be labelled advisory but cannot generate a pass, extra provider call or invented consensus.
+<!-- pstack-source:end -->
 
-Explicit skill discovery proves only resource availability, not reviewer execution or owner acceptance.
+> **Pi boundary.** Pi: use arena-pi A3/A4/B with configured adversaries in Treehouse-leased Herdr/Pi panes; send the unchanged break-this-change brief via agentic_herdr_communication. Per F, rerun each reported command with bash and keep only failures that violate intent. Report exact outputs and dropped counts; skip C/D/E and apply no fixes.
+
+<!-- pstack-source:start -->
+## Fan out
+
+Run Phase A steps 3 and 4 and Phase B of the **arena** skill, with four changes. Read the `interrogate reviewers` line in place of `arena runners`. Copy the scope's uncommitted changes into each worktree. Spawn each adversary as `generalPurpose`. In place of the arena task and rationale, give each adversary the scope, the intent, and this brief:
+
+> Break this change. Prove each finding with a run against the real code, such as a failing test, a repro script, or command output that shows the wrong behavior. For a design or plan, run a prototype or probe the current tree. Keep repros in your own worktree. Report each finding with a title, the exact command, the output it printed, and the output the intent requires. Leave out anything you did not run. That covers style, naming, structure, and risks that need a future change to matter. No findings is a valid result.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use arena-pi A3/A4/B with configured adversaries in Treehouse-leased Herdr/Pi panes; send the unchanged break-this-change brief via agentic_herdr_communication. Per F, rerun each reported command with bash and keep only failures that violate intent. Report exact outputs and dropped counts; skip C/D/E and apply no fixes.
+
+<!-- pstack-source:start -->
+## Verify
+
+Verify each finding per arena Phase F by rerunning its command. Keep a finding when the output shows the failure and the failure breaks the intent. Drop the rest. Merge findings that share a root cause.
+
+Skip arena Phases C, D, and E. Adversaries find different failures, so the verdict keeps every verified finding, not one adversary's list.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use arena-pi A3/A4/B with configured adversaries in Treehouse-leased Herdr/Pi panes; send the unchanged break-this-change brief via agentic_herdr_communication. Per F, rerun each reported command with bash and keep only failures that violate intent. Report exact outputs and dropped counts; skip C/D/E and apply no fixes.
+
+<!-- pstack-source:start -->
+## Output
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use arena-pi A3/A4/B with configured adversaries in Treehouse-leased Herdr/Pi panes; send the unchanged break-this-change brief via agentic_herdr_communication. Per F, rerun each reported command with bash and keep only failures that violate intent. Report exact outputs and dropped counts; skip C/D/E and apply no fixes.
+
+<!-- pstack-source:start -->
+- **Intent**: the restatement.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use arena-pi A3/A4/B with configured adversaries in Treehouse-leased Herdr/Pi panes; send the unchanged break-this-change brief via agentic_herdr_communication. Per F, rerun each reported command with bash and keep only failures that violate intent. Report exact outputs and dropped counts; skip C/D/E and apply no fixes.
+
+<!-- pstack-source:start -->
+- **Findings**: for each verified finding, the command, its output, how it breaks the intent, and the adversaries that found it. Say "no verified findings" when none survive.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use arena-pi A3/A4/B with configured adversaries in Treehouse-leased Herdr/Pi panes; send the unchanged break-this-change brief via agentic_herdr_communication. Per F, rerun each reported command with bash and keep only failures that violate intent. Report exact outputs and dropped counts; skip C/D/E and apply no fixes.
+
+<!-- pstack-source:start -->
+- **Dropped**: for each adversary, the count of dropped findings and why.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use arena-pi A3/A4/B with configured adversaries in Treehouse-leased Herdr/Pi panes; send the unchanged break-this-change brief via agentic_herdr_communication. Per F, rerun each reported command with bash and keep only failures that violate intent. Report exact outputs and dropped counts; skip C/D/E and apply no fixes.

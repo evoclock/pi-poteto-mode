@@ -4,15 +4,17 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat" alt="License: MIT"/></a>
   <a href="https://www.npmjs.com/package/@evoclock/pi-poteto-mode"><img src="https://img.shields.io/npm/v/@evoclock/pi-poteto-mode?style=flat" alt="npm version"/></a>
   <a href="https://pi.dev/docs/latest/packages"><img src="https://img.shields.io/badge/Pi-package-06b6d4?style=flat" alt="Pi package"/></a>
-  <img src="https://img.shields.io/badge/skills-54-79c39e?style=flat" alt="54 adapted skills"/>
+  <img src="https://img.shields.io/badge/skills-57-79c39e?style=flat" alt="57 registered instruction skills"/>
 </p>
 
 The skills in this package are **[pstack](https://github.com/cursor/plugins/tree/main/pstack)
-by Lauren Tan** (v0.15.25, MIT). Copyright stays with Lauren Tan. I adapted all
-54 skills for the [Pi coding agent](https://pi.dev) to keep a port that is
-maintainable and close to the upstream text, and to cover the gaps I found in
-other Pi ports. This package holds only the adaptation; it adds no extensions or
-workflows of my own.
+by Lauren Tan** (v0.15.36, MIT). Copyright stays with Lauren Tan. This source
+revision restores 58 skill procedures and 23 full playbook files for the
+[Pi coding agent](https://pi.dev), with additive Pi boundaries. It registers
+57 instruction skills; ketchup-video remains planned and unregistered.
+This is an instruction adaptation with declared safety and capability differences,
+not a claim of runtime parity. It adds no extensions, schedulers or installers.
+The published package has not been released from this source revision.
 
 For what pstack is and how its workflows fit together, read Lauren Tan's
 [upstream pstack README](https://github.com/cursor/plugins/blob/main/pstack/README.md).
@@ -50,7 +52,7 @@ Add `-l` to install it for the current project only. Remove it with
 
 ## Set up roles
 
-The skills never name a model. They ask for two roles, `development` and
+Pi execution uses two configured roles, `development` and
 `independent-review`, which you map once per project:
 
 1. Run `/skill:setup-pstack-pi`, or copy
@@ -65,13 +67,14 @@ filled in, skills that need a role stop and tell you to run setup.
 ## How this works in Pi
 
 - **Naming.** Each upstream skill `name` becomes `name-pi`, for example
-  `poteto-mode` becomes `poteto-mode-pi`. 52 of the 54 skills set
-  `disable-model-invocation`, so they run only when you call them, for example
+  `poteto-mode` becomes `poteto-mode-pi`. Source invocation flags are retained;
+  56 of the 57 registered skills set `disable-model-invocation`. Load those explicitly, for example
   `/skill:poteto-mode-pi`.
 - **Install.** `pi install npm:@evoclock/pi-poteto-mode`, or `pi install <path>`
-  for a local checkout. The `pi` field in `package.json` lists the 54 skill
+  for a local checkout. The `pi` field in `package.json` lists the 57 skill
   folders. The package ships no extensions and no install scripts.
-- **Model roles.** Skills never name a model. They look up `development` and
+- **Model roles.** Retained source text includes upstream examples, not Pi defaults.
+  Actual execution looks up `development` and
   `independent-review` in `.pi/pstack-model-roles.v1.json`. Copy
   `config/pstack-model-roles.v1.example.json` (placeholders only) or run
   `/skill:setup-pstack-pi`.
@@ -85,10 +88,13 @@ filled in, skills that need a role stop and tell you to run setup.
 
 These upstream features do not map to Pi yet:
 
-- **Subagents.** Upstream ships Cursor agents (`agents/poteto-agent.md`,
-  `agents/comment-sicko.md`) and fans work out to Cursor `Task` subagents. Pi has
-  no built-in subagents, so the skills here only use workers when a separate,
-  approved Pi dispatch route exists, and otherwise work sequentially.
+- **Subagents.** Source Cursor/cloud workers map to Pi agents in Herdr panes.
+  Acquire Treehouse leases, start workers with `agentic_herdr_spawn_worker`,
+  and exchange bounded briefs/reports with `agentic_herdr_communication`.
+  These tools come from the installed Pi integration, not this package.
+  A missing required worker/verifier route is blocked, not silently replaced by
+  sequential self-review. The source text remains verbatim; the Pi boundary is
+  the executable route. PR observation uses `gh`, not a required Origin install.
 - **Model roles.** Upstream has many roles with effort budgets, model panels and
   `auto`/inherit fallbacks. This port has two exact roles and no fallback.
 - **Always-on mode.** Upstream's Poteto mode is a Cursor custom mode. In Pi,
@@ -96,19 +102,20 @@ These upstream features do not map to Pi yet:
 - **Automations.** Upstream's `automations/` folder and Cursor `/loop` have no
   Pi equivalent here.
 
-My plan: first add a subagent mapping through a Pi extension in a separate
-package, so this one stays a skills-only port. Then extend the roles file when
-I can test more roles in Pi. I will add each piece only after it works in a real
-Pi session.
+This remains a skills-only package. The concrete Herdr, Treehouse, task-tool
+and `gh` mapping is in `skills/how/UPSTREAM_MAPPING.md`; required tools must
+actually be installed and allowed. More role types and persistent wake support
+remain separate integrations, not capabilities supplied by this package.
 
 ## Maintenance
 
-I pin each release to one upstream version, currently 0.15.25. When upstream
-publishes a new version, I run the sync script against it, port new or changed
-skills by hand, and keep the `-pi` names. The tests then check that every
-upstream skill in the list is present, that frontmatter is valid and that no
-model names or personal paths ship. Every change gets an independent review
-before I merge it.
+This source revision targets 0.15.36. UPSTREAM.lock.json records the actual
+plugin version and SHA-256 source hashes, not an assumed Git revision.
+The source steps remain verbatim, with Pi limits under them; playbooks.md is
+only an index. Read [Policy divergences](docs/adaptation-guide.md#policy-divergences)
+for owner-held landing, gated publication, restricted model routes and scratch/tool limits.
+I review the native-source comparison before integration; restoration and recall
+checks are not independent semantic or runtime proof.
 
 ## Comparison with other Pi ports
 
@@ -145,12 +152,14 @@ for example `{ "source": "npm:other-package", "skills": ["!skills/*-pi"] }`.
 - `bro-pi`
 - `correct-pi`
 - `create-verification-skill-pi`
+- `create-formal-verification-skill-pi`
 - `figure-it-out-pi`
 - `how-pi`
 - `in-your-own-words-pi`
 - `interrogate-pi`
 - `ketchup-pi`
 - `maintain-verification-skill-pi`
+- `maintain-formal-verification-skill-pi`
 - `make-bot-ui-pi`
 - `no-comments-pi`
 - `poteto-help-pi`
@@ -185,6 +194,7 @@ for example `{ "source": "npm:other-package", "skills": ["!skills/*-pi"] }`.
 - `sharpen-pi`
 - `show-me-your-work-pi`
 - `swarm-pi`
+- `statechart-pi`
 - `tdd-pi`
 - `teach-pi`
 - `technical-writing-pi`
@@ -196,13 +206,27 @@ for example `{ "source": "npm:other-package", "skills": ["!skills/*-pi"] }`.
 
 `node scripts/sync-upstream.mjs <path-to-upstream-pstack>` compares the port with
 a local copy of upstream and lists missing or extra skills and the upstream
-version. It only reads. I port upstream changes by hand and review each one.
+version. It only reads and defaults to the reviewed local cache when no path is given.
+`node scripts/restore-upstream.mjs` checks deterministic instruction restoration;
+`--write` regenerates from an explicitly reviewed local source. No network access
+or package installation occurs. Source names resolve through
+`skills/how/UPSTREAM_MAPPING.md`, not through guessed Cursor tools.
 
 ## Tests
 
-`npm test` checks that every upstream skill is present, that frontmatter is
-valid, that no model names or personal paths ship, and what `npm pack` would
-publish.
+`npm test` checks all source skills, frontmatter, exact source-body/hash
+reconstruction, 23 per-file playbooks, changed contracts, explicit video status,
+instruction-recall floors and package contents. Source model names are allowed
+only in fingerprint-checked retained source blocks, never as operational Pi choices.
+Personal paths and secrets remain forbidden. `npm run check:recall` reports
+principle/playbook floors of 0.8 and skill floors of 0.6 against an offline baseline.
+No low-recall exemptions are used in this revision.
+
+The formal-verification and statechart instruction skills are new. Their actual
+checks require approved installed tools; the upstream self-installing TLC runtime
+is not bundled. A missing checker is blocked, not a proof. Video catch-up remains
+planned until a render-and-inspection route is validated. No package release,
+agent run or browser journey is established by these static checks.
 
 ## How I use it
 
