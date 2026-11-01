@@ -17,37 +17,37 @@ Invoked at the end of every other playbook.
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Keep this tail in the checklist. Actual publication requires the accepted destination/content grant; otherwise record a blocked handoff. Never merge.
+> **Pi boundary.** Pi: acquire a Treehouse lease with treehouse get --lease --json --base <verified-ref>; use agentic_herdr_spawn_worker and agentic_herdr_communication for scoped Pi work, not Cursor Task. git reset --hard is explicitly blocked: preserve unrelated edits instead. PR delivery needs its accepted destination/content grant. Default to draft and honor the live-Pi review gate; source never-draft wording does not auto-mark ready. Never merge.
 
 <!-- pstack-source:start -->
 - `## Why`: the problem and approach, 1–3 short sentences. No SHAs, rebase genealogy, or "based on main" preamble.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Keep this tail in the checklist. Actual publication requires the accepted destination/content grant; otherwise record a blocked handoff. Never merge.
+> **Pi boundary.** Pi: acquire a Treehouse lease with treehouse get --lease --json --base <verified-ref>; use agentic_herdr_spawn_worker and agentic_herdr_communication for scoped Pi work, not Cursor Task. git reset --hard is explicitly blocked: preserve unrelated edits instead. PR delivery needs its accepted destination/content grant. Default to draft and honor the live-Pi review gate; source never-draft wording does not auto-mark ready. Never merge.
 
 <!-- pstack-source:start -->
 - `## What changed`: 1–3 short bullets. Name a real symbol or path only when it carries the change. Name both sides of a rename or retarget.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Keep this tail in the checklist. Actual publication requires the accepted destination/content grant; otherwise record a blocked handoff. Never merge.
+> **Pi boundary.** Pi: acquire a Treehouse lease with treehouse get --lease --json --base <verified-ref>; use agentic_herdr_spawn_worker and agentic_herdr_communication for scoped Pi work, not Cursor Task. git reset --hard is explicitly blocked: preserve unrelated edits instead. PR delivery needs its accepted destination/content grant. Default to draft and honor the live-Pi review gate; source never-draft wording does not auto-mark ready. Never merge.
 
 <!-- pstack-source:start -->
 - `## Scope`: always. 1–3 short items on what it covers and what it deliberately leaves out (a follow-up, a known gap). No symbols, paths, or file-by-file essay.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Keep this tail in the checklist. Actual publication requires the accepted destination/content grant; otherwise record a blocked handoff. Never merge.
+> **Pi boundary.** Pi: acquire a Treehouse lease with treehouse get --lease --json --base <verified-ref>; use agentic_herdr_spawn_worker and agentic_herdr_communication for scoped Pi work, not Cursor Task. git reset --hard is explicitly blocked: preserve unrelated edits instead. PR delivery needs its accepted destination/content grant. Default to draft and honor the live-Pi review gate; source never-draft wording does not auto-mark ready. Never merge.
 
 <!-- pstack-source:start -->
 - `## Tradeoffs`: only rejected alternatives a reviewer would otherwise ask about. Skip when there was no real choice.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Keep this tail in the checklist. Actual publication requires the accepted destination/content grant; otherwise record a blocked handoff. Never merge.
+> **Pi boundary.** Pi: acquire a Treehouse lease with treehouse get --lease --json --base <verified-ref>; use agentic_herdr_spawn_worker and agentic_herdr_communication for scoped Pi work, not Cursor Task. git reset --hard is explicitly blocked: preserve unrelated edits instead. PR delivery needs its accepted destination/content grant. Default to draft and honor the live-Pi review gate; source never-draft wording does not auto-mark ready. Never merge.
 
 <!-- pstack-source:start -->
 - `## Blast Radius`: 1–2 sentences on who or what it touches and why that is safe or risky. If main is red, state the cost of leaving it red.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Keep this tail in the checklist. Actual publication requires the accepted destination/content grant; otherwise record a blocked handoff. Never merge.
+> **Pi boundary.** Pi: acquire a Treehouse lease with treehouse get --lease --json --base <verified-ref>; use agentic_herdr_spawn_worker and agentic_herdr_communication for scoped Pi work, not Cursor Task. git reset --hard is explicitly blocked: preserve unrelated edits instead. PR delivery needs its accepted destination/content grant. Default to draft and honor the live-Pi review gate; source never-draft wording does not auto-mark ready. Never merge.
 
 <!-- pstack-source:start -->
 - `## Verification`: 1–3 bullets, each a real run path and its outcome. Perf: one primary number with its unit, `before → after`, and a link to the arena or swarm directory for the rest. No sample-size methodology, swarm recitals, or metric tables.
@@ -67,4 +67,4 @@ After the sections, attach videos or screenshots when they prove a claim. Full S
 A subagent that opens a PR runs `/deslop` and `/no-comments`, and posts the URL. It returns to the parent without babysitting, unless it is an Autopilot-full or Autopilot-stack owner. That owner's brief assigns the babysit loop and is the ask `playbooks/babysit.md` waits for. The owner starts the loop after its code-ready report, reports merge-ready, and is exempt from the rules here and in `playbooks/babysit.md` that hold babysitting until a whole stack is built.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Keep this tail in the checklist. Actual publication requires the accepted destination/content grant; otherwise record a blocked handoff. Never merge.
+> **Pi boundary.** Pi: acquire a Treehouse lease with treehouse get --lease --json --base <verified-ref>; use agentic_herdr_spawn_worker and agentic_herdr_communication for scoped Pi work, not Cursor Task. git reset --hard is explicitly blocked: preserve unrelated edits instead. PR delivery needs its accepted destination/content grant. Default to draft and honor the live-Pi review gate; source never-draft wording does not auto-mark ready. Never merge.

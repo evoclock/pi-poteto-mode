@@ -223,8 +223,11 @@ principle/playbook floors of 0.8 and skill floors of 0.6 against an offline base
 No low-recall exemptions are used in this revision.
 
 The formal-verification and statechart instruction skills are new. Their actual
-checks require approved installed tools; the upstream self-installing TLC runtime
-is not bundled. A missing checker is blocked, not a proof. Video catch-up remains
+checks require approved installed tools. On macOS, use the bundled
+`statechart-pi/scripts/run-tlc.mjs --check` detector, then its explicit repo-scratch
+spec/config/output invocation. It uses installed TLC only, with no first-run install;
+the upstream self-installing chart runtime is not bundled. A missing checker is
+blocked, not a proof, and Mermaid output is view-only. Video catch-up remains
 planned until a render-and-inspection route is validated. No package release,
 agent run or browser journey is established by these static checks.
 

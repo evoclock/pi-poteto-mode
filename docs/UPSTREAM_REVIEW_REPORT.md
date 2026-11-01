@@ -38,7 +38,7 @@ See adaptation-guide.md, Policy divergences, for source quotes and reasons. In p
 - Opening a PR is always reached as a checklist/handoff. Actual publication needs an accepted destination/content grant; loading the tail is not that grant.
 - Pi role lookup remains project-local with exact distinct identities, not source model defaults, inherited aliases or a Cursor rule. Extra panel routes and budget controls need explicit configuration.
 - Scratch, disposal, transcript scope, MCP and external effects follow the shared Pi boundary. Missing tooling is blocked, not silently omitted or counted as passed.
-- Statechart's upstream TLC/Java self-installing executable is not bundled. An approved installed checker is required. A diagram alone is not proof, and a real formal/model-checker journey was not run here.
+- Statechart's upstream TLC/Java self-installing executable is not bundled. The new Mac adapter, skills/statechart-pi/scripts/run-tlc.mjs, detects and invokes an already installed tlc or an explicitly approved existing tools jar plus Java. It never installs and confines spec/config/output to repo scratch. A diagram is view-only, never proof. On the current Mac, detection returned blocked/exit 3: no tlc on PATH and no approved tools jar selected. A real TLC run remains unrun.
 - Ketchup-video has no validated Pi slide/video render-and-inspection route. It is planned, not advertised as working; text ketchup remains available.
 
 These differences are not hidden recall exceptions. No below-floor recall exception is used in this revision.
@@ -59,7 +59,7 @@ All 81 skill/principle/playbook entries meet their floors, with a minimum observ
 ## Checks performed
 
 - Fail-first: the new alignment tests failed on absent lock/playbook/baseline files and the old review/prompt contracts before restoration.
-- Package suite: 46 tests passed, zero failures or skips. Existing package, PR policy and wording tests remain enabled.
+- Package suite after premerge changes: 52 tests passed, zero failures or skips. The added adapter tests check missing-tool failure, selected-jar refusal, completed-summary classification, scratch/symlink confinement and invocation construction. These are unit tests, not a claim that TLC ran. Existing package, PR policy and wording tests remain enabled.
 - Deterministic restoration check: 58 skills, 23 playbooks, zero differences on a second run.
 - Sync check: source and target 0.15.36, no missing or extra source skill directories. Planned video registration is checked separately.
 - Offline recall floors: >=0.8 for principles/playbooks, >=0.6 for workflow skills. A deleted-procedure mutant is rejected; all current source bodies/references reconstruct exactly and match lock hashes.
@@ -67,6 +67,12 @@ All 81 skill/principle/playbook entries meet their floors, with a minimum observ
 - Diff whitespace check passed. No package publication, automatic Pi settings change, model-provider call, independent reviewer run, live browser journey, or formal proof is claimed.
 
 Reproduce with `npm test`, `node scripts/instruction-recall.mjs`, `node scripts/sync-upstream.mjs <native-source>`, and `node scripts/restore-upstream.mjs <native-source>`. The restoration checker is read-only unless `--write` is supplied. The source corpus/taxonomy pipeline is not required to run these tests.
+
+## Premerge review gate
+
+Opening a PR now has concrete Treehouse/Herdr notes even for its unnumbered worktree/Task paragraphs; git reset --hard is explicitly blocked there. Pi review defaults to draft and the live-Pi gate overrides the source ready-only rule. Shipping step 1's independent verifier note is unchanged. Step 3 now specifies recorded/current base-head patch-id comparison and re-verification. Step 4 explicitly blocks merge/auto-merge/retarget/force-with-lease operations. Step 5 explicitly marks /loop and watch-pr unsupported rather than claiming a persistent watcher.
+
+A live Pi session must load this branch's poteto-mode and exercise routing plus a concrete Treehouse/Herdr route after the changes are pushed. The static tests and source recall do not satisfy that gate. At this pre-smoke checkpoint the live result is pending. Keep the PR draft; do not mark ready or merge. Raw smoke/session/pane/delivery evidence belongs in ignored repository scratch, not the public package. The source checker's missing-tool result remains a separate blocker and must never be relabelled verified.
 
 ## Independent review requested
 

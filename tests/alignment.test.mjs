@@ -81,6 +81,22 @@ test('Pi remapping names concrete Herdr, Treehouse, task and forge routes', () =
   assert.match(boundaries, /gh pr checks/);
 });
 
+test('premerge boundaries cover destructive and unsupported source steps explicitly', () => {
+  // Why: a global caveat cannot hide a destructive command or unsupported watch step.
+  const adapted = path => read(path).replace(/<!-- pstack-source:start -->\n[\s\S]*?<!-- pstack-source:end -->\n/g, '');
+  const opening = adapted('skills/poteto-mode-pi/playbooks/opening-a-pr.md');
+  assert.match(opening, /Treehouse/);
+  assert.match(opening, /agentic_herdr_spawn_worker/);
+  assert.match(opening, /agentic_herdr_communication/);
+  assert.match(opening, /git reset --hard is explicitly blocked/);
+  assert.match(opening, /draft/);
+  const shipping = adapted('skills/poteto-mode-pi/playbooks/shipping.md');
+  assert.match(shipping, /Pi step 3:[\s\S]*git patch-id --stable/);
+  assert.match(shipping, /Pi step 4 is owner-held:[\s\S]*--force-with-lease/);
+  assert.match(shipping, /Pi step 5:[\s\S]*watch-pr[\s\S]*blocked/);
+  assert.match(adapted('skills/statechart-pi/SKILL.md'), /run-tlc\.mjs --check/);
+});
+
 test('new review and prompt contracts replace the old inversions', () => {
   // Why: the old bucket and no-rewrite contracts directly contradict this baseline.
   const interrogate = read('skills/interrogate-pi/SKILL.md');

@@ -11,13 +11,13 @@ license: MIT; see ../how/LICENSE
 
 Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-The instruction skill is available; its upstream self-installing CLI is NOT bundled or automatically run. Use a repo-local scratch directory, an already installed and explicitly approved TLC/checker route, and recorded tool versions/bounds. With no checker, report the run blocked and offer a model/view draft, never a verified chart. A separate diagram renderer or bowerbird statechart check does not prove a TLA+ invariant. Renderer choice is owner-selected; no automatic network install.
+On macOS use the bundled installed-only adapter: node <skill-dir>/scripts/run-tlc.mjs --check. It detects tlc on PATH, or an explicitly approved existing TLA2TOOLS_JAR plus Java on PATH; it never downloads or installs. Run a spec/config from repo-local .scratch with --spec FILE --config FILE --out NEW_DIR. Read references/pi-tlc.md first. Missing TLC is blocked, never verified. The upstream self-installing statechart CLI is not the Pi execution path. Mermaid/diagrams are views only, never a TLA+ proof.
 
 <!-- pstack-source:start -->
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 # Statechart
@@ -26,7 +26,7 @@ The chart shows how a system moves between states, in the words of the person wh
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 ## Run
@@ -43,33 +43,33 @@ The first run installs TLC and Java with mise and needs the network.
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 ## Write the spec
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - Write each rule that the reader agrees to as an INVARIANT. A rule can be about a screen, a result, a stored value, or a message. If the model has no variable for a rule, add the variable. Never weaken a rule to make it hold.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - Write `Next` as a disjunction of the actions, such as `YouPressPlay \/ YouPressStop`. If you do not, TLC names every step `Next`.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - A state with no step out breaks `NoDeadlock`, also when it is a correct end state. When an INVARIANT or a PROPERTY already has that name, the rule is `CHECK_DEADLOCK`. Add to `Next` an action that is true only in the end states and changes nothing, such as `Done == phase \in {"paid", "failed"} /\ UNCHANGED vars`, and give it a label in `step()`.
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 ## Pick the chart
@@ -80,19 +80,19 @@ To show the reader's words, the view exports `state(vars)`. The value that `stat
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - A string gives a flat chart: `export const state = (v) => (v.paid ? "Paid" : "Paying");`
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - An array gives parent states: `export const state = (v) => v.main.split(".");`
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - An object gives one parallel region for each key: `export const state = (v) => ({ Playback: v.playback, Volume: v.volume });`
@@ -107,19 +107,19 @@ The view can also export these:
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - `group(vars)` returns the name of a phase. Each chart state gets the color of its group. When the model states behind one chart state are in different groups, that state gets no color.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - `colors` gives each group name a color class.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - `title` is a string that the chart shows at the top.
@@ -132,82 +132,82 @@ Aim for about 20 arrows or fewer, because a busier chart is hard to read. First 
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - Keep each chart state reachable by arrows from a start state.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - Keep at least one arrow out of each chart state that has a step out in the model.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - Hide all the steps of an arrow, or none of them. When you hide only some, its condition gets narrower.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - In the hand-off, say which steps the chart hides.
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 ## Read the report
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - In the chart, a state that breaks a rule has the class `breaks`. When only some model states behind it break the rule, it has the class `mayBreak`. The Legend names the rules of each mark. When two rules break, it names both on one mark, so say in the hand-off which state breaks which rule. In a regions chart, a state gets a mark when each combination of region states that includes it can break a rule. When a combination can break a rule and none of its states has a mark, each state in that combination gets a mark.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - TLC goes past a state that breaks a rule, so the chart shows the states after a bug.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - Because TLC goes past bugs, a model with no limit on its states can run without end. Keep the constants small, or add a CONSTRAINT.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - With a VIEW or a SYMMETRY, TLC counts states that it treats as the same as one state, and the chart draws that one state. An arrow can lead to it rather than to the state that the step reaches, and the report says so.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - TLC checks the rules in each state past a CONSTRAINT or an ACTION_CONSTRAINT, but it does not explore that state or check it for deadlock. When TLC's shortest path for a rule ends in such a state, the chart draws that state, and the report gives that path. The chart does not draw the other states past the bound. A deadlock in such a state does not show. TLC also checks the rules after each step that an ACTION_CONSTRAINT excludes, also when it reaches the next state another way. When TLC's shortest path for a rule ends with such a step, the chart draws that step.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - The command checks the rules with TLC on the config as written, with one worker. When a rule breaks, the command removes that rule and runs TLC again, until no rule breaks. After the first break, each run stops at 100,000 distinct states, so that a large model does not run without end. When a run reaches that bound or stops on an error, the report lists the rules that it did not check under "Rules not checked", and the chart does not mark them. A rule that is not checked can hold or break. To check it, remove the rules that break from the config, or make the model smaller. The bound adds a module that changes TLC's order of the variables, so for a property TLC can find a different counterexample than a run without the bound.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 - `tlc.out` is what TLC printed on the config as written. When the chart does not show the bug path of a rule that breaks, `tlc-RULE.out` is what TLC printed for the run that found it. When TLC repeats its first warning, plain TLC prints it twice, but `tlc.out` shows it once, because TLC leaves the second copy out of the output that this command reads. That happens only when Java runs with `-XX:+UseParallelGC`, since otherwise TLC's first warning is its advice to pass that flag, which it prints once.
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 ## Show the chart
@@ -218,7 +218,7 @@ Render charts with Pele. When the user asks for an image, or a chart is too larg
 
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
 
 <!-- pstack-source:start -->
 ## Hand off
@@ -228,4 +228,4 @@ Give each chart and its Mermaid text to the person who must decide. Add one line
 When the model describes code, replay each bug path against the real code, as a test or a live repro, one step for each action. If a bug does not occur, think that the model is wrong until you show that it is not.
 <!-- pstack-source:end -->
 
-> **Pi boundary.** Use approved repo-local scratch and an installed checker. The upstream self-installing CLI is not bundled; missing execution or rendering is blocked, never a proof.
+> **Pi boundary.** Pi on Mac: run node <skill-dir>/scripts/run-tlc.mjs --check, then its explicit --spec/--config/--out invocation from repo-local scratch. No mise, download or first-run install. Missing tlc/approved checker is blocked. Mermaid and rendered diagrams are views, never TLA+ proof; see references/pi-tlc.md.
