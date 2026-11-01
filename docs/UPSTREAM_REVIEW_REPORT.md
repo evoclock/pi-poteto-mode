@@ -72,7 +72,15 @@ Reproduce with `npm test`, `node scripts/instruction-recall.mjs`, `node scripts/
 
 Opening a PR now has concrete Treehouse/Herdr notes even for its unnumbered worktree/Task paragraphs; git reset --hard is explicitly blocked there. Pi review defaults to draft and the live-Pi gate overrides the source ready-only rule. Shipping step 1's independent verifier note is unchanged. Step 3 now specifies recorded/current base-head patch-id comparison and re-verification. Step 4 explicitly blocks merge/auto-merge/retarget/force-with-lease operations. Step 5 explicitly marks /loop and watch-pr unsupported rather than claiming a persistent watcher.
 
-A live Pi session must load this branch's poteto-mode and exercise routing plus a concrete Treehouse/Herdr route after the changes are pushed. The static tests and source recall do not satisfy that gate. At this pre-smoke checkpoint the live result is pending. Keep the PR draft; do not mark ready or merge. Raw smoke/session/pane/delivery evidence belongs in ignored repository scratch, not the public package. The source checker's missing-tool result remains a separate blocker and must never be relabelled verified.
+Live smoke was attempted after the premerge code was committed and pushed at `e17cd4be6dfb0f7dab2b3ac80803a6a5f0e3fc67`. **Overall result: BLOCKED. Keep draft; do not mark ready or merge.**
+
+The routing subcheck passed in a fresh real Pi 1.4.0 JSON session with discovered skills disabled and this lease's poteto-mode resource explicitly supplied. The organic explanation request did not name a playbook. Observed tool calls read the leased poteto-mode, boundaries/mapping, Investigation, how and unslop; then ran the actual installed-only detector. It returned blocked/exit 3, and the session explained that a diagram is not proof. The session exited zero and made no source edits. This establishes live routing, not full procedure compliance or a formal proof.
+
+For the second subcheck, a separate Treehouse lease at that pushed branch was acquired and a guarded Pi/Herdr worker start attempted. The route refused because this repository is not enabled in its trusted registry. No worker pane or delivery was created, and no registration, parked-pane reuse or bypass was attempted. Thus the required Treehouse-to-Herdr round trip is not demonstrated. The smoke lease is preserved for reconciliation.
+
+The installed-only TLC route is wired and unit-tested, but no tlc on PATH or approved tools jar was selected on this Mac; no actual model-checker pass exists. Bounded known-location searches found no candidate, not proof that none exists anywhere. This remains a separate runtime gap.
+
+Raw commands, session/tool events, lease metadata, pane/delivery null results and the refusal are retained only in ignored `.scratch/premerge-smoke-summary.json`, `.scratch/premerge-live-routing.jsonl`, `.scratch/premerge-herdr-result.json`, `.scratch/premerge-smoke-lease.json` and `.scratch/premerge-tlc.json`. No private session transcript or host identifier is committed. Static tests/source recall and a successful routing subcheck do not override the blocked overall live gate.
 
 ## Independent review requested
 
