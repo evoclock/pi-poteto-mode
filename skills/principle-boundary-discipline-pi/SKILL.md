@@ -1,21 +1,118 @@
 ---
 name: principle-boundary-discipline-pi
-description: Place validation and error handling at real CLI, config, network or external API boundaries, while keeping trusted domain logic simple. Use explicitly when shaping an approved adapter or validation change.
+description: "Pi adaptation: Apply when wiring validation, error handling, or framework adapters. Concentrate guards at system boundaries (CLI, config, network, external APIs); trust internal types and keep business logic in pure functions."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Boundary discipline
+## Pi adaptation contract
 
-Adapted from Lauren Tan's `principle-boundary-discipline` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This is a code-organization method, **not** a claim that types or a lease enforce runtime containment.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-First draw the **actual** boundary: CLI arguments, config reads, external API responses, network messages, file formats or another outside input. At entry, validate and narrow into a domain value or reject with an actionable error. Expose domain concepts rather than passing raw transport/storage/framework types into the public domain API. Keep general mechanism internal, special-purpose policy at the edge, and the framework shell thin. Within code that receives genuinely validated domain values, remove redundant re-validation and keep business transforms and scoring pure where possible. Ask at each guard, “Is this crossing a real boundary **now**?” and at each framework-heavy function, “Can a pure function do the domain work?” Validate config when parsed, not deep inside its consumers.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-**Trust is conditional:** prove all relevant external entry points actually parse the value before removing a guard. Types, compiler checks and function-local assumptions do not establish authority, safe filesystem paths or protection from malicious outside data. Do not strip a load-bearing safety check or soften a denial in the name of reducing noise. Handle invalid input at the real entry and test both an accepted domain value and a rejected outside value before calling the reshape safe. Unknown call paths or insufficient edit grant leave the existing check intact with an evidence gap.
+<!-- pstack-source:start -->
 
-- **Positive BDD:** Given an approved adapter and identified untrusted entry, when Pi traces calls and tests valid/invalid input at that entry, then parse-time errors and a pure domain path replace proved redundant inside guards without weakening the outside denial.
-- **Refusal BDD:** Given an unverified caller, external input still reaching the inner function or a safety guard without equivalent boundary proof, when a deletion is proposed, then retain it and mark the proposed simplification `blocked`/`unrun`; do not assume a type is containment.
+<!-- pstack-source:end -->
 
-This skill file does not drive an app or prove a boundary by itself.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+# Boundary Discipline
+
+Place validation, type narrowing, and error handling at system boundaries. Trust internal code unconditionally. Business logic lives in pure functions. The shell is thin and mechanical.
+
+**Why:** Scattered validation is noisy, redundant, and gives a false sense of safety. Keep logic out of framework wiring so it can be tested without the framework.
+
+**The pattern:**
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **At boundaries** (CLI args, config files, external APIs, network protocols): validate, return errors, handle defensively.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **Inside the system:** typed data, error propagation, no re-validation. Trust the types.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **Across the boundary.** Expose domain concepts, not the boundary's private representation. Keep general-purpose mechanism inside and special-purpose policy at the edge.
+
+**Applications:**
+
+Validation and error handling:
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Validate config at parse time (the boundary), not inside business logic
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Parse raw data into domain types at the boundary
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Do not re-export transport, storage, framework, or wire types through the public surface
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- No redundant nil checks deep in call chains if the boundary already validated
+
+Code organization:
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Business logic in pure functions with no framework dependencies
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Parse functions: pure transforms from raw bytes to typed state
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Prompt construction: structured state in, string out
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Scoring and assessment: pure transforms from state to results
+
+**The tests:**
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- "Is this data crossing a system boundary right now?" If not, validation is redundant.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- "Can this be a pure function that the shell just calls?" If yes, extract it.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

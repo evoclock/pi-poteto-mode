@@ -3,3 +3,5 @@ node_modules/
 .pi/
 .review/
 scan-terms.local.json
+.scratch/
+pipeline_output/

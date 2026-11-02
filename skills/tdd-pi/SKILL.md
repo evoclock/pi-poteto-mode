@@ -1,23 +1,151 @@
 ---
 name: tdd-pi
-description: For an explicitly requested TDD or regression path, or a bug with an obvious cheap local test, demonstrate a focused red check before the smallest fix and green after. Use explicitly when the test seam is practical.
+description: "Pi adaptation: Use only when the user explicitly asks for TDD, a failing test, or a regression test, OR when the bug has an obvious cheap local test target. Skip when the test path is unclear, expensive, integration-heavy, or not requested."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# TDD bug fix for Pi
+## Pi adaptation contract
 
-Adapted from Lauren Tan's unchanged `tdd` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The source allows **skipping a new automated test** when the seam is impractical; it does **not** waive this project's stricter authorized red-capable reproduction requirement before a bug hypothesis/fix. No install, production access or broad harness follows from this skill.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-Use when the user explicitly asks for TDD, a failing/regression test, or an obvious cheap local bug test. Otherwise skip this method when the only candidate needs broad harness setup, brittle mocks, slow end-to-end infrastructure, production-only state, vague repro or large fixture churn. First identify intended behavior, observed failure, affected entry and smallest observable reproduction. Choose the narrowest existing unit/component/integration/regression seam that exercises **behavior**; do not create a new framework to clear a process checkbox. For an actual bug, if no authorized red-capable seam exists, stop the diagnosis/fix at its existing gate and report the needed permission or artifact; a proposed closest check is not observed red.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-When the seam is practical, write a focused test against an independent expected behavior, run it **before** production edits, and confirm it fails for the intended reason. A green test, unrelated failure, mock self-assertion or changed assertion that mirrors broken code is not red proof: correct the seam first. Make the smallest permitted cause fix that preserves adjacent contracts; rerun the same regression green and check the original scenario. Do not weaken a prior assertion without a genuinely changed accepted requirement. Keep fixtures scoped and stabilize flaky timing with a declared deterministic signal; first prove this defect, then consider sibling coverage within a separate grant.
+<!-- pstack-source:start -->
 
-If a **new automated** failing test is impractical but an approved red-capable manual reproduction, targeted script, browser drive, snapshot or log assertion can exercise the same wrong behavior, record the actual before failure and after observation there instead. If none can run safely, mark bug repair `blocked` and offer the closest proposed check without claiming a fix. In the handback name exact pre-fix failure, post-fix run, nearby checks and every missing/unrun step; passing a fixture alone is not a real packaged app/user journey.
+<!-- pstack-source:end -->
 
-- **Positive BDD:** Given an approved bug with an inexpensive executable behavior seam, when Pi observes a focused red result before editing, applies the smallest cause fix and reruns that check plus the original scenario, then the regression turns green for the right reason without losing negative behavior.
-- **Refusal BDD:** Given no safe red-capable seam, only brittle mocks, no edit/target grant or a test that was already green, when a fix is proposed, then hold bug diagnosis/fix `blocked`/`unrun`, report the closest check and do not invent red evidence or loosen tests to pass.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Discovering a Pi TDD skill is not an executed red/green loop or Pi verification.
+<!-- pstack-source:start -->
+# TDD Bug Fix
+
+When fixing a bug with a clear, cheap test path, make the broken behavior executable before changing production code. The goal is a focused regression test that fails before the fix and passes after it.
+
+Do not force a test when it would be impractical. If the available test would require broad harness setup, brittle mocks, slow end-to-end infrastructure, production-only state, vague reproduction steps, or large unrelated fixture churn, skip adding a new test and use the closest useful verification instead.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Workflow
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+1. **Understand the bug.** Identify the intended behavior, current behavior, affected path, and smallest observable reproduction.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+2. **Choose the narrowest executable check.** Prefer the closest unit, component, integration, or regression test already used for that codepath. If no practical test path is obvious, do not create one from scratch just to satisfy the workflow.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+3. **Write the failing test first.** Add the smallest focused test that would have caught the bug. The test should encode intended behavior, not mirror the current implementation.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+4. **Run the new test before fixing.** Confirm it fails for the intended reason. If it passes or fails for an unrelated reason, correct the test or reproduction before editing the implementation.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+5. **Fix the bug.** Make the smallest production change that satisfies the intended behavior while preserving nearby contracts.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+6. **Rerun the regression test.** Confirm the test now passes.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## If a Failing Test Is Impractical
+
+Use the closest executable regression check instead: a targeted script, manual reproduction command, browser automation, snapshot comparison, log assertion, or focused integration check.
+
+Prefer no new test over a bad test. A bad test is one that mostly tests mocks, encodes current implementation details, depends on timing or unrelated global state, needs expensive infrastructure for a small fix, or would be deleted immediately after proving the fix.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Guardrails
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Do not change tests merely to match a wrong implementation.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Do not weaken existing assertions unless the expected behavior has genuinely changed and the reason is clear.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Keep the regression test focused on the bug. Avoid broad fixture churn or unrelated coverage expansion.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- If the bug is flaky, make the test deterministic where possible and document the signal being locked down.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- If the bug exposes a broader class of failures, first land the focused regression path, then consider additional sibling coverage.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Final Response
+
+Report the evidence, not just the outcome:
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Name the failing-before test or executable check and the failure it produced.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Name the passing-after test run and any nearby validation performed.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- If failing-before evidence could not be demonstrated, state why and describe the closest regression check used instead.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

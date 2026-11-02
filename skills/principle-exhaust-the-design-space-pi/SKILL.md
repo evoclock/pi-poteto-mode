@@ -1,19 +1,28 @@
 ---
 name: principle-exhaust-the-design-space-pi
-description: For a novel UI interaction, architectural fork or feel-dependent product choice with no precedent, compare two or three approved prototypes side by side before committing to a design. Use explicitly for an empirical design fork.
+description: "Pi adaptation: Apply when facing a novel UI interaction or architectural decision with no precedent in the codebase. Build 2-3 competing prototypes and compare side by side before committing."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Exhaust the design space
+## Pi adaptation contract
 
-Adapted from Lauren Tan's `principle-exhaust-the-design-space` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. A design claim, a three-option prose list or an AI vote is not a prototype. Look for a codebase precedent first and avoid ceremony when an established solution applies.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-When an interaction, architecture or product experience has a genuine unsettled fork, name the observable decision, constraints and approved scratch location. Build **two or three different small, isolated prototypes** that can answer the fork cheaply; they are throwaway evidence, not production code. Compare side by side on the **same authorized surface** with actual observations: working interaction, screenshots for visual choices, behavior or timing for architectural ones. State tradeoffs and recommend the best fit against the user's experience, then ask for an owner decision only where the preference is irreducible. Do not install dependencies, fetch CDN scripts, launch an app, spawn candidates or share a mutable instance merely because this principle names prototypes. If no real prototype route is granted, present the proposed experiment and mark the comparison `unrun`; do not claim a winner from prose alone. Subsequent production implementation belongs to a separately accepted Feature/`architect-pi` route, not this throwaway choice.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-- **Positive BDD:** Given a novel approved design fork and safe target, when Pi builds two or three isolated variants and observes them side by side on the same surface, then it recommends a choice with cited comparative artifacts before production code is committed.
-- **Refusal BDD:** Given a known precedent, no safe app/target, shared instance conflict or no scratch/effect grant, when a prototype would cross that boundary, then reuse precedent or mark comparison `blocked`/`unrun`, with no fabricated screenshots, hidden install or automatic feature merge.
+<!-- pstack-source:start -->
 
-Temporary Pi discovery does not prove a prototype comparison.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+# Exhaust the Design Space
+
+It also applies to product design decisions where user experience depends on feel, not logic.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

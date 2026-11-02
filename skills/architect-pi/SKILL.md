@@ -1,46 +1,210 @@
 ---
 name: architect-pi
-description: Sketch caller-first types, signatures and module boundaries for an approved non-trivial Pi engineering change before implementation; compare distinct designs and revisit the sketch when implementation reveals a wrong shape. Use explicitly for an architecture task.
+description: "Pi adaptation: Sketch types, signatures, and module structure before code, then stay in the loop while implementation fills in. Use for /architect, 'architect this', 'design this', or non-trivial work where jumping to code would lock in the wrong shape."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Architect for Pi
+## Pi adaptation contract
 
-Adapted from Lauren Tan's pstack `architect` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). This Pi port preserves Ground → Sketch → Agree → Implement → Scrap and the source's caller-first sketch, competing whole-shape candidates, red-flag screening and rationale. It cannot import Cursor's `Task`, `arena` runner configuration, default models, `/tmp` runner paths or automatic commits. Read `../how/WORKFLOW_BOUNDARIES.md` before an effectful or delegated step.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-## Boundaries and roles
+Read the ordered `architect runners` list from the project-local role map through setup-pstack-pi; one runner per entry, including duplicates. Apply the approved native budget effort through a supported Pi session control. Missing list, seat availability or effort support blocks this phase; do not substitute a core role.
 
-Start with the approved task contract, repository, evidence destination, scope, model/data budget and stop. Use session `tasks` for the five phases when loaded, not a new project board. Resolve `development` and `independent-review` through `/skill:setup-pstack-pi` before any role-dependent handoff. The configured reviewer is reserved for independent review of the exact artifact; it is **not** an extra author or a substitute second design model. If the approved task does not provide two distinct authorized candidate routes (including any required additional roles), do not run a fake parallel/multi-model arena or claim its synthesis occurred. A single-author pair of sketches may be a labelled provisional exploration, not the full multi-perspective result. No default model, provider fallback, worker spawn, worktree creation, commit, PR or merge follows from reading this skill. Only the repository owner merges.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-## A. Ground
+<!-- pstack-source:start -->
 
-Use the loaded Pi `how` method to trace real entry points, state ownership, integration boundaries and actual runtime claims. If the proposed design changes existing ownership, use an available, approved `why` route for rationale; if that route is not loaded, inspect the scoped source/ADRs yourself and label the missing method. A genuinely greenfield unit can skip this phase with its reason. Save citations, not copied private transcripts. A file name alone is not a mental model.
+<!-- pstack-source:end -->
 
-## B. Sketch and synthesize
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-1. Frame an artifact and 3–6 concrete comparison criteria from the accepted behavior. Give each authorized candidate the same task, grounding and rubric, with independent writable locations only when approved. Require **at least two structurally different whole-shape designs** before choosing, not two cosmetic variants. If `arena` is available and separately authorized, use its Pi port; otherwise compare read-only proposals without calling it an arena. Missing candidate capacity is a reported block for the multi-model check, not permission to appoint the independent reviewer as an author.
-2. For each candidate, write the caller's intended usage and two or three realistic call sites **before** the types. Derive core data structures, function signatures, module map and invariants from that usage. Mark bodies as not implemented and difficult logic as pseudocode. Do not write a deployable half-implemented API just to illustrate the sketch. Trace dominant access patterns and define one writer per state; validate external input at the boundary. A new index/cache or extra layer needs a reason in the actual access pattern.
-3. Screen each candidate for a shallow interface that exposes internal steps; information leakage across modules; layers split by execution time rather than ownership; pass-through methods; shared state with multiple writers; two ways to do one task; importable internals; and hand-synced lists. Prefer a small public interface that hides substantial behavior and keeps call chains short. Cite specific future caller breakage rather than a style score.
-4. Select one base against the rubric, record what useful part was grafted from each other candidate, and say why other shapes lost. A separate approved cross-judge may contribute evidence; reviewer output never chooses or authorizes by itself. Preserve disagreement. The rationale records: problem and grounded constraints; caller usage; shape and interface depth; synthesis decision; accepted tradeoffs; concrete alternatives; open owner questions/risks; and the next implementation step. Store it only in the approved private destination.
+<!-- pstack-source:start -->
+# Architect
 
-## C. Agree
+Sketch types, function signatures, class shapes, and module boundaries with `not implemented` bodies and pseudocode. Synthesize across multiple model perspectives, then fill in code against the chosen sketch.
 
-Normally continue within the approved contract. If the invoker asked for a checkpoint, present the sketch and pause before implementation. New ownership, model/data access, app effects, irreversible work or changed scope always return to the owner even without a checkpoint. A sketch is not a signed product specification and commits are not implied.
+<!-- pstack-source:end -->
 
-## D. Implement against the sketch
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Fill in the approved design in verifiable units. Compare actual call sites and test results with the usage and types. A surprising new parameter or writer is evidence to inspect the design or requirement, not something to hide with an escape-hatch type. Check the real entry point and capture failures. Independent exact-artifact Standards and Spec review through the configured different-model `independent-review` role and separate user-path QA remain separate.
+<!-- pstack-source:start -->
+## Start
 
-## E. Scrap if the shape fails
+Open a todolist with one entry per phase before starting.
 
-One edge case is not proof of a wrong architecture. Repeated workarounds across unrelated code, casts around invalid states, a newly shared lock, callers learning private rules, or repeated same-shape deviations are reasons to stop. Re-ground what was actually built; re-sketch with the new constraint as foundational; subtract an unnecessary layer first; then compare new whole-shape candidates. Do not delete evidence, revert other people's work or replace an approved spec automatically.
+<!-- pstack-source:end -->
 
-## BDD and handback
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-- **Given** an approved non-trivial design task, loaded Pi resources and separately authorized distinct candidate routes, **when** the architect method runs, **then** the cited grounding, two caller-first whole-shape sketches, red-flag screen, rubric-based synthesis, rationale and checked implementation deviations are observable; an explicit checkpoint pauses when requested.
-- **Given** a missing route, role, budget, safe destination or implementation grant, **when** the next phase would cross that boundary, **then** report `blocked` or `unrun` for that phase. Do not claim a multi-model arena, authored candidate, implementation, independent review or live success from a one-model draft.
+<!-- pstack-source:start -->
+1. Ground
+<!-- pstack-source:end -->
 
-Hand back the exact sketch/rationale paths and identity, evidence for comparisons, what ran versus remained proposed, outcome at the real entry point and the next owner-held decision. No package/Pi loading or real design journey is claimed by this file's existence.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+2. Sketch
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+3. Agree
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+4. Implement
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+5. Scrap
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase A: Ground the problem
+
+Build a real mental model of every system the new code touches. Run the **how** skill over the relevant subsystems. Naming a file isn't grounding. Produce the architectural explanation `how` prescribes. If the design redefines ownership or layering, also run the **why** skill on the existing shape so the rationale becomes a constraint, not a guess.
+
+Skip Phase A only when the work is genuinely greenfield with no surrounding system to integrate.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase B: Sketch
+
+Run the **arena** skill with the design-sketch task and the Phase A grounding artifacts. Pass `references/runner-prompt.md` as each runner's prompt.
+
+Take the runners from the `architect runners` line in the `pstack-models.mdc` rule, in place of the `arena runners` line. If the rule or that line is missing, use `claude-opus-5-5-xhigh` and `grok-4.7-xhigh-fast`. Alias and rejected entries follow the runner rules in the **arena** skill's Phase A.
+
+Design it twice. Require at least two structurally distinct candidates before synthesis, even when the first looks sufficient. This is the **exhaust-the-design-space** principle skill made concrete. Whole-shape alternatives, not point fixes inside one shape.
+
+Screen every candidate against [`references/design-red-flags.md`](references/design-red-flags.md) before synthesis. Assume the next contributor is an agent that sees only the files it opened, copies the nearest example, and takes the shortest path that compiles. Prefer the design where a change that looks right from one file is right for the whole repo.
+
+Compare viable candidates on interface depth. Prefer the design that hides more complexity behind a smaller, simpler public surface. A rich interface can keep call chains short by concentrating capability instead of scattering it across layers.
+
+Arena returns one synthesized design package. Its synthesis decision fills the rationale's "Synthesis decision" section.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase C: Agree (opt-in)
+
+Default: proceed directly to implementation with the synthesized design. No human checkpoint.
+
+Opt in to a checkpoint when the invoker explicitly asks: "/architect with checkpoint," "stop and show me before implementing," or similar. Then surface the synthesized design and pause for sign-off.
+
+The synthesis can ship as its own commit either way, as the "scaffold first" mode of the **foundational-thinking** principle skill. Planned and scoped breakage during fill-in is fine, per the **outcome-oriented-execution** principle skill. For adversarial pressure on the design before implementing, run the **interrogate** skill on the synthesized sketch.
+
+If the human pushes back on the shape (in a checkpoint or after the fact), treat that as Phase A evidence. Re-ground and re-run Phase B before writing more code.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase D: Implement against the sketch
+
+Replace `not implemented` bodies with code, pseudocode with logic. The synthesized sketch is the contract. Deviations from it are signal to surface, not friction to absorb silently. If a function needs a parameter the sketch didn't anticipate, ask whether the sketch was wrong, the requirement was missed, or the implementation is overreaching.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase E: Scrap when the architecture is wrong
+
+If implementation keeps producing friction the sketch can't absorb, throw the sketch out. Don't bolt fixes onto a wrong design, per the **redesign-from-first-principles** and **fix-root-causes** principle skills.
+
+The signal is a *pattern*, not single instances. Tells:
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- The same shape of workaround appearing repeatedly across unrelated code.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Multiple unrelated edge cases that all need special-case branches.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Types that need escape hatches (`any`, casts, optional fields always set in practice) to compile.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- The "we need a lock" reflex when the sketch said the state wasn't shared.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Callers having to know the abstraction's internal rules to use it.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Two or more independent Phase D deviations of the same shape across the implementation.
+
+Use judgment. A few edge cases don't condemn an architecture. Some problems are legitimately complex. Complexity in the data is not complexity in the design.
+
+When you scrap:
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+1. Re-run the **how** skill over what's been built.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+2. Redesign as if the new constraints had been day-one assumptions, per redesign-from-first-principles.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+3. Subtract before adding, per the **subtract-before-you-add** principle skill. The new sketch should be smaller than the old one before it grows.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+4. Return to Phase B and re-run arena.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Outputs
+
+The caller's usage is written first and the type sketch derived from it. One file with new types and signatures for small changes. Module map plus type definitions for larger work. The rationale ships alongside, shaped per `references/rationale-template.md`, including the usage sketch and the synthesis decision.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

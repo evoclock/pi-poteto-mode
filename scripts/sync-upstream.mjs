@@ -6,9 +6,11 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { homedir } from "node:os";
 
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
-export const UPSTREAM_VERSION = "0.15.25";
+export const UPSTREAM_VERSION = "0.15.36";
+export const DEFAULT_UPSTREAM = join(homedir(), ".cursor/plugins/cache/cursor-public/pstack/1ba91fc25c0977741dd0e267849e6234b037ed0a");
 
 export function upstreamSkills(dir) {
   return readdirSync(join(dir, "skills")).filter((n) => statSync(join(dir, "skills", n)).isDirectory()).sort();
@@ -30,7 +32,7 @@ export function compare(upstreamDir, root = ROOT) {
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
-  const dir = process.argv[2];
+  const dir = process.argv[2] || DEFAULT_UPSTREAM;
   if (!dir || !existsSync(join(dir, "skills"))) {
     console.error("usage: node scripts/sync-upstream.mjs <path-to-upstream-pstack>");
     process.exit(2);

@@ -1,6 +1,8 @@
 # pstack ports for Pi: comparison
 
-Date: 18 Oct 2026
+Date: 18 Oct 2026. Historical comparison, not a current certification. The
+current source adaptation targets 0.15.36; see adaptation-guide.md and
+UPSTREAM.lock.json for its scope and deliberate differences.
 
 I compared nine published Pi packages that port pstack against upstream pstack v0.15.25 (54 skills, MIT, published from `cursor/plugins/pstack`).
 
@@ -36,7 +38,7 @@ Skills missing from most packages: sharpen, in-your-own-words, ketchup, benchmar
 - All nine are MIT. Only pi-herdr-pstack and potetos-for-everyone ship a notice file crediting upstream.
 - Upstream itself names specific models. poteto-pi, @0xrsydn/pstack-pi and @mccune1224/pi-pstack add further hardcoded model ids.
 - Two packages write outside their install directory from `postinstall`: @whamp/pi-pstack and potetos-for-everyone.
-- This package covers all 54 upstream skills as `*-pi` adaptations. I did not byte-compare them, because they are adapted for Pi on purpose.
+- At this historical comparison, this package covered 54 source skills as `*-pi` adaptations. That was not instruction-level or runtime parity evidence. Current coverage and limitations are recorded separately in adaptation-guide.md.
 
 ## Name clash
 

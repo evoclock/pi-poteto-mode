@@ -1,21 +1,70 @@
 ---
 name: principle-outcome-oriented-execution-pi
-description: For an approved phased rewrite or migration, aim for a verifiable final architecture rather than accumulating temporary compatibility layers. Use explicitly when planning accepted transition checkpoints.
+description: "Pi adaptation: Apply during planned rewrites and migrations with explicit phase boundaries. Converge on the target architecture; don't preserve smooth intermediate states with throwaway compatibility code."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Outcome-oriented execution
+## Pi adaptation contract
 
-Adapted from Lauren Tan's unchanged `principle-outcome-oriented-execution` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This is a planning and sequencing principle, not permission to break a deployed service, public API, shared branch or another user's workflow. An incomplete migration must not be presented as verified product functionality.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-For an **approved planned rewrite or migration**, name the desired final architecture and its real, observable completion predicate. Break the work into declared phases with owner-approved paths, safe exit and checks. State precisely **where temporary breakage is acceptable**, who owns that surface, how it will be observed, and when it must be resolved. Prefer a reversible, isolated intermediate state that reaches the end state over a throwaway compatibility layer that may outlive the transition. End-state integrity takes precedence over keeping every internal interim step green **only within the explicitly accepted boundary**. An undeclared runtime, customer or security failure is not a planned transition.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Keep high-signal checks on actively touched code during each phase, recording which checks intentionally remain red and why, rather than deleting the tests or changing the oracle. At each boundary inspect the actual changed artifact and fix unexpected breakage before the next unit. At plan completion require the **full relevant static and real runtime/user-path checks** before declaring the migration done. If no approved runtime entry or safe target exists, report completion `blocked`/`unrun` even when unit checks pass; do not paper over this with an adapter or self-report. A safety guard, external compatibility contract or owner-held merge/push gate is not expendable merely because the target design is simpler.
+<!-- pstack-source:start -->
 
-- **Positive BDD:** Given an approved phased migration with a declared isolated breakage window and actual final-state checks, when Pi sequences changes toward the target and checks each affected boundary, then the final static and runtime observations satisfy the initial predicate without leftover temporary compatibility code.
-- **Refusal BDD:** Given undeclared breakage, a shared/public path, missing owner direction, safe exit or runtime check, when a phase would disrupt that surface or claim completion, then retain the existing contract, mark the affected phase `blocked`/`unrun` and do not merge, disable tests or claim the intended outcome.
+<!-- pstack-source:end -->
 
-Explicit Pi discovery is not a completed migration, live runtime proof or Pi skill registration.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+# Outcome-Oriented Execution
+
+Optimize for the intended, verifiable end state rather than preserving smooth intermediate states.
+
+**Why:** Keeping every intermediate step fully stable often creates temporary compatibility code that becomes long-lived debt. Converge on the target architecture and prove correctness at explicit verification boundaries.
+
+**Core rule:**
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Prioritize end-state integrity over transitional stability
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Intermediate breakage is acceptable when it is planned, scoped, and reversible
+
+**Guardrails:**
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Use this for planned rewrites and migrations with explicit phase boundaries
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Declare where temporary breakage is acceptable
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Keep high-signal checks for actively touched areas while migrating
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Require full static and runtime verification at plan completion
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
