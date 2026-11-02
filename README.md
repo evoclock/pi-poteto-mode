@@ -14,9 +14,8 @@ revision restores 58 skill procedures and 23 full playbook files for the
 57 instruction skills; ketchup-video remains planned and unregistered.
 This is an instruction adaptation with declared safety and capability differences,
 not a claim of runtime parity. It adds no extensions, schedulers or installers.
-Packaged for the **0.1.1 release candidate**: complete playbook procedures,
+Packaged since **0.1.1**: complete playbook procedures,
 operator-selected model roles, reasoning budgets and multi-seat panels.
-Publication to npm follows release review.
 
 For what pstack is and how its workflows fit together, read Lauren Tan's
 [upstream pstack README](https://github.com/cursor/plugins/blob/main/pstack/README.md).
