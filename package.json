@@ -1,7 +1,7 @@
 {
   "name": "@evoclock/pi-poteto-mode",
-  "version": "0.1.0",
-  "description": "A faithful port of Lauren Tan's pstack (v0.15.25) skills for the Pi coding agent.",
+  "version": "0.1.1",
+  "description": "Pi instruction adaptations of Lauren Tan's pstack 0.15.36 with explicit safety and capability differences.",
   "type": "module",
   "license": "MIT",
   "author": "Julen Gamboa",
@@ -23,7 +23,8 @@
     "config/pstack-model-roles.v1.example.json",
     "README.md",
     "LICENSE",
-    "NOTICE"
+    "NOTICE",
+    "UPSTREAM.lock.json"
   ],
   "pi": {
     "skills": [
@@ -35,12 +36,14 @@
       "./skills/bro-pi",
       "./skills/correct-pi",
       "./skills/create-verification-skill-pi",
+      "./skills/create-formal-verification-skill-pi",
       "./skills/figure-it-out-pi",
       "./skills/how-pi",
       "./skills/in-your-own-words-pi",
       "./skills/interrogate-pi",
       "./skills/ketchup-pi",
       "./skills/maintain-verification-skill-pi",
+      "./skills/maintain-formal-verification-skill-pi",
       "./skills/make-bot-ui-pi",
       "./skills/no-comments-pi",
       "./skills/poteto-help-pi",
@@ -75,6 +78,7 @@
       "./skills/sharpen-pi",
       "./skills/show-me-your-work-pi",
       "./skills/swarm-pi",
+      "./skills/statechart-pi",
       "./skills/tdd-pi",
       "./skills/teach-pi",
       "./skills/technical-writing-pi",
@@ -86,7 +90,9 @@
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "sync:upstream": "node scripts/sync-upstream.mjs",
-    "adaptation:report": "node scripts/adaptation-report.mjs"
+    "adaptation:report": "node scripts/adaptation-report.mjs",
+    "check:recall": "node scripts/instruction-recall.mjs",
+    "restore:upstream": "node scripts/restore-upstream.mjs"
   },
   "repository": {
     "type": "git",

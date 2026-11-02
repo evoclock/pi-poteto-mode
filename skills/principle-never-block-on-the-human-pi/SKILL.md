@@ -1,21 +1,59 @@
 ---
 name: principle-never-block-on-the-human-pi
-description: When an approved task has routine reversible choices, keep making scoped progress and show the result instead of requesting approval for each small step. Use explicitly when a question would stall execution.
+description: "Pi adaptation: Apply when tempted to ask 'should I do X?' on reversible work."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Never block on the human
+## Pi adaptation contract
 
-Adapted from Lauren Tan's `principle-never-block-on-the-human` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The human supplies product direction and the actual task contract; this principle cannot turn a missing grant into permission. Reversibility means a scoped change can be reviewed and corrected, not that a private-data read, network effect or cleanup becomes harmless.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-Within an accepted goal, paths, data/effect route and stopping point, choose routine reversible implementation details yourself: write scoped code or notes, split already approved session work into verifiable units, run permitted local checks and show the result with a reason. Do not interrupt the owner with “should I do X?” for every ordinary edit. Keep the smallest safe exit and a falsifiable check in view. If a local observation shows a problem, record the actual failure in the approved private trail and correct it in the next **authorized** unit; no automatic background scheduler, new board card, silent replay or speculative fix follows from “self-healing”.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Separate owner-held direction from execution. Ask for a decision when acceptance/product behavior changes, scope or access is missing, a safety constraint conflicts, a negative check fails without a permitted correction, or an action is irreversible (force push, production deletion, external message) and lacks its own exact approval. Continue independent reversible work **within the grant** while that choice waits; do not make the owner-held choice by default. If no safe independent unit remains, stop with the precise blocker and evidence, rather than mislabelling an unrun path done. Even when a push or PR is expressly authorized, verify its specific destination and outgoing content; no merge is implied.
+<!-- pstack-source:start -->
 
-- **Positive BDD:** Given an approved task with several ordinary reversible units and a defined stop, when Pi makes a scoped implementation choice, checks it and presents its result without repeated permission requests, then accepted work advances and genuine owner decisions remain explicit.
-- **Refusal BDD:** Given missing product direction, data/effect access, safe exit or approval for an irreversible act, when the next step needs that boundary, then do only independent approved work or mark it `blocked`/`unrun`; do not force-push, delete, send, merge or invent authority from this principle.
+<!-- pstack-source:end -->
 
-Reading this skill does not authorize unattended execution, Pi registration or a completed user journey.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+# Never Block on the Human
+
+The human supervises asynchronously. Agents must stay unblocked. Make reasonable decisions, proceed, and let the human course-correct after the fact. Since code changes are reversible and reviewable, a wrong decision usually costs less than blocking.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Proceed, then present. Do the work, show the result. Don't ask "should I do X?" Do X, explain why.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Make the system self-healing. When you notice a problem, log it and fix it in the next round.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Irreversible actions (force-push, delete production data, send external messages) still require confirmation.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Reversible actions (write code, edit notes, split tasks) should proceed without blocking.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Product direction comes from the human. Execution should not block.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

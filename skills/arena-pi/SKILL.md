@@ -1,48 +1,122 @@
 ---
 name: arena-pi
-description: Compare separately produced candidate solutions to one approved non-trivial Pi task, cross-judge against a rubric, select a base, graft only the best parts and verify the synthesized result. Use explicitly when one attempt could lock in the wrong shape.
+description: "Pi adaptation: Spawn N parallel candidates at the same task, pick a base, graft the strongest parts of the losers into it. Use for /arena, 'arena this', 'throw it in the arena', or when one attempt at a non-trivial artifact would lock in the wrong shape."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Arena for Pi
+## Pi adaptation contract
 
-Adapted from Lauren Tan's pstack `arena` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Preserve Frame → Fan out → Cross-judge → Pick → Graft → Verify. Do not import Cursor `Task` defaults, Cursor model rules, background fan-out or `/tmp/arena-*`. Read `../how/WORKFLOW_BOUNDARIES.md` first.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-## Before launching candidates
+Read ordered `arena runners` and `arena cross-judge pool` lists from the project-local role map via setup-pstack-pi; never substitute core roles for missing lists. Start one candidate per runner entry, retaining duplicate seats. Select only the first eligible cross-judge entry from a different verified or operator-confirmed model family than the parent; a shared provider does not imply the same model family. Apply the configured native budget effort to each worker through a supported Pi control, or block that worker. Start configured candidate Pi panes with agentic_herdr_spawn_worker, each on its own Treehouse lease; submit identical bounded briefs with agentic_herdr_communication and inspect delivery/read reports. Keep rubric hidden and the judge independent from the parent family. Do not inherit a model or add source-default fallback seats. If diversity is unavailable, report the judge unrun and follow the source explicit self-pick disclosure, never claim an independent verdict.
 
-Use the approved task contract, exact repository and revision, effect/data boundary, capacity, candidate paths, artifact rubric, budget and stopping point. An arena is not permission to create a new assignment or choose a provider. Resolve required roles through `/skill:setup-pstack-pi`; confirm the actual author and `independent-review` identities differ. Any additional candidate role and its model/data grant must be selected by the owner and validated before use. Do not turn the independent reviewer into a second author to manufacture model diversity, or silently reuse the development role as a supposedly diverse model. If no approved isolated candidate routes exist, produce a labelled single-author comparison proposal and mark the multi-candidate run `blocked`. The same independent-review role may cross-judge finished candidates **in a fresh read-only context** if the task permits it; a later final-artifact reviewer must use a **different fresh context** after synthesis. Cross-judging never satisfies final exact-artifact Standards/Spec review or separate user-path QA.
+<!-- pstack-source:start -->
 
-Use Pi session tasks to track the six phases when loaded; otherwise keep a visible six-phase checklist in the approved task evidence. A workspace lease is an ownership boundary, not runtime containment. Candidate writes require separate approved work locations and exact assigned paths; read-only candidates can use separate contexts with the same fixed inputs. Do not create worktrees, spawn workers, install packages, delete candidates, publish, open a PR or merge by implication. The repository owner alone merges.
+<!-- pstack-source:end -->
 
-## A. Frame
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-1. State the **one** artifact each candidate must produce and the exact shared brief. Derive 3–6 observable, task-specific criteria for comparing it. Candidates see the same task, grounding and input revision; the rubric is for selection and the cross-judge. State any invariant a candidate must not violate and the real verification seam.
-2. Choose the number of candidates and distinct authorized routes based on the task's budget. Do not quietly start more workers or select fallback identities when a route refuses. Use separate, approved output locations; preserve and label incomplete or missing results.
+<!-- pstack-source:start -->
+# Arena
 
-## B. Fan out
+Open a todolist with one entry per phase (Frame, Fan out, Cross-judge, Pick, Graft, Verify) before launching anything.
 
-Within the already approved Pi coordinator/worker interface, dispatch each candidate once with the identical contract, its own output destination and a request for rationale and rejected alternatives. Confirm the actual candidate artifact exists and its exact revision/content identity; a worker receipt or self-report is not the artifact. If a candidate drops out, record the failure and continue with fewer only if the approved rubric still permits a meaningful comparison. With one candidate, stop the arena selection and label the comparison `unrun`.
+<!-- pstack-source:end -->
 
-## C. Cross-judge
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-After candidate writes finish, give a separately approved, read-only `independent-review` context the same rubric and immutable candidate artifacts, labelled by path, to score each criterion and recommend a base with reasons. Do not let the judge edit candidates or spawn them. If the reviewer is missing, unavailable or not distinct from the authors, mark cross-judging `blocked`; a self-score is not an independent verdict.
+<!-- pstack-source:start -->
+## Phase A: Frame
 
-## D. Pick
+Every candidate gets the same prompt, so the prompt is the contract.
 
-Read **every** candidate in full. Score each criterion against actual evidence, independently of the cross-judge; then compare recommendations. If they disagree, inspect the disputed criterion before deciding. Prefer a base whose boundary and interface are easier for the next maintainer to extend. Convergence can justify a shared shape; wild divergence may mean the brief is underspecified, in which case reframe within scope rather than averaging incompatible designs.
+<!-- pstack-source:end -->
 
-## E. Graft
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Identify at most the few genuinely useful parts of losing candidates. Fold them deliberately into the selected design so it retains one coherent ownership model. Do not paste competing implementations or recreate parallel sources of truth. Preserve which candidate supplied each graft and why another idea was rejected. Changes to effects, data routes or accepted specification require an owner decision.
+<!-- pstack-source:start -->
+1. State the artifact each candidate is producing.
+<!-- pstack-source:end -->
 
-## F. Verify and hand back
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Run the approved checks on the **synthesized** artifact, not a losing candidate's test report. A failure due to a wrong task frame returns to A; a missed useful candidate idea returns to E. Record the base choice, cross-judge verdict, each graft, rejected alternatives, convergence/dropouts, actual verification output and unrun paths. After synthesis, run independent exact-artifact Standards and Spec review in fresh contexts **separate from the cross-judge context** through the configured different-model reviewer; user-path QA is also separate. Neither a cross-judge verdict nor this method certifies those checks.
+<!-- pstack-source:start -->
+2. Derive the rubric, 3-6 concrete gradeable criteria for what success looks like on *this* task. It is the picker's tool in Phase D. Candidates only see the task.
+<!-- pstack-source:end -->
 
-- **Positive BDD:** Given one approved task, at least two authorized isolated candidate routes and a distinct read-only judge, when Pi runs the six phases, then two real artifacts are compared criterion by criterion, a base and justified grafts produce one checked artifact, and the evidence names both successes and failures.
-- **Refusal BDD:** Given no approved distinct candidate capacity, writable isolation, reviewer, budget or effect route, when the next phase would require it, then the missing phase is `blocked`/`unrun` without a substitute provider, invented verdict, shared-write race, hidden install or external action.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-The skill can be explicitly discovered and reviewed without running an arena. That is **not** positive BDD or Pi loading evidence.
+<!-- pstack-source:start -->
+3. Pick the runners. Use the `arena runners` line in `~/.cursor/rules/pstack-models.mdc`. If the rule or that line is missing, default to one each on `claude-opus-5-5-xhigh` and `grok-4.7-xhigh-fast`. An `auto` or `inherit-parent` entry in this line means the parent model, so omit `model` for it. If the Task tool rejects a configured entry, run that seat on its family's default and say so. Families go by prefix: `claude-*`, and `grok-*` with `cursor-grok-*` and `composer-*`. A refused `composer-*` entry runs on `grok-4.7-xhigh-fast`. If the family has no default, or the Task tool rejects that default, use the closest valid slug of the same family from its error message, or drop the seat and say so when there is none. If dropped seats leave fewer than two runners, add runners until there are two, or one when the line has one entry. Run each added runner on a remaining runner's model, or omit `model` so it runs on the parent model when none remain, and say so. Spawn more runners when the arena covers multiple design directions. Use the same model N times when the work is generation-bound rather than judgment-sensitive. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+4. Give each candidate its own output location (a git worktree where possible, otherwise `/tmp/arena-<slug>/candidate-<n>/`), per the **separate-before-serializing-shared-state** principle skill.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase B: Fan out
+
+Spawn all N subagents in one message with `run_in_background: true`, each with the task, the path to the shared grounding, its own output path, and instructions to produce the artifact and a short rationale naming the alternatives it considered and what it rejected.
+
+If a candidate produces no output, proceed with N-1 and note the dropout.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase C: Cross-judge
+
+After all Phase B candidates complete, choose one model from the `arena cross-judge pool` line in `~/.cursor/rules/pstack-models.mdc`. If the rule or that line is missing, choose from `claude-opus-5-5-xhigh` and `grok-4.7-xhigh-fast`. Spawn one readonly judge subagent. The judge is never from the parent's family, as Phase A step 3 defines families. Try only the entries from another family, in pool order. An `auto` or `inherit-parent` entry is the parent model, so it never judges. With the default pool, a Claude parent gets `grok-4.7-xhigh-fast`. A parent from any other family gets `claude-opus-5-5-xhigh` first. If the Task tool rejects an entry, use a valid slug of the same model at the closest level or speed from the error message, or move to the next entry when there is none. If no entry from another family runs, try the default pool's entries from another family the same way. If none of those runs, skip the judge, pick the base alone in Phase D, and say so. If you do not know the parent's model, try the pool's real slugs in pool order and say that the family check did not run. The judge sees the rubric and the candidates by path label, scores each criterion, and recommends a base with rationale. It runs in parallel with your reading in Phase D. Don't spawn it while candidates are still writing.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase D: Pick a base
+
+Read every candidate end to end before picking. Score each against the rubric criterion by criterion, not on holistic feel, and compare with the cross-judge when Phase C ran one. Agreement on the base confirms the pick. Disagreement means one of you is biased or the rubric was ambiguous. Read both rationales before deciding.
+
+Pick the base a future maintainer can extend most easily without breaking invariants. When two feel tied, prefer the cleaner boundary or smaller API, per the Laziness Protocol.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase E: Graft
+
+Walk each losing candidate once more for what is worth porting into the base, usually one or two things per candidate, not most of it. Fold each graft in by hand, per the **redesign-from-first-principles** principle skill, so the result stays coherent under one mental model. Don't paste mechanically.
+
+If the candidates converge on one shape, that is strong agreement. Note it and ship the consensus shape. No graft is needed. If they wildly diverge, Phase A was under-specified. Reframe and re-run rather than averaging the divergence.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase F: Verify
+
+Verify the synthesized artifact like any other output, per the **prove-it-works** principle skill. If verification finds a problem the arena missed, either Phase A was wrong (re-frame and re-run) or a candidate caught it and you missed the graft (go back to Phase E). Don't paper over it.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Outputs
+
+One synthesized artifact, with a short synthesis note alongside naming the base and why, the cross-judge's verdict or that Phase C skipped the judge, each graft with its source candidate, what was rejected and why, any convergence or dropouts, and the verification result.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

@@ -5,10 +5,11 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { compare } from "../scripts/sync-upstream.mjs";
+import { sourceProcedure } from "../scripts/instruction-recall.mjs";
 
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const pkg = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8"));
-const upstream = JSON.parse(readFileSync(join(ROOT, "tests/fixtures/upstream-0.15.25-skills.json"), "utf8"));
+const upstream = JSON.parse(readFileSync(join(ROOT, "tests/fixtures/upstream-0.15.36-skills.json"), "utf8"));
 const skillDirs = readdirSync(join(ROOT, "skills")).filter((n) => n.endsWith("-pi"));
 
 function walk(dir) {
@@ -16,13 +17,14 @@ function walk(dir) {
 }
 const textFiles = walk(join(ROOT, "skills")).concat(["README.md", "docs/pstack-pi-ports-comparison.md", "docs/adaptation-guide.md", "config/pstack-model-roles.v1.example.json"].map((f) => join(ROOT, f)));
 
-test("every upstream pstack 0.15.25 skill has a port and the manifest lists it", () => {
-  assert.equal(upstream.length, 54);
+test("every upstream pstack 0.15.36 skill has an instruction port or explicit planned status", () => {
+  // Why: the video procedure must not be registered as an available renderer.
+  assert.equal(upstream.length, 58);
   for (const name of upstream) {
     assert.ok(skillDirs.includes(`${name}-pi`), `missing ${name}-pi`);
-    assert.ok(pkg.pi.skills.includes(`./skills/${name}-pi`), `manifest lacks ${name}-pi`);
+    assert.equal(pkg.pi.skills.includes(`./skills/${name}-pi`), name !== 'ketchup-video', name);
   }
-  assert.equal(pkg.pi.skills.length, 54);
+  assert.equal(pkg.pi.skills.length, 57);
 });
 
 test("each SKILL.md has valid frontmatter whose name matches its folder", () => {
@@ -38,14 +40,28 @@ test("each SKILL.md has valid frontmatter whose name matches its folder", () => 
   }
 });
 
-test("no model names or personal paths in shipped text", () => {
+test("no operational model defaults, personal paths or secrets in shipped text", () => {
+  // Why: exact locked upstream examples are evidence, never Pi role defaults.
+  const snapshot = JSON.parse(readFileSync(join(ROOT, 'tests/fixtures/upstream-0.15.36.json'), 'utf8'));
   // Public list: model names, personal paths and secrets. Private names (people, bots,
   // internal projects) go in a gitignored scan-terms.local.json: ["name", ...].
   const local = existsSync(join(ROOT, "scan-terms.local.json")) ? JSON.parse(readFileSync(join(ROOT, "scan-terms.local.json"), "utf8")) : [];
   const words = ["opus", "sonnet", "haiku", "claude", "gpt-?\\d*", "gemini", "grok", "codex", "copilot", "glm-?\\d*", "llama", "mistral", "qwen", "deepseek", "kimi", "anthropic", "openai", "xai", ...local.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))];
   const banned = new RegExp(`\\b(${words.join("|")})\\b|\\/Users\\/|\\/home\\/[a-z]|~\\/\\.pi\\/agent|(api[_-]?key|secret|token|password)\\s*[:=]\\s*\\S{8,}|sk-[A-Za-z0-9]{20,}|gh[pousr]_[A-Za-z0-9]{20,}`, "i");
   for (const f of textFiles) {
-    const hit = readFileSync(f, "utf8").replaceAll("@evoclock/pi-poteto-mode", "").replaceAll("Grok Bot", "").replaceAll("evoclock/pi-poteto-mode", "").match(banned); // the npm scope is allowed
+    const raw = readFileSync(f, 'utf8');
+    const relative = f.slice(ROOT.length);
+    const source = sourceProcedure(raw);
+    if (source) {
+      const skill = relative.match(/^skills\/([^/]+)-pi\/SKILL\.md$/)?.[1];
+      const playbook = relative.match(/^skills\/poteto-mode-pi\/playbooks\/([^/]+)\.md$/)?.[1];
+      const expected = skill ? snapshot.skills[skill].replace(/^---\n[\s\S]*?\n---\n/, '') : playbook ? snapshot.playbooks[playbook] : snapshot.references[relative];
+      assert.equal(source, expected, `unverified source block: ${relative}`);
+    }
+    const scanned = source ? raw.replaceAll('/Users/you/proj', '<upstream-placeholder>') : raw;
+    assert.doesNotMatch(scanned, /\/Users\/|\/home\/[a-z]|sk-[A-Za-z0-9]{20,}|gh[pousr]_[A-Za-z0-9]{20,}/, relative);
+    const adapted = raw.replace(/<!-- pstack-source:start -->\n[\s\S]*?<!-- pstack-source:end -->\n/g, '');
+    const hit = adapted.replaceAll('@evoclock/pi-poteto-mode', '').replaceAll('Grok Bot', '').replaceAll('evoclock/pi-poteto-mode', '').match(banned);
     assert.equal(hit, null, `${f}: ${hit && hit[0]}`);
   }
 });
@@ -61,6 +77,7 @@ test("package has no install scripts", () => {
 });
 
 test("npm pack contents are the whitelist only", () => {
+  // Why: provenance must ship without leaking test baselines or authoring helpers.
   const out = JSON.parse(execFileSync("npm", ["pack", "--dry-run", "--json"], { cwd: ROOT, encoding: "utf8" }));
   const files = out[0].files.map((f) => f.path);
   const diagrams = [
@@ -68,17 +85,18 @@ test("npm pack contents are the whitelist only", () => {
     "assets/pi-coding-system.html",
     "assets/pi-poteto-mode-routing.png",
   ];
-  assert.ok(files.every((f) => diagrams.includes(f) || /^(skills\/|config\/pstack-model-roles\.v1\.example\.json$|README\.md$|LICENSE$|NOTICE$|docs\/pstack-pi-ports-comparison\.md$|docs\/adaptation-guide\.md$|package\.json$)/.test(f)), files.join(","));
+  assert.ok(files.every((f) => diagrams.includes(f) || /^(skills\/|config\/pstack-model-roles\.v1\.example\.json$|README\.md$|LICENSE$|NOTICE$|docs\/pstack-pi-ports-comparison\.md$|docs\/adaptation-guide\.md$|UPSTREAM\.lock\.json$|package\.json$)/.test(f)), files.join(","));
   for (const diagram of diagrams) assert.ok(files.includes(diagram), `missing ${diagram}`);
   assert.ok(!files.some((f) => f.includes("node_modules") || f.startsWith("tests/") || f.startsWith("scripts/")));
   assert.ok(files.includes("skills/how/LICENSE"));
 });
 
 test("sync script reports drift against an upstream copy", () => {
+  // Why: a newer source inventory must still report unrelated or missing slugs.
   const r = compare(join(ROOT, "tests/fixtures/upstream"));
   assert.equal(r.version, "9.9.9");
   assert.deepEqual(r.missing, ["alpha", "beta"]);
-  assert.equal(r.extra.length, 54);
+  assert.equal(r.extra.length, 58);
 });
 
 test("adaptation report finds each feature in an upstream copy", async () => {

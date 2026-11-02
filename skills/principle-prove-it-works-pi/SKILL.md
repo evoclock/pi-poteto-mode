@@ -1,21 +1,61 @@
 ---
 name: principle-prove-it-works-pi
-description: Before declaring an approved task done, check the actual output, value or feature at its real entry rather than trusting proxies or an agent report. Use explicitly for a completion claim.
+description: "Pi adaptation: Apply after completing a task, before declaring done. Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.'"
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Prove it works
+## Pi adaptation contract
 
-Adapted from Lauren Tan's `principle-prove-it-works` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This is the direct-artifact completion rule, not permission to start an app, instrument a host, install a verifier, write to an unapproved evidence location or mark a task done. A separately loaded journey-verification method details user-facing BDD drives when that method is actually loaded and the target/effects are approved.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-Before saying done, name the **real output** and the owner's observable pass/fail predicate. Check that output directly at the approved entry: inspect the actual changed value or Git diff, exercise the real feature if its target is granted, and check process liveness at the process rather than a derived status. A file mtime, fresh-looking output, cached screenshot, passing compile, worker receipt or self-report is a lead, not the result. Compare the observed value to an independent expected value, not to the same algorithm's echo. When verification fails or passes implausibly easily, first challenge the observation method and make sure the check reached the target; then diagnose the product if the measurement seam is sound. Record both consequential accepted and refusal paths where the task requires them.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Where an approved, deterministic check is practical, prefer a rerunnable script or existing harness over a one-off eyeball: inspect inventory/prior art before new code, run it against a known good and bad case if possible, and retain its exact output as a reviewable private artifact. **Do not author a script merely to assert its own output**, hide an install, or run effects outside the task. Keep evidence visible to the owner. Commit a check/evidence artifact only for large or complex work where an audit trail is warranted **and the Git scope is separately approved**; ordinary verification does not self-commit. If a real target or effect grant is absent, show what source/static checks ran and label the live claim `blocked`/`unrun`, not verified.
+<!-- pstack-source:start -->
 
-- **Positive BDD:** Given an approved completed task, real target and independent expected result, when Pi observes the actual output or user-path behavior and rechecks it through a meaningful rerunnable seam, then the completion claim cites the exact artifact and successful accepted/refusal observations rather than proxies.
-- **Refusal BDD:** Given only a compile, fixture, cached view, receipt, inaccessible real entry or unapproved effect, when completion is requested, then identify the missing direct check, mark the real path `blocked`/`unrun` and do not invent a pass, run an app, commit evidence or declare owner acceptance.
+<!-- pstack-source:end -->
 
-A source-inspected or discoverable skill is not a live Pi verification journey.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+# Prove It Works
+
+Verify every task output by checking the real thing directly. Do not infer from proxies, self-reports, or "it compiles."
+
+**Why:** Unverified work has unknown correctness. Indirect verification (file mtimes, output freshness, agent self-reports, cached screenshots) feels cheaper than direct observation. Acting on a wrong inference costs far more than checking the source.
+
+Check the real thing, not a proxy:
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Check process liveness directly, not indirectly through derived state
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Read the actual value, not a cached or derived representation
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- When verification fails, suspect the observation method before suspecting the system
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Script the check when you can
+
+The strongest proof is a deterministic script that re-runs the same comparison, not a one-time eyeball. Write the script, run it, and keep its output as an artifact a reviewer can re-run instead of trusting your word.
+
+Keep the artifact visible for the human. Commit it only for large or complex work where the trail has to be auditable later, like a big port or migration (the **show-me-your-work** skill).
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

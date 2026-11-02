@@ -1,29 +1,125 @@
 ---
 name: swarm-pi
-description: For an approved bounded parallel investigation or comparison, split independent slices or race identical briefs, then reconcile every result into one evidence-backed report. Use explicitly for a swarm request.
+description: "Pi adaptation: Fan out N parallel workers, drain them, and return one report. Use for /swarm, 'swarm this', or parallel coverage, races, gauntlets, and exploration."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Swarm for Pi
+## Pi adaptation contract
 
-Adapted from Lauren Tan's `swarm` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. This method is **not** a worker, cloud environment, capacity, containment or model-selection grant. The Cursor source's default worker provider, `auto`/parent fallback, cloud/local switch, `cloud_base_branch` and background `Task` calls are not Pi APIs. A workspace lease is not runtime isolation, and a worker report cannot authorize effects or certify the result.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-## Frame before fan-out
+Read the scalar `swarm workers` identity from the project-local role map through setup-pstack-pi; use it for each worker unless the operator explicitly approves a per-arm identity for a race/comparison. Never fall back to a core role. Apply the approved native budget effort with a supported Pi session control, or block the affected worker. Use distinct Pi workers in Herdr panes via agentic_herdr_spawn_worker on Treehouse leases. Send disjoint coverage briefs via agentic_herdr_communication and inspect artifacts, not just reports. Keep the real-surface lane and current head receipts; if a driver or required model role is missing, mark that lane blocked. No cloud environment or automatic model fallback.
 
-Use the already loaded Pi session tasks for four phases — **Frame, Fan out, Aggregate, Report** — when available; otherwise keep a local checklist within an approved evidence file, not a second board. Name one done predicate, exact report/artifact, repository base/revision, data/effect route, worker budget and safe stop. Choose **partitioned independent slices**, a **race** of identical briefs, or a declared mixed shape. Before launching any race name its selection rule: `first pass`, `rank all` or `best-of`, with a real comparison check; never choose a winner post hoc. Set N and worker role/identity from the owner-approved project map through `/skill:setup-pstack-pi` and verify actual Pi worker capacity/data route; a missing or rejected role is `blocked`, not an invented default or alternate model. A model race needs each explicitly approved arm and budget, not the role map's one default.
+<!-- pstack-source:start -->
 
-## Fan out with owned outputs
+<!-- pstack-source:end -->
 
-Only after a Pi coordinator/worker route and isolation appropriate to the effects are approved, give each worker a **self-contained** goal, exact slice or common race brief, allowed paths, do-not-touch fence, immutable base/SHA, success and negative check, private output path and report shape. Distinct writing workers own distinct files/branches; a shared writer uses its existing trusted claim/serialization route, not hopeful instructions. For any measurement name sample count, one sample, ordering and independent oracle **in the brief**. Launch bounded independent jobs only within granted N and capacity; no automatic cloud instance, external provider, local host access or extra terminal/tab follows. Reports must state `PASS`, `ISSUES` or `BLOCKED`, cite their exact SHA and method, and list **all** proved issues for the slice. A completion receipt is not the report.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-## Aggregate and hand back
+<!-- pstack-source:start -->
+# Swarm
 
-Read each attributed terminal result and verify decisive evidence against source or the authorized real check. Discard a result missing its required SHA/method; an unsupported `PASS` is a gap. If a worker drops out, report N-1 coverage and the missing slice; **every required slice** needs real evidence before complete coverage. A new attempt after a malformed report requires an explicit permitted retry with reconciled state; never blindly resend an accepted effect. For a race use the preregistered selection rule and actual comparable outputs; do not call a lucky first response the winner without its predicate. Reconcile contradictions, include one table of statuses, issue one-liners, dropouts/unrun checks and the declared race rule. Do not paste raw private worker dumps into public copy. Owner-only merge, independent exact-artifact review and real Pi/user QA stay separate.
+<!-- pstack-source:end -->
 
-- **Positive BDD:** Given an approved parallel task, distinct worker scopes/routes and budget, when Pi fans out self-contained briefs and checks every returned SHA, method and observable result, then one report covers all required slices or selects the race winner by its declared verified rule with gaps explicit.
-- **Refusal BDD:** Given no role/capacity/data route, overlapping writes, uncertain effect, missing worker result/SHA or unapproved retry, when fan-out or aggregation depends on it, then mark that slice `blocked`/`unrun`, do not spawn a fallback, replay an effect, invent consensus or report a partial swarm as complete.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-A discoverable skill or accepted dispatch receipt is not an executed swarm, verified worker result or Pi session.
+<!-- pstack-source:start -->
+## Start
+
+Open a todolist with one entry per phase before launching anything.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+1. Frame
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+2. Fan out
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+3. Aggregate
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+4. Report
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase A: Frame
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+1. State the done predicate and the artifact or report the swarm must return.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+2. Choose the shape. Partition into slices, race N workers on identical briefs, or mix both. For a race or mixed shape, declare `first pass`, `rank all`, or `best-of` before spawning.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+3. Pick the worker model from the `swarm workers` line in `~/.cursor/rules/pstack-models.mdc`. If the rule or that line is missing, use `grok-4.7-xhigh-fast`. For `auto` or `inherit-parent`, omit `model` so the workers run on the parent model. If the Task tool rejects a slug, use the default and say so. If it rejects the default, use the closest valid slug of the same family from its error message. For a model race, name each arm's model up front. Pick each subagent's reasoning level and fast or standard speed for the job, per the Subagents section of the **poteto-mode** skill.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+4. Give each worker its own writable output when it writes. When workers verify or measure commits, each brief names the exact SHAs. A measurement brief also names the method (sample count, what one sample is, order). The worker records both in its result.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase B: Fan out
+
+Spawn all N workers in one message with `subagent_type: generalPurpose`, `environment: "cloud"`, `run_in_background: true`, and the step 3 model, left unset for `auto` or `inherit-parent`. Use `environment: "local"` only when the worker needs access to something on the user's computer.
+
+When a worker must start from a non-default pushed branch, pass `cloud_base_branch`.
+
+Every brief stands alone. Include the goal, scope, exact slice or race arm, how to verify, and what to report. Reports use `PASS`, `ISSUES`, or `BLOCKED` with evidence. A worker that can prove a defect reports `ISSUES` and lists every issue it can prove, not only the first.
+
+If a worker drops out, proceed with N-1 and note it.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase C: Aggregate
+
+Read the terminal results. Drop a result that does not record the SHAs and method its brief names, and respawn that worker once. After a second miss, record a gap. A gap does not count as a pass. For coverage, every required slice needs a result. For a race, apply the selection rule declared up front. Use first pass, rank all, or best-of. Do not paste raw worker dumps.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+## Phase D: Report
+
+Return one consolidated in-chat report with a result table, issue one-liners, gaps or dropouts, and the race rule when used.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

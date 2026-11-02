@@ -1,21 +1,47 @@
 ---
 name: principle-type-system-discipline-pi
-description: For an approved typed boundary or function signature, model distinct semantic primitives and variants, parse external data once and derive owned shapes from authoritative schemas. Use explicitly before adding typed code.
+description: "Pi adaptation: Apply when designing types, reviewing a function signature, or writing code in any statically-typed language. Make illegal states unrepresentable, brand semantic primitives, parse external data at boundaries, exhaust variants, derive from authoritative schemas."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Type system discipline
+## Pi adaptation contract
 
-Adapted from Lauren Tan's **pinned live** `principle-type-system-discipline` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The live source differs from the preserved installed body, so preserve the live brand/boundary/schema rules rather than silently substituting older examples. Compiler types help reject impossible states, mismatched primitives and unhandled variants **inside typed code**; a type is not runtime validation, containment or authorization. For TypeScript syntax consult a reviewed `typescript-best-practices-pi` only when it actually loads, not a planned command.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-For an approved model or signature, give distinct semantic values distinct types: a `UserId` and `OrderId` may both be strings, but a branded intersection/newtype can prevent swapping them. Validate input at creation; downstream code may trust the typed value **only when every relevant outside caller passed the actual parser**. Treat RPC, JSON, IPC, CLI, config, environment and database rows as untyped until an explicit boundary parser validates and narrows them. Name invalid-input errors and exercise both accepted and rejected values at the actual entry; do not assume a compiler checked an external payload. If a union represents a finite set of legal variants, require an exhaustive typed decision and check that adding a variant reveals unhandled code rather than falling into a silent default.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Where a protocol buffer, OpenAPI/GraphQL schema, migration, design-token file or another reviewed artifact **owns** a shape, derive the program type from it rather than maintain a second hand-written definition. Inspect ownership, generator prior art and update path before introducing generated code; no dependency install or schema migration is granted by this principle. Prefer a domain model that eliminates redundant special-case handling, but keep load-bearing runtime guards until actual ingress parsing and caller coverage are proved. If no schema exists or a file is out of scope, name the gap rather than inventing authority or rewriting every caller.
+<!-- pstack-source:start -->
 
-- **Positive BDD:** Given an approved typed domain with a real external input and authoritative shape where present, when Pi brands distinct IDs, parses accepted/invalid data at entry and checks finite variants exhaustively, then mismatched semantics and new unhandled cases fail at type/test seams while real invalid input is rejected at runtime.
-- **Refusal BDD:** Given unverified outside callers, absent schema ownership, no edit/parser grant or only compile-time evidence of external validation, when a guard is removed or a generated type is proposed, then leave the boundary intact, mark that step `blocked`/`unrun` and do not claim types alone protect runtime behavior.
+<!-- pstack-source:end -->
 
-This Pi skill is not a runtime parser test, installed generator or Pi session proof.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+# Type System Discipline
+
+Make the compiler reject impossible states, mismatched primitives, and unhandled variants. Prefer defining errors and special cases out of existence over proliferating handlers. For TypeScript syntax, see the `typescript-best-practices` skill.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **Brand semantic primitives.** `UserId` and `OrderId` are strings underneath but should not be interchangeable. Give each its own type, such as a branded intersection in TypeScript or a newtype elsewhere. Validate once at creation, trust the type downstream. If two arguments share a primitive type but mean different things, brand them.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **External data is untyped until parsed.** RPC payloads, JSON, IPC messages, CLI args, config files, environment variables, database rows. Have a parse function at every boundary that turns unstructured input into the typed model. The **boundary-discipline** principle skill says where to put validation.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **Derive types from authoritative schemas.** When a protocol buffer, OpenAPI spec, GraphQL schema, database migration, design-token file, or another file owns a shape, derive from it instead of hand-rolling a parallel type. See the **encode-lessons-in-structure** principle skill.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

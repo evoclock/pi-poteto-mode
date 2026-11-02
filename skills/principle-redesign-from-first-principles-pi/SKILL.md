@@ -1,21 +1,55 @@
 ---
 name: principle-redesign-from-first-principles-pi
-description: When an approved new requirement changes an existing design invariant, reason from that requirement as if it had been foundational and propagate its consequences. Use explicitly before an architectural bolt-on.
+description: "Pi adaptation: Apply when integrating a new requirement into an existing design."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Redesign from first principles
+## Pi adaptation contract
 
-Adapted from Lauren Tan's `principle-redesign-from-first-principles` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. A redesign thought experiment does **not** grant a broad rewrite, public-document edit, worker fan-out or a new owner decision. Distinguish this from challenging a failed assumption: here an **accepted new requirement** changes the intended design.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-Read the affected design, entry points, callers and contracts **within the granted repository/data range**. State the original invariant, the new accepted requirement and their conflict. Ask: “If this new requirement had been foundational, what design would we choose?” Compare the resulting domain shape, ownership and boundary to a local bolt-on and to the current design; name what the existing design already does well. Trace the chosen change through all relevant **approved** references: types, code, tests, documentation, examples and rationale/decision sections. Do not update public docs with private rationale or silently widen the approved file scope. If an affected reference is inaccessible, name it and hold the affected completion claim rather than assert full propagation.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Think through the whole resulting shape and its compatibility/one-way-door costs **before editing**, then implement only owner-approved small, independently checkable increments toward it. Keep behavior-level checks for both the accepted requirement and existing supported paths; a speculative rewrite that merely relocates code is not a first-principles outcome. Where the task settles only a design proposal, stop at that proposal with evidence and owner-held choices. If no grant covers a needed migration, do not bolt on an unsafe interim adapter or claim the final design already exists; mark that phase `blocked`/`unrun`.
+<!-- pstack-source:start -->
 
-- **Positive BDD:** Given an owner-accepted new requirement that changes a proved invariant and accessible affected references, when Pi compares a from-scratch design with a bolt-on and propagates the chosen scoped design in verifiable increments, then approved tests and real entry observations support both the new behavior and retained compatibility without divergent assumptions.
-- **Refusal BDD:** Given no accepted design direction, incomplete affected-file access, missing edit/runtime scope or an unapproved public documentation path, when a broad redesign or completion claim is proposed, then provide only an evidence-backed design option, mark affected work `blocked`/`unrun` and leave owner-held choices intact.
+<!-- pstack-source:end -->
 
-A reviewed principle draft does not mean a production redesign, deployment or live Pi test happened.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+# Redesign From First Principles
+
+When integrating a change, don't bolt it onto the existing design. Redesign as if the requirement had been a foundational assumption from the start.
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Read all affected files and understand the current design
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Ask: "if we were writing this from scratch with this new requirement, what would we build?"
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Propagate the change through every reference: types, docs, examples, rationale sections
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- Think about the whole redesign, then deliver it incrementally
+
+This is the method for preserving option value when integrating changes into an existing design.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

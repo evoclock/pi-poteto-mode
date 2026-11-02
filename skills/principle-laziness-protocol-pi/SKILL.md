@@ -1,21 +1,39 @@
 ---
 name: principle-laziness-protocol-pi
-description: For an approved refactor or proposed new layer, consolidate repeated decisions and choose the smallest behavior-preserving change. Use explicitly before expanding a diff.
+description: "Pi adaptation: Apply when refactoring, evaluating diff size, or tempted to add abstractions, layers, or signal threading. Bias toward deletion and the smallest change that solves the problem."
 disable-model-invocation: true
 license: MIT; see ../how/LICENSE
 ---
 
 > Adapted from pstack by Lauren Tan (MIT).
 
-# Laziness protocol
+## Pi adaptation contract
 
-Adapted from the **pinned live** Lauren Tan `principle-laziness-protocol` at `cursor/plugins@99743e9c151c8537cbbf1f98bb38f34ef3368453` (MIT). Read `../how/WORKFLOW_BOUNDARIES.md`. The live body has only two rules: consolidate decisions and minimize the diff. The older installed source has extra flat-hierarchy and signal-threading advice; do not turn those older thresholds into mandatory Pi rules. Shorter code is a goal only after behavior, compatibility and safety remain intact; line count is a diagnostic, not a veto.
+Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-For an approved change, find each place that makes **the same choice**. If these are truly one policy decision, choose the actual owner and compute it once there; pass the result as a simple flag to consumers that need it, instead of duplicating the choice. First check prior art, callers, inputs and effects to avoid creating a new global singleton or leaking policy across a trust boundary. If the decisions have different owners or timing, keep them separate and explain why.
+Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
 
-Compare the smallest edit that solves the observed problem with a proposed abstraction, layer or boilerplate. Favor a narrowly scoped reuse or proved deletion over added coordination, but delete only if the task grants it and the real callers/negative paths have been checked. Verify the accepted behavior and the case that must still be rejected at the actual authorized entry. A smaller diff that hides an error, drops an approved feature or weakens a guard fails this principle. Do not remove comments, tests, checks, or evidence just to reduce a count; record why the retained code exists. No automatic commit, PR or merge follows.
+<!-- pstack-source:start -->
 
-- **Positive BDD:** Given an approved refactor with repeated equivalent decisions and an observable behavior test, when Pi centralizes the choice at its proved owner and makes the smallest permitted edit, then the real accepted and rejected paths keep their behavior with less duplicated decision logic.
-- **Refusal BDD:** Given distinct policy owners, unknown callers, no approved deletion/test surface or a safety guard without replacement proof, when a short diff would erase needed behavior, then leave it intact, mark the risky step `blocked`/`unrun` and explain the missing evidence instead of applying a line-count rule.
+<!-- pstack-source:end -->
 
-Pi discovery is not a verified refactor or permission to delete code.
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+# Laziness Protocol
+
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **Consolidate decisions.** Do not repeat the same choice in several places. Put it behind one source of truth and pass the result as a simple flag.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
+
+<!-- pstack-source:start -->
+- **Minimize the diff.** Make the smallest change that solves the problem. Fewer lines beat "elegant" boilerplate.
+<!-- pstack-source:end -->
+
+> **Pi boundary.** Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.
