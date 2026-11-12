@@ -1,0 +1,37 @@
+{
+  "schema": "workflow-skill.catalog.v1",
+  "sourceLock": "UPSTREAM.lock.json",
+  "sourceVersion": "0.15.36",
+  "skills": [
+    {
+      "id": "workflow-statechart-v1",
+      "source": {
+        "skill": "statechart",
+        "path": "skills/statechart/SKILL.md",
+        "sha256": "010b7b4532406739b1c3a426d1a45f02bb618a42561fc96b3976e064a7f8384d",
+        "bodySha256": "0e74f6a1adce34ad3db4a0759ff2a9dce405741f72ed6222de27087505cff69b"
+      },
+      "requiredStepIds": ["define-model", "check-invariants", "render-reader-view"]
+    },
+    {
+      "id": "workflow-poteto-v1",
+      "source": {
+        "skill": "poteto-mode",
+        "path": "skills/poteto-mode/SKILL.md",
+        "sha256": "ee1848c973a112026f09ba12ea7a13c1654006e7bf170d1c34bf5d5816bc439b",
+        "bodySha256": "66c7a9adaee36399f10d86af2d2f198c921a29fd31e492627cf4ab0d90fc5c00"
+      },
+      "requiredStepIds": ["define-goal", "plan-steps", "declare-failure-branches"]
+    },
+    {
+      "id": "workflow-proof-v1",
+      "source": {
+        "skill": "principle-prove-it-works",
+        "path": "skills/principle-prove-it-works/SKILL.md",
+        "sha256": "ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2",
+        "bodySha256": "b4e91c8e8b5a137865e3dba26048951c1caf13351e1463d0c025e05b1fafcfe1"
+      },
+      "requiredStepIds": ["inspect-artifacts", "check-criteria", "report-evidence"]
+    }
+  ]
+}
