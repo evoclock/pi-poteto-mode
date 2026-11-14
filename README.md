@@ -8,13 +8,15 @@
 </p>
 
 The skills in this package are **[pstack](https://github.com/cursor/plugins/tree/main/pstack)
-by Lauren Tan** (v0.15.36, MIT). Copyright stays with Lauren Tan. This source
-revision restores 58 skill procedures and 23 full playbook files for the
-[Pi coding agent](https://pi.dev), with additive Pi boundaries. It registers
-57 instruction skills; ketchup-video remains planned and unregistered.
+by Lauren Tan** (v0.15.36, MIT). Copyright stays with Lauren Tan. This package
+includes 58 source skill procedures and 23 full playbook files for the
+[Pi coding agent](https://pi.dev), with additive Pi boundaries. Of the 59
+folders under `skills/`, 58 are source skill ports and one (`how/`) holds shared
+references. It registers 57 instruction skills; ketchup-video remains planned
+and unregistered.
 This is an instruction adaptation with declared safety and capability differences,
 not a claim of runtime parity. It adds no extensions, schedulers or installers.
-Packaged since **0.1.1**: complete playbook procedures,
+Packaged since **0.2.0**: complete playbook procedures,
 operator-selected model roles, reasoning budgets and multi-seat panels.
 
 For what pstack is and how its workflows fit together, read Lauren Tan's
@@ -59,8 +61,9 @@ Pi execution uses two configured roles, `development` and
 1. Run `/skill:setup-pstack-pi`, or copy
    `config/pstack-model-roles.v1.example.json` to `.pi/pstack-model-roles.v1.json`
    in your repository.
-2. Set each role to an exact `provider/modelId` from your own Pi setup. The two
-   roles must differ.
+2. Set each role to an exact `provider/modelId` from your own Pi setup. You can
+   select the same identity for both, but review steps requiring a different
+   model or family remain blocked until you configure distinct choices.
 
 Keep that file out of version control if it names your own models. Until it is
 filled in, skills that need a role stop and tell you to run setup.
@@ -119,8 +122,8 @@ plugin version and SHA-256 source hashes, not an assumed Git revision.
 The source steps remain verbatim, with Pi limits under them; playbooks.md is
 only an index. Read [Policy divergences](docs/adaptation-guide.md#policy-divergences)
 for owner-held landing, gated publication, restricted model routes and scratch/tool limits.
-I review the native-source comparison before integration; restoration and recall
-checks are not independent semantic or runtime proof.
+I review the native-source comparison as part of maintenance; restoration and
+recall checks are not independent semantic or runtime proof.
 
 ## Comparison with other Pi ports
 
@@ -233,8 +236,8 @@ checks require approved installed tools. On macOS, use the bundled
 spec/config/output invocation. It uses installed TLC only, with no first-run install;
 the upstream self-installing chart runtime is not bundled. A missing checker is
 blocked, not a proof, and Mermaid output is view-only. Video catch-up remains
-planned until a render-and-inspection route is validated. No package release,
-agent run or browser journey is established by these static checks.
+planned until a render-and-inspection route is validated. Static checks do not
+establish an agent run or browser journey.
 
 ## How I use it
 

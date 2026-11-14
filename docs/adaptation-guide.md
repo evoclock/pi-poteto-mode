@@ -53,7 +53,7 @@ Read skills/how/UPSTREAM_MAPPING.md and WORKFLOW_BOUNDARIES.md at the actual loa
 
 Concrete recipe call paths, including Shipping step 1 and Interrogate's exact reruns, are in skills/how/UPSTREAM_MAPPING.md. Pi agents in Herdr panes replace cloud workers/verifiers; leases come from Treehouse, PR state comes from gh, and source commands remain verbatim for comparison rather than serving as the executable harness path.
 
-A discoverable skill is not proof of loading, configured roles, a live verifier, a formal proof, safe automation, or an independent review. The current branch is for native-source review before integration. No package release or corpus migration is part of this change.
+A discoverable skill is not proof of loading, configured roles, a live verifier, a formal proof, safe automation, or an independent review. The packaged adaptation retains native-source review as a maintenance check; it does not claim a corpus migration.
 
 ## Model selection (published package)
 
