@@ -85,10 +85,11 @@ test("npm pack contents are the whitelist only", () => {
     "assets/pi-coding-system.html",
     "assets/pi-poteto-mode-routing.png",
   ];
-  assert.ok(files.every((f) => diagrams.includes(f) || /^(skills\/|config\/pstack-model-roles\.v1\.example\.json$|README\.md$|LICENSE$|NOTICE$|docs\/pstack-pi-ports-comparison\.md$|docs\/adaptation-guide\.md$|UPSTREAM\.lock\.json$|package\.json$)/.test(f)), files.join(","));
+  assert.ok(files.every((f) => diagrams.includes(f) || /^(skills\/|config\/pstack-model-roles\.v1\.example\.json$|README\.md$|CHANGELOG\.md$|LICENSE$|NOTICE$|docs\/pstack-pi-ports-comparison\.md$|docs\/adaptation-guide\.md$|UPSTREAM\.lock\.json$|package\.json$)/.test(f)), files.join(","));
   for (const diagram of diagrams) assert.ok(files.includes(diagram), `missing ${diagram}`);
   assert.ok(!files.some((f) => f.includes("node_modules") || f.startsWith("tests/") || f.startsWith("scripts/")));
   assert.ok(files.includes("skills/how/LICENSE"));
+  assert.ok(files.includes("CHANGELOG.md"));
 });
 
 test("sync script reports drift against an upstream copy", () => {
