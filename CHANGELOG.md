@@ -4,6 +4,8 @@ All notable changes to this package are documented here. This project follows [K
 
 ## Unreleased
 
+## [0.3.0] - 2026-11-22
+
 ### Changed
 - Made all 58 packaged skills model-discoverable while retaining slash invocation and source bodies. The video skill remains unable to render in Pi and reports that limit.
 

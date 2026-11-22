@@ -1,6 +1,6 @@
 {
   "name": "@evoclock/pi-poteto-mode",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Pi instruction adaptations of Lauren Tan's pstack 0.15.36 with explicit safety and capability differences.",
   "type": "module",
   "license": "MIT",
