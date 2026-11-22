@@ -1,7 +1,6 @@
 ---
 name: unslop-pi
-description: "Pi adaptation: Cut AI tells from any writing."
-disable-model-invocation: true
+description: "Pi adaptation: Use when editing prose to remove AI-sounding patterns while preserving meaning. Not for changing facts or intent. Invoke /skill:unslop-pi."
 license: MIT; see ../how/LICENSE
 ---
 

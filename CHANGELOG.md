@@ -5,7 +5,7 @@ All notable changes to this package are documented here. This project follows [K
 ## Unreleased
 
 ### Changed
-- Made the core poteto playbooks and 24 principle skills discoverable by the model while retaining slash invocation and leaving the other skills hidden.
+- Made all 58 packaged skills model-discoverable while retaining slash invocation and source bodies. The video skill remains unable to render in Pi and reports that limit.
 
 ## [0.2.0] - 2026-11-14
 

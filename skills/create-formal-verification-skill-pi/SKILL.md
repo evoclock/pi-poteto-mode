@@ -1,7 +1,6 @@
 ---
 name: create-formal-verification-skill-pi
-description: "Pi adaptation: Generate a project-local skill that formally verifies the code where a bug costs the most and tests reach the least, in any language, with whichever verification tool fits. Use for /create-formal-verification-skill, \"model-check this race\", \"prove this invariant\", or when concurrency, retries, state machines, parsers, or unsafe code need more than tests."
-disable-model-invocation: true
+description: "Pi adaptation: Use when a high-risk invariant, race, parser or state machine needs formal checks beyond tests and a project-local verification skill. Not for claiming unbounded proof. Invoke /skill:create-formal-verification-skill-pi."
 license: MIT; see ../how/LICENSE
 ---
 

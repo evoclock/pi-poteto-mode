@@ -1,7 +1,6 @@
 ---
 name: create-verification-skill-pi
-description: "Pi adaptation: Generate a project-local verification skill that drives your app the way a user does — any language, framework, or platform. Use for /create-verification-skill, \"make a control skill for this repo\", or when a project has no scripted way to prove UI/CLI/service behavior."
-disable-model-invocation: true
+description: "Pi adaptation: Use when a project needs a skill that drives its real UI, CLI or service to prove behavior. Not for a test that only checks mocks. Invoke /skill:create-verification-skill-pi."
 license: MIT; see ../how/LICENSE
 ---
 

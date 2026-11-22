@@ -1,7 +1,6 @@
 ---
 name: typescript-best-practices-pi
-description: "Pi adaptation: TypeScript best practices. Use when reading or editing any .ts or .tsx file."
-disable-model-invocation: true
+description: "Pi adaptation: Use when reading or editing TypeScript or TSX code and checking types and boundary validation. Not for unrelated languages. Invoke /skill:typescript-best-practices-pi."
 license: MIT; see ../how/LICENSE
 ---
 

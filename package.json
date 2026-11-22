@@ -43,6 +43,7 @@
       "./skills/in-your-own-words-pi",
       "./skills/interrogate-pi",
       "./skills/ketchup-pi",
+      "./skills/ketchup-video-pi",
       "./skills/maintain-verification-skill-pi",
       "./skills/maintain-formal-verification-skill-pi",
       "./skills/make-bot-ui-pi",

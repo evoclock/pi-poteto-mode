@@ -1,6 +1,6 @@
 ---
 name: setup-pstack-pi
-description: "Pi adaptation: Configure exact model roles, native reasoning budgets and multi-seat panels. Detects available Pi models, previews, and writes only approved selections to project-local .pi/pstack-model-roles.v1.json (no package defaults). Use for /setup-pstack, \"configure pstack models\", \"pstack budget\", or panel choices."
+description: "Pi adaptation: Use when the user asks to configure pstack model roles, reasoning budgets, or panel choices. Preview exact available models and write only approved project-local choices. Not for choosing package-wide model defaults. Invoke /skill:setup-pstack-pi."
 license: MIT; see ../how/LICENSE
 ---
 

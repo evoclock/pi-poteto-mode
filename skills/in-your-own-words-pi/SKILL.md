@@ -1,7 +1,6 @@
 ---
 name: in-your-own-words-pi
-description: "Pi adaptation: Restate in your own words what you think the user's goals are and what problem they're trying to solve. Use for /in-your-own-words."
-disable-model-invocation: true
+description: "Pi adaptation: Use when you need to restate the user’s goal and problem before acting. Not for guessing requirements the user did not give. Invoke /skill:in-your-own-words-pi."
 license: MIT; see ../how/LICENSE
 ---
 

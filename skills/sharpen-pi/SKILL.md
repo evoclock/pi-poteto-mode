@@ -1,7 +1,6 @@
 ---
 name: sharpen-pi
-description: "Pi adaptation: Make a task deeper, not bigger, then rewrite the prompt. Use for /sharpen."
-disable-model-invocation: true
+description: "Pi adaptation: Use when the user asks to make a task prompt deeper rather than broader. Not for executing the rewritten task. Invoke /skill:sharpen-pi."
 license: MIT; see ../how/LICENSE
 ---
 

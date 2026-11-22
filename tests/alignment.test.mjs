@@ -36,15 +36,12 @@ test('all skill and reference source bodies match the offline baseline exactly',
   for (const [slug, text] of Object.entries(snapshot.skills)) {
     const port = read(`skills/${slug}-pi/SKILL.md`);
     assert.equal(restored(port), sourceBody(text), slug);
-    const autoInvoke = ['poteto-mode', 'how', 'figure-it-out'].includes(slug) || slug.startsWith('principle-');
-    assert.equal(port.match(/^disable-model-invocation: (true|false)$/m)?.[1], autoInvoke ? undefined : text.match(/^disable-model-invocation: (true|false)$/m)?.[1], `${slug}: invocation policy`);
-    if (autoInvoke) {
-      const description = JSON.parse(port.match(/^description: (.+)$/m)[1]);
-      assert.ok(description.startsWith('Pi adaptation: Use when'), `${slug}: trigger`);
-      assert.match(description, /not for /i);
-      assert.ok(description.includes(`/skill:${slug}-pi`), `${slug}: slash name`);
-      assert.ok(description.length < 400, `${slug}: description length`);
-    }
+    assert.doesNotMatch(port, /^disable-model-invocation:/m, `${slug}: model discovery`);
+    const description = JSON.parse(port.match(/^description: (.+)$/m)[1]);
+    assert.ok(description.startsWith('Pi adaptation: Use when'), `${slug}: trigger`);
+    assert.match(description, /not for /i);
+    assert.ok(description.includes(`/skill:${slug}-pi`), `${slug}: slash name`);
+    assert.ok(description.length < 400, `${slug}: description length`);
   }
   for (const [path, text] of Object.entries(snapshot.references)) {
     assert.equal(restored(read(path)), text, path);
@@ -116,15 +113,16 @@ test('new review and prompt contracts replace the old inversions', () => {
   assert.doesNotMatch(sharpen, /Don't hand back a rewritten prompt/);
 });
 
-test('new formal and statechart skills register while video remains explicitly planned', () => {
-  // Why: retained upstream video prose must not advertise an unavailable execution route.
+test('formal, statechart and video skills register with video capability still unavailable', () => {
+  // Why: discoverability of a skill must not imply that its unavailable video renderer works.
   const pkg = JSON.parse(read('package.json'));
   for (const slug of ['create-formal-verification-skill', 'maintain-formal-verification-skill', 'statechart']) {
     assert.ok(pkg.pi.skills.includes(`./skills/${slug}-pi`));
     assert.ok(existsSync(new URL(`skills/${slug}-pi/SKILL.md`, root)));
   }
-  assert.ok(!pkg.pi.skills.includes('./skills/ketchup-video-pi'));
-  assert.match(read('docs/adaptation-guide.md'), /ketchup-video[\s\S]*planned/i);
+  assert.ok(pkg.pi.skills.includes('./skills/ketchup-video-pi'));
+  assert.match(read('skills/ketchup-video-pi/SKILL.md'), /no validated Pi slide\/video render-and-inspection route/i);
+  assert.match(read('docs/adaptation-guide.md'), /ketchup-video[\s\S]*not executable/i);
 });
 
 test('instruction recall floors bind to offline source and reject deleted procedures', async () => {

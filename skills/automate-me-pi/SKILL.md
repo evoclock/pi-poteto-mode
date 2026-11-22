@@ -1,7 +1,6 @@
 ---
 name: automate-me-pi
-description: "Pi adaptation: Use for \"automate me\", \"create/update/refresh my -mode skill\", \"turn/capture my preferences or working style into a skill\", or wanting agents to follow how the user works. Drafts or revises a personal -mode skill via create-skill + unslop, optionally pulling fresh evidence from recent transcripts."
-disable-model-invocation: true
+description: "Pi adaptation: Use when the user asks to turn their working preferences into a personal mode skill. Not for implementing the task described by those preferences. Invoke /skill:automate-me-pi."
 license: MIT; see ../how/LICENSE
 ---
 

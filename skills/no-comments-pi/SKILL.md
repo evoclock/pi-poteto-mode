@@ -1,7 +1,6 @@
 ---
 name: no-comments-pi
-description: "Pi adaptation: Spawn Comment Sicko, fix accepted findings, and offer encodings for claimed constraints."
-disable-model-invocation: true
+description: "Pi adaptation: Use when reviewing comments in a changed diff and deciding which to remove or replace with code. Not for deleting explanations without checking their constraints. Invoke /skill:no-comments-pi."
 license: MIT; see ../how/LICENSE
 ---
 

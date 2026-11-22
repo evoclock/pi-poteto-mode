@@ -1,7 +1,6 @@
 ---
 name: correct-pi
-description: "Pi adaptation: Find the mistakes agents keep repeating in this repo and make each one impossible. Try architecture first, then types, then a lint whose error names the fix, then a test, and write docs last. Prove each check fails on a real past mistake. Repeat this each time the operator corrects you. Use for /correct."
-disable-model-invocation: true
+description: "Pi adaptation: Use when the user corrects a repeated agent mistake and wants an enforced repo guard. Not for a one-off preference with no recurring failure. Invoke /skill:correct-pi."
 license: MIT; see ../how/LICENSE
 ---
 

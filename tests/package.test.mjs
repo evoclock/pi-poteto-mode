@@ -17,14 +17,14 @@ function walk(dir) {
 }
 const textFiles = walk(join(ROOT, "skills")).concat(["README.md", "docs/pstack-pi-ports-comparison.md", "docs/adaptation-guide.md", "config/pstack-model-roles.v1.example.json"].map((f) => join(ROOT, f)));
 
-test("every upstream pstack 0.15.36 skill has an instruction port or explicit planned status", () => {
-  // Why: the video procedure must not be registered as an available renderer.
+test("every upstream pstack 0.15.36 skill is registered with its Pi boundary", () => {
+  // Why: every packaged skill must be discoverable, including the video skill that reports its unavailable route.
   assert.equal(upstream.length, 58);
   for (const name of upstream) {
     assert.ok(skillDirs.includes(`${name}-pi`), `missing ${name}-pi`);
-    assert.equal(pkg.pi.skills.includes(`./skills/${name}-pi`), name !== 'ketchup-video', name);
+    assert.ok(pkg.pi.skills.includes(`./skills/${name}-pi`), name);
   }
-  assert.equal(pkg.pi.skills.length, 57);
+  assert.equal(pkg.pi.skills.length, 58);
 });
 
 test("each SKILL.md has valid frontmatter whose name matches its folder", () => {

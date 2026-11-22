@@ -1,7 +1,6 @@
 ---
 name: tdd-pi
-description: "Pi adaptation: Use only when the user explicitly asks for TDD, a failing test, or a regression test, OR when the bug has an obvious cheap local test target. Skip when the test path is unclear, expensive, integration-heavy, or not requested."
-disable-model-invocation: true
+description: "Pi adaptation: Use when the user asks for TDD or a bug has a cheap local failing test path. Not for expensive, unclear or integration-heavy test setup. Invoke /skill:tdd-pi."
 license: MIT; see ../how/LICENSE
 ---
 

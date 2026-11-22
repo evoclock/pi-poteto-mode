@@ -89,13 +89,10 @@ export function restore(upstreamDir = DEFAULT_UPSTREAM, write = false) {
     const source = body(text);
     snapshot.skills[slug] = text;
     lock.skills[slug] = { path: `skills/${slug}/SKILL.md`, sha256: hash(text), bodySha256: hash(source), status: slug === 'ketchup-video' ? 'planned' : 'instruction-port' };
-    const frontmatter = text.match(/^---\n([\s\S]*?)\n---\n/)?.[1] || '';
     const portPath = `skills/${slug}-pi/SKILL.md`;
-    const autoInvoke = ['poteto-mode', 'how', 'figure-it-out'].includes(slug) || slug.startsWith('principle-');
     const currentPort = existsSync(join(ROOT, portPath)) ? readFileSync(join(ROOT, portPath), 'utf8') : '';
-    const portDescription = autoInvoke && currentPort.match(/^description: (.+)$/m)?.[1];
-    const invocation = autoInvoke ? undefined : frontmatter.match(/^disable-model-invocation: (true|false)$/m)?.[1];
-    const head = `---\nname: ${slug}-pi\ndescription: ${portDescription || JSON.stringify('Pi adaptation: ' + description(text))}\n${invocation ? `disable-model-invocation: ${invocation}\n` : ''}license: MIT; see ../how/LICENSE\n---\n\n> Adapted from pstack by Lauren Tan (MIT).\n\n## Pi adaptation contract\n\nRead [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack ${UPSTREAM_VERSION}; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.\n\n${note(slug)}\n\n`;
+    const portDescription = currentPort.match(/^description: (.+)$/m)?.[1];
+    const head = `---\nname: ${slug}-pi\ndescription: ${portDescription || JSON.stringify('Pi adaptation: ' + description(text))}\nlicense: MIT; see ../how/LICENSE\n---\n\n> Adapted from pstack by Lauren Tan (MIT).\n\n## Pi adaptation contract\n\nRead [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack ${UPSTREAM_VERSION}; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.\n\n${note(slug)}\n\n`;
     outputs.set(`skills/${slug}-pi/SKILL.md`, head + renderBody(source, slug));
     // Supporting prose is read-only source evidence; executable helpers are not imported.
     const copyReferences = (dir, prefix = '') => {

@@ -4,7 +4,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat" alt="License: MIT"/></a>
   <a href="https://www.npmjs.com/package/@evoclock/pi-poteto-mode"><img src="https://img.shields.io/npm/v/@evoclock/pi-poteto-mode?style=flat" alt="npm version"/></a>
   <a href="https://pi.dev/docs/latest/packages"><img src="https://img.shields.io/badge/Pi-package-06b6d4?style=flat" alt="Pi package"/></a>
-  <img src="https://img.shields.io/badge/skills-57-79c39e?style=flat" alt="57 registered instruction skills"/>
+  <img src="https://img.shields.io/badge/skills-58-79c39e?style=flat" alt="58 registered instruction skills"/>
 </p>
 
 The skills in this package are **[pstack](https://github.com/cursor/plugins/tree/main/pstack)
@@ -12,8 +12,8 @@ by Lauren Tan** (v0.15.36, MIT). Copyright stays with Lauren Tan. This package
 includes 58 source skill procedures and 23 full playbook files for the
 [Pi coding agent](https://pi.dev), with additive Pi boundaries. Of the 59
 folders under `skills/`, 58 are source skill ports and one (`how/`) holds shared
-references. It registers 57 instruction skills; ketchup-video remains planned
-and unregistered.
+references. It registers all 58 instruction skills. The ketchup-video skill is
+visible but its Pi video route remains unavailable; it reports that limit.
 This is an instruction adaptation with declared safety and capability differences,
 not a claim of runtime parity. It adds no extensions, schedulers or installers.
 Packaged since **0.2.0**: complete playbook procedures,
@@ -71,13 +71,12 @@ filled in, skills that need a role stop and tell you to run setup.
 ## How this works in Pi
 
 - **Naming.** Each upstream skill `name` becomes `name-pi`, for example
-  `poteto-mode` becomes `poteto-mode-pi`. The model can discover `poteto-mode-pi`,
-  `how-pi`, `figure-it-out-pi`, and all 24 `principle-*-pi` skills. The other
-  29 registered skills retain their source invocation flags and require an
-  explicit `/skill:name-pi` invocation. `setup-pstack-pi` was already discoverable.
-  Every skill retains its slash command.
+  `poteto-mode` becomes `poteto-mode-pi`. The model can discover all 58
+  registered skills, including `poteto-mode-pi`, `how-pi`, `figure-it-out-pi`,
+  and the 24 `principle-*-pi` skills. Every skill retains its slash command.
+  Discovery alone does not make an unavailable Pi capability work.
 - **Install.** `pi install npm:@evoclock/pi-poteto-mode`, or `pi install <path>`
-  for a local checkout. The `pi` field in `package.json` lists the 57 skill
+  for a local checkout. The `pi` field in `package.json` lists the 58 skill
   folders. The package ships no extensions and no install scripts.
 - **Model roles.** Retained source text includes upstream examples, not Pi defaults.
   Actual execution looks up `development` and
