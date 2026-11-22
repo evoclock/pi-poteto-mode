@@ -1,7 +1,6 @@
 ---
 name: principle-redesign-from-first-principles-pi
-description: "Pi adaptation: Apply when integrating a new requirement into an existing design."
-disable-model-invocation: true
+description: "Pi adaptation: Use when integrating a new requirement into an existing design. Not for unrelated tasks. Invoke /skill:principle-redesign-from-first-principles-pi."
 license: MIT; see ../how/LICENSE
 ---
 

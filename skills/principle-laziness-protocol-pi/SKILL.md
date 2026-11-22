@@ -1,7 +1,6 @@
 ---
 name: principle-laziness-protocol-pi
-description: "Pi adaptation: Apply when refactoring, evaluating diff size, or tempted to add abstractions, layers, or signal threading. Bias toward deletion and the smallest change that solves the problem."
-disable-model-invocation: true
+description: "Pi adaptation: Use when refactoring, evaluating diff size, or tempted to add abstractions, layers, or signal threading. Bias toward deletion and the smallest change that solves the problem. Not for unrelated tasks. Invoke /skill:principle-laziness-protocol-pi."
 license: MIT; see ../how/LICENSE
 ---
 

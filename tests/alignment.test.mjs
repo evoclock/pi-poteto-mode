@@ -36,7 +36,15 @@ test('all skill and reference source bodies match the offline baseline exactly',
   for (const [slug, text] of Object.entries(snapshot.skills)) {
     const port = read(`skills/${slug}-pi/SKILL.md`);
     assert.equal(restored(port), sourceBody(text), slug);
-    assert.equal(port.match(/^disable-model-invocation: (true|false)$/m)?.[1], text.match(/^disable-model-invocation: (true|false)$/m)?.[1], `${slug}: invocation parity`);
+    const autoInvoke = ['poteto-mode', 'how', 'figure-it-out'].includes(slug) || slug.startsWith('principle-');
+    assert.equal(port.match(/^disable-model-invocation: (true|false)$/m)?.[1], autoInvoke ? undefined : text.match(/^disable-model-invocation: (true|false)$/m)?.[1], `${slug}: invocation policy`);
+    if (autoInvoke) {
+      const description = JSON.parse(port.match(/^description: (.+)$/m)[1]);
+      assert.ok(description.startsWith('Pi adaptation: Use when'), `${slug}: trigger`);
+      assert.match(description, /not for /i);
+      assert.ok(description.includes(`/skill:${slug}-pi`), `${slug}: slash name`);
+      assert.ok(description.length < 400, `${slug}: description length`);
+    }
   }
   for (const [path, text] of Object.entries(snapshot.references)) {
     assert.equal(restored(read(path)), text, path);

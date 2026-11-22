@@ -71,9 +71,11 @@ filled in, skills that need a role stop and tell you to run setup.
 ## How this works in Pi
 
 - **Naming.** Each upstream skill `name` becomes `name-pi`, for example
-  `poteto-mode` becomes `poteto-mode-pi`. Source invocation flags are retained;
-  56 of the 57 registered skills set `disable-model-invocation`. Load those explicitly, for example
-  `/skill:poteto-mode-pi`.
+  `poteto-mode` becomes `poteto-mode-pi`. The model can discover `poteto-mode-pi`,
+  `how-pi`, `figure-it-out-pi`, and all 24 `principle-*-pi` skills. The other
+  29 registered skills retain their source invocation flags and require an
+  explicit `/skill:name-pi` invocation. `setup-pstack-pi` was already discoverable.
+  Every skill retains its slash command.
 - **Install.** `pi install npm:@evoclock/pi-poteto-mode`, or `pi install <path>`
   for a local checkout. The `pi` field in `package.json` lists the 57 skill
   folders. The package ships no extensions and no install scripts.

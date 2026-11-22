@@ -1,7 +1,6 @@
 ---
 name: principle-attack-the-premise-pi
-description: "Pi adaptation: Apply when two or more fixes that share one premise have failed the same gate. Write the premise down and test it directly before you write another fix that assumes it."
-disable-model-invocation: true
+description: "Pi adaptation: Use when two or more fixes that share one premise have failed the same gate. Write the premise down and test it directly before you write another fix that assumes it. Not for unrelated tasks. Invoke /skill:principle-attack-the-premise-pi."
 license: MIT; see ../how/LICENSE
 ---
 

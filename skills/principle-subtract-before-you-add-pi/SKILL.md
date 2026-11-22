@@ -1,7 +1,6 @@
 ---
 name: principle-subtract-before-you-add-pi
-description: "Pi adaptation: Apply when sequencing an addition, refactor, or rewrite. Remove dead code, redundant validators, and stub references first, then build on the simpler base."
-disable-model-invocation: true
+description: "Pi adaptation: Use when sequencing an addition, refactor, or rewrite. Remove dead code, redundant validators, and stub references first, then build on the simpler base. Not for unrelated tasks. Invoke /skill:principle-subtract-before-you-add-pi."
 license: MIT; see ../how/LICENSE
 ---
 

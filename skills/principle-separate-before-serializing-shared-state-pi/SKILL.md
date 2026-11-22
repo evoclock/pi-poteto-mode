@@ -1,7 +1,6 @@
 ---
 name: principle-separate-before-serializing-shared-state-pi
-description: "Pi adaptation: Apply when concurrent actors might write to the same file, branch, key, or state object. Eliminate the sharing first; serialize structurally only when one shared writer is a real invariant."
-disable-model-invocation: true
+description: "Pi adaptation: Use when concurrent actors might write to the same file, branch, key, or state object. Eliminate the sharing first; serialize structurally only when one shared writer is a real invariant. Not for unrelated tasks. Invoke /skill:principle-separate-before-serializing-shared-state-pi."
 license: MIT; see ../how/LICENSE
 ---
 

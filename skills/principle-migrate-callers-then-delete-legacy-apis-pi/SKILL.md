@@ -1,7 +1,6 @@
 ---
 name: principle-migrate-callers-then-delete-legacy-apis-pi
-description: "Pi adaptation: Apply when introducing a new internal API while old callers still exist. Migrate callers and delete the old API in the same wave instead of preserving compatibility layers."
-disable-model-invocation: true
+description: "Pi adaptation: Use when introducing a new internal API while old callers still exist. Migrate callers and delete the old API in the same wave instead of preserving compatibility layers. Not for unrelated tasks. Invoke /skill:principle-migrate-callers-then-delete-legacy-apis-pi."
 license: MIT; see ../how/LICENSE
 ---
 

@@ -1,7 +1,6 @@
 ---
 name: principle-test-behavior-not-implementation-pi
-description: "Pi adaptation: Apply when you write, change, or keep a test. Assert what the code's users can observe, so that the test fails when that behavior breaks and keeps passing when only the internals change."
-disable-model-invocation: true
+description: "Pi adaptation: Use when you write, change, or keep a test. Assert what the code's users can observe, so that the test fails when that behavior breaks and keeps passing when only the internals change. Not for unrelated tasks. Invoke /skill:principle-test-behavior-not-implementation-pi."
 license: MIT; see ../how/LICENSE
 ---
 

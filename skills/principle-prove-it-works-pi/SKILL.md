@@ -1,7 +1,6 @@
 ---
 name: principle-prove-it-works-pi
-description: "Pi adaptation: Apply after completing a task, before declaring done. Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.'"
-disable-model-invocation: true
+description: "Pi adaptation: Use when you have completing a task, before declaring done. Verify against the real artifact (run the feature, read the actual value, inspect the diff), not a proxy, self-report, or 'it compiles.' Not for unrelated tasks. Invoke /skill:principle-prove-it-works-pi."
 license: MIT; see ../how/LICENSE
 ---
 

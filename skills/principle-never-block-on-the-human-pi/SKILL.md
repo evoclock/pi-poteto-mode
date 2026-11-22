@@ -1,7 +1,6 @@
 ---
 name: principle-never-block-on-the-human-pi
-description: "Pi adaptation: Apply when tempted to ask 'should I do X?' on reversible work."
-disable-model-invocation: true
+description: "Pi adaptation: Use when tempted to ask 'should I do X?' on reversible work. Not for unrelated tasks. Invoke /skill:principle-never-block-on-the-human-pi."
 license: MIT; see ../how/LICENSE
 ---
 

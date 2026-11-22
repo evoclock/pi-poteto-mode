@@ -1,7 +1,6 @@
 ---
 name: principle-guard-the-context-window-pi
-description: "Pi adaptation: Apply when context is filling up: large outputs, long files, repeated reads, fan-out planning. Route bulk to subagents; keep summaries in the main thread, not raw payloads."
-disable-model-invocation: true
+description: "Pi adaptation: Use when context is filling up: large outputs, long files, repeated reads, fan-out planning. Route bulk to subagents; keep summaries in the main thread, not raw payloads. Not for unrelated tasks. Invoke /skill:principle-guard-the-context-window-pi."
 license: MIT; see ../how/LICENSE
 ---
 

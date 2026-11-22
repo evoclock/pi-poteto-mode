@@ -1,7 +1,6 @@
 ---
 name: principle-model-the-domain-pi
-description: "Pi adaptation: Apply when writing stateful logic, or when code branches a lot or repeats a shape assumption across files."
-disable-model-invocation: true
+description: "Pi adaptation: Use when writing stateful logic, or when code branches a lot or repeats a shape assumption across files. Not for unrelated tasks. Invoke /skill:principle-model-the-domain-pi."
 license: MIT; see ../how/LICENSE
 ---
 

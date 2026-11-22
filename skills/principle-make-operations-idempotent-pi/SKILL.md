@@ -1,7 +1,6 @@
 ---
 name: principle-make-operations-idempotent-pi
-description: "Pi adaptation: Apply when designing commands, lifecycle steps, or processing loops that run amid crashes, restarts, and retries. Converge to the same end state regardless of partial prior runs."
-disable-model-invocation: true
+description: "Pi adaptation: Use when designing commands, lifecycle steps, or processing loops that run amid crashes, restarts, and retries. Converge to the same end state regardless of partial prior runs. Not for unrelated tasks. Invoke /skill:principle-make-operations-idempotent-pi."
 license: MIT; see ../how/LICENSE
 ---
 
