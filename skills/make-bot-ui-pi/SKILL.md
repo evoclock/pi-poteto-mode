@@ -1,7 +1,6 @@
 ---
 name: make-bot-ui-pi
-description: "Pi adaptation: >-"
-disable-model-invocation: true
+description: "Pi adaptation: Use when the user wants a browser page that sends JSON to a bot webhook, and the required routine and secret routes exist. Not for exposing sender keys or assuming Cursor-only tools exist in Pi. Invoke /skill:make-bot-ui-pi."
 license: MIT; see ../how/LICENSE
 ---
 

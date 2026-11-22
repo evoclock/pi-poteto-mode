@@ -1,7 +1,6 @@
 ---
 name: principle-encode-lessons-in-structure-pi
-description: "Pi adaptation: Apply when you catch yourself writing the same instruction a second time, or notice a recurring correction. Encode the rule as a lint, metadata flag, runtime check, or script instead of more text."
-disable-model-invocation: true
+description: "Pi adaptation: Use when you catch yourself writing the same instruction a second time, or notice a recurring correction. Encode the rule as a lint, metadata flag, runtime check, or script instead of more text. Not for unrelated tasks. Invoke /skill:principle-encode-lessons-in-structure-pi."
 license: MIT; see ../how/LICENSE
 ---
 

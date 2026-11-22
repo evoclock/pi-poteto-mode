@@ -1,7 +1,6 @@
 ---
 name: bro-pi
-description: "Pi adaptation: Restate the last message in plain human language, with no jargon."
-disable-model-invocation: true
+description: "Pi adaptation: Use when the user asks you to restate your last message plainly without jargon. Not for changing its meaning or doing new work. Invoke /skill:bro-pi."
 license: MIT; see ../how/LICENSE
 ---
 

@@ -1,7 +1,6 @@
 ---
 name: maintain-verification-skill-pi
-description: "Pi adaptation: Periodic pass that keeps a project's verification skill and feature map honest: parallel source readers per feature, one live session driving every feature, at most one PR of proven corrections. Use for /maintain-verification-skill or \"audit the verify skill\"."
-disable-model-invocation: true
+description: "Pi adaptation: Use when a project verification skill or feature map needs an audit against current live behavior. Not for creating the skill from scratch. Invoke /skill:maintain-verification-skill-pi."
 license: MIT; see ../how/LICENSE
 ---
 

@@ -1,7 +1,6 @@
 ---
 name: principle-sequence-verifiable-units-pi
-description: "Pi adaptation: Apply to multi-step work (sweeps, migrations, runs of similar edits) and to how you stack commits and PRs. Break work into small units that each end in a verifiable state, check each before the next, and order delivery so the sequence proves itself to a reviewer."
-disable-model-invocation: true
+description: "Pi adaptation: Use when you need to multi-step work (sweeps, migrations, runs of similar edits) and to how you stack commits and PRs. Break work into small units that each end in a verifiable state, check each before the next, and order delivery so the sequence proves itself to a reviewer. Not for unrelated tasks. Invoke /skill:principle-sequence-verifiable-units-pi."
 license: MIT; see ../how/LICENSE
 ---
 

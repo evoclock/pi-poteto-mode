@@ -1,7 +1,6 @@
 ---
 name: ketchup-pi
-description: "Pi adaptation: Catch the user up on what changed in this chat since their last message, in plain words and small visuals. List every item waiting on them with what they need to decide it from the reply alone. Use for /ketchup."
-disable-model-invocation: true
+description: "Pi adaptation: Use when the user asks what happened in this chat since their last message and what decisions await them. Not for a broader historical recap. Invoke /skill:ketchup-pi."
 license: MIT; see ../how/LICENSE
 ---
 

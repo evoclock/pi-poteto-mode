@@ -1,7 +1,6 @@
 ---
 name: poteto-help-pi
-description: "Pi adaptation: Guides users through pstack setup, /poteto-mode, and picking the skill, playbook, or principle for a task. Type /poteto-help with a question."
-disable-model-invocation: true
+description: "Pi adaptation: Use when the user asks which poteto skill or playbook to use or how to set it up. Not for starting the work in their question. Invoke /skill:poteto-help-pi."
 license: MIT; see ../how/LICENSE
 ---
 

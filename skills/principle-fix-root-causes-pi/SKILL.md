@@ -1,7 +1,6 @@
 ---
 name: principle-fix-root-causes-pi
-description: "Pi adaptation: Apply when debugging. Trace each symptom back to the first place the system went wrong and fix it there. A guard is a fix only when the state it handles is legitimate."
-disable-model-invocation: true
+description: "Pi adaptation: Use when debugging. Trace each symptom back to the first place the system went wrong and fix it there. A guard is a fix only when the state it handles is legitimate. Not for unrelated tasks. Invoke /skill:principle-fix-root-causes-pi."
 license: MIT; see ../how/LICENSE
 ---
 

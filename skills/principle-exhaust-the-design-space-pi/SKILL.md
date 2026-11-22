@@ -1,7 +1,6 @@
 ---
 name: principle-exhaust-the-design-space-pi
-description: "Pi adaptation: Apply when facing a novel UI interaction or architectural decision with no precedent in the codebase. Build 2-3 competing prototypes and compare side by side before committing."
-disable-model-invocation: true
+description: "Pi adaptation: Use when facing a novel UI interaction or architectural decision with no precedent in the codebase. Build 2-3 competing prototypes and compare side by side before committing. Not for unrelated tasks. Invoke /skill:principle-exhaust-the-design-space-pi."
 license: MIT; see ../how/LICENSE
 ---
 

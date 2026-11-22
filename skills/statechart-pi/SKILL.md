@@ -1,7 +1,6 @@
 ---
 name: statechart-pi
-description: "Pi adaptation: Check a TLA+ model of a system that moves between states, such as a product flow, a protocol, or a service, and draw it as a Mermaid statechart. The report gives the shortest path to each state that breaks a rule. Use for /statechart, or to show a bug as a path through states."
-disable-model-invocation: true
+description: "Pi adaptation: Use when a protocol or workflow needs a bounded TLA+ state check and reader-facing chart using an approved installed checker. Not for claiming a diagram proves code correct. Invoke /skill:statechart-pi."
 license: MIT; see ../how/LICENSE
 ---
 

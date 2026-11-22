@@ -1,7 +1,6 @@
 ---
 name: poteto-mode-pi
-description: "Pi adaptation: poteto's agent style for concise, detailed responses, deliberate subagents, unslopped prose, simple code, and verified work. Use for poteto, /poteto-mode, or requests to work in this style."
-disable-model-invocation: true
+description: "Pi adaptation: Use when starting any non-trivial coding task or when the user says poteto; choose a matching playbook and verify work. Not for a trivial one-line edit. Invoke /skill:poteto-mode-pi."
 license: MIT; see ../how/LICENSE
 ---
 

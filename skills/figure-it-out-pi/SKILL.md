@@ -1,7 +1,6 @@
 ---
 name: figure-it-out-pi
-description: "Pi adaptation: Design an auditable playbook when no narrower one fits: a large migration, an ambitious multi-part change, or work a human reviews after stepping away. Scales rigor to the task, runs a hypothesis loop, and logs decisions. Use for /figure-it-out or 'figure it out'."
-disable-model-invocation: true
+description: "Pi adaptation: Use when work is large, ambiguous, or unattended and no narrower playbook fits. Design an auditable plan; not for a small, well-scoped fix. Invoke /skill:figure-it-out-pi."
 license: MIT; see ../how/LICENSE
 ---
 

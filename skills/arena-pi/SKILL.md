@@ -1,7 +1,6 @@
 ---
 name: arena-pi
-description: "Pi adaptation: Spawn N parallel candidates at the same task, pick a base, graft the strongest parts of the losers into it. Use for /arena, 'arena this', 'throw it in the arena', or when one attempt at a non-trivial artifact would lock in the wrong shape."
-disable-model-invocation: true
+description: "Pi adaptation: Use when comparing several candidate solutions to the same non-trivial artifact before choosing and grafting a base. Not for a single narrow fix. Invoke /skill:arena-pi."
 license: MIT; see ../how/LICENSE
 ---
 

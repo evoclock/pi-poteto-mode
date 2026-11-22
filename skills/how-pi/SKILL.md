@@ -1,7 +1,6 @@
 ---
 name: how-pi
-description: "Pi adaptation: Use for \"how does X work\", code walkthroughs before changing something, and placement / ownership / layering questions (\"where should this live\", \"which package owns this\", \"is this the right layer\"). Explains subsystem architecture, runtime flow, onboarding mental models. Use why for motivation."
-disable-model-invocation: true
+description: "Pi adaptation: Use when asked how code works or where it should live, or before changing unfamiliar code. Explain architecture and runtime flow; not for historical motivation (use why-pi). Invoke /skill:how-pi."
 license: MIT; see ../how/LICENSE
 ---
 

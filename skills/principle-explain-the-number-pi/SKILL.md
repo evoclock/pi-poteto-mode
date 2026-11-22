@@ -1,7 +1,6 @@
 ---
 name: principle-explain-the-number-pi
-description: "Pi adaptation: Apply before you measure, and before you trust, report, or act on a number you measured: a speedup, a regression, a throughput, a latency, or an eval result. Find what limits it, and rule out that it measured something other than the work you think."
-disable-model-invocation: true
+description: "Pi adaptation: Use when preparing to you measure, and before you trust, report, or act on a number you measured: a speedup, a regression, a throughput, a latency, or an eval result. Find what limits it, and rule out that it measured something other than the work you think. Not for unrelated tasks. Invoke /skill:principle-explain-the-number-pi."
 license: MIT; see ../how/LICENSE
 ---
 

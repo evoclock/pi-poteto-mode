@@ -1,7 +1,6 @@
 ---
 name: architect-pi
-description: "Pi adaptation: Sketch types, signatures, and module structure before code, then stay in the loop while implementation fills in. Use for /architect, 'architect this', 'design this', or non-trivial work where jumping to code would lock in the wrong shape."
-disable-model-invocation: true
+description: "Pi adaptation: Use when designing non-trivial code where types, signatures or module boundaries need a sketch before implementation. Not for a trivial edit. Invoke /skill:architect-pi."
 license: MIT; see ../how/LICENSE
 ---
 

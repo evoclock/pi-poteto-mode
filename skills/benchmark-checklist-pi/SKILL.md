@@ -1,7 +1,6 @@
 ---
 name: benchmark-checklist-pi
-description: "Pi adaptation: Vet a perf measurement (limiter, tuning, limits, errors, repeatability, relevance, and whether the work happened) before you report or act on it. Use when you run a benchmark or report a speedup or regression you measured."
-disable-model-invocation: true
+description: "Pi adaptation: Use when reporting or acting on a measured performance number; check limits and repeatability first. Not for unmeasured speed guesses. Invoke /skill:benchmark-checklist-pi."
 license: MIT; see ../how/LICENSE
 ---
 

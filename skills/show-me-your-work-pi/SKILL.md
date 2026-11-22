@@ -1,7 +1,6 @@
 ---
 name: show-me-your-work-pi
-description: "Pi adaptation: Keep a reviewable decision trail for long-running or unattended work: a TSV log with one row per decision (what, why, evidence, result). Local by default; commit it when a reviewer needs the trail to trust the result. Use for /show-me-your-work, autonomous or multi-phase runs, or work a human reviews after stepping away."
-disable-model-invocation: true
+description: "Pi adaptation: Use when long or unattended work needs a reviewable decision log with evidence pointers. Not for replacing actual verification. Invoke /skill:show-me-your-work-pi."
 license: MIT; see ../how/LICENSE
 ---
 

@@ -1,7 +1,6 @@
 ---
 name: ketchup-video-pi
-description: "Pi adaptation: Catch the user up like /ketchup, with a short subtitled video of slides for what happened and the waiting calls as text under it. Use for /ketchup-video."
-disable-model-invocation: true
+description: "Pi adaptation: Use when the user requests a video recap of this chat. The Pi video route is not implemented; report that gap and offer text ketchup instead. Not for claiming a rendered video. Invoke /skill:ketchup-video-pi."
 license: MIT; see ../how/LICENSE
 ---
 

@@ -1,7 +1,6 @@
 ---
 name: interrogate-pi
-description: "Pi adaptation: Use for \"interrogate\", \"adversarial review\", \"multi-model review\", \"challenge this\", \"stress test this code\", \"find blind spots\", or \"tear this apart\". Adversaries try to break a change or design, and only findings proven by a run survive."
-disable-model-invocation: true
+description: "Pi adaptation: Use when the user requests adversarial review of a design or change with findings proven by a run. Not for applying fixes during review. Invoke /skill:interrogate-pi."
 license: MIT; see ../how/LICENSE
 ---
 

@@ -1,7 +1,6 @@
 ---
 name: principle-type-system-discipline-pi
-description: "Pi adaptation: Apply when designing types, reviewing a function signature, or writing code in any statically-typed language. Make illegal states unrepresentable, brand semantic primitives, parse external data at boundaries, exhaust variants, derive from authoritative schemas."
-disable-model-invocation: true
+description: "Pi adaptation: Use when designing types, reviewing a function signature, or writing code in any statically-typed language. Make illegal states unrepresentable, brand semantic primitives, parse external data at boundaries, exhaust variants, derive from authoritative schemas. Not for unrelated tasks. Invoke /skill:principle-type-system-discipline-pi."
 license: MIT; see ../how/LICENSE
 ---
 

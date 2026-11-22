@@ -1,7 +1,6 @@
 ---
 name: reflect-pi
-description: "Pi adaptation: Spawn three parallel review subagents over the active transcript, surface learnings, and route each to a concrete edit on an existing skill. Use when the user says reflect."
-disable-model-invocation: true
+description: "Pi adaptation: Use when the user asks to mine this conversation for durable lessons and route them to skill edits. Not for trivial or already-covered exchanges. Invoke /skill:reflect-pi."
 license: MIT; see ../how/LICENSE
 ---
 

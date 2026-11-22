@@ -2,6 +2,13 @@
 
 All notable changes to this package are documented here. This project follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+## [0.3.0] - 2026-11-22
+
+### Changed
+- Made all 58 packaged skills model-discoverable while retaining slash invocation and source bodies. The video skill remains unable to render in Pi and reports that limit.
+
 ## [0.2.0] - 2026-11-14
 
 ### Added

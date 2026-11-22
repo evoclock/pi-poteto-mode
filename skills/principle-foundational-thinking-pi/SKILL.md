@@ -1,7 +1,6 @@
 ---
 name: principle-foundational-thinking-pi
-description: "Pi adaptation: Apply before writing logic: choosing core types and data structures, sequencing scaffold-vs-feature work, asking what concurrent actors share. Get the data structures right so downstream code becomes obvious."
-disable-model-invocation: true
+description: "Pi adaptation: Use when preparing to writing logic: choosing core types and data structures, sequencing scaffold-vs-feature work, asking what concurrent actors share. Get the data structures right so downstream code becomes obvious. Not for unrelated tasks. Invoke /skill:principle-foundational-thinking-pi."
 license: MIT; see ../how/LICENSE
 ---
 

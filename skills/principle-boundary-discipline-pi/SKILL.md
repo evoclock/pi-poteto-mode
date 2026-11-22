@@ -1,7 +1,6 @@
 ---
 name: principle-boundary-discipline-pi
-description: "Pi adaptation: Apply when wiring validation, error handling, or framework adapters. Concentrate guards at system boundaries (CLI, config, network, external APIs); trust internal types and keep business logic in pure functions."
-disable-model-invocation: true
+description: "Pi adaptation: Use when wiring validation, error handling, or framework adapters. Concentrate guards at system boundaries (CLI, config, network, external APIs); trust internal types and keep business logic in pure functions. Not for unrelated tasks. Invoke /skill:principle-boundary-discipline-pi."
 license: MIT; see ../how/LICENSE
 ---
 

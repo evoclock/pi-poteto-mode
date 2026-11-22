@@ -1,7 +1,6 @@
 ---
 name: principle-experience-first-pi
-description: "Pi adaptation: Apply when product, UX, or feature-scope tradeoffs come up. Choose user delight over implementation convenience; ship fewer polished features over more rough ones."
-disable-model-invocation: true
+description: "Pi adaptation: Use when product, UX, or feature-scope tradeoffs come up. Choose user delight over implementation convenience; ship fewer polished features over more rough ones. Not for unrelated tasks. Invoke /skill:principle-experience-first-pi."
 license: MIT; see ../how/LICENSE
 ---
 

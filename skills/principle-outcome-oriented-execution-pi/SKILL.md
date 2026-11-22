@@ -1,7 +1,6 @@
 ---
 name: principle-outcome-oriented-execution-pi
-description: "Pi adaptation: Apply during planned rewrites and migrations with explicit phase boundaries. Converge on the target architecture; don't preserve smooth intermediate states with throwaway compatibility code."
-disable-model-invocation: true
+description: "Pi adaptation: Use when handling planned rewrites and migrations with explicit phase boundaries. Converge on the target architecture; don't preserve smooth intermediate states with throwaway compatibility code. Not for unrelated tasks. Invoke /skill:principle-outcome-oriented-execution-pi."
 license: MIT; see ../how/LICENSE
 ---
 

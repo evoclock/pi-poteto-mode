@@ -1,7 +1,6 @@
 ---
 name: blast-radius-pi
-description: "Pi adaptation: Find what a change could break somewhere else before it ships, beyond the diff, and prove the one fact it's safe because of by running real code instead of writing it up. Use for 'blast radius of X', 'what could this break', or reviewing a small diff you don't trust."
-disable-model-invocation: true
+description: "Pi adaptation: Use when reviewing a change for effects beyond its diff or asked what else it could break. Not for a caller list alone. Invoke /skill:blast-radius-pi."
 license: MIT; see ../how/LICENSE
 ---
 
