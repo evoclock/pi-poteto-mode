@@ -8,6 +8,8 @@ license: MIT; see ../how/LICENSE
 
 ## Pi adaptation contract
 
+Without project-local `.pi/pstack-model-roles.v1.json`, every role uses the Pi default model resolved at run time. Continue the user's work without setup or file creation. `/skill:setup-pstack-pi` is optional and is the only workflow that creates that file from approved selections. Offer it at most once when setup, cost or model choices matter, and answer the user's question either way. A present file is authoritative; malformed configuration or a needed missing/null role is an explicit error. The source's Cursor path and default slugs below are historical, not Pi configuration.
+
 Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
 Pi: use read, edit and bash only within this step's scope, and TaskList/TaskCreate/TaskUpdate for the checklist. For delegated steps, use a Treehouse lease and agentic_herdr_spawn_worker for a Pi agent in a Herdr pane; brief/report via agentic_herdr_communication. Follow UPSTREAM_MAPPING.md for exact calls. If a required tool or role is absent, retain this step as blocked/skip; never substitute a cloud agent.

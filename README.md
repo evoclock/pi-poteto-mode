@@ -53,20 +53,24 @@ pi install npm:@evoclock/pi-poteto-mode
 Add `-l` to install it for the current project only. Remove it with
 `pi remove npm:@evoclock/pi-poteto-mode`.
 
-## Set up roles
+## Optional role setup
 
-Pi execution uses two configured roles, `development` and
-`independent-review`, which you map once per project:
+Without `.pi/pstack-model-roles.v1.json`, every role uses the Pi default model
+resolved at run time. This includes development, independent review, panels and
+swarm workers. Missing configuration never stops a workflow or requires setup.
+No package slug, parent inheritance or `auto`/`inherit-parent` alias is used.
 
-1. Run `/skill:setup-pstack-pi`, or copy
-   `config/pstack-model-roles.v1.example.json` to `.pi/pstack-model-roles.v1.json`
-   in your repository.
-2. Set each role to an exact `provider/modelId` from your own Pi setup. You can
-   select the same identity for both, but review steps requiring a different
-   model or family remain blocked until you configure distinct choices.
+Run `/skill:setup-pstack-pi` only when you want project-specific choices. It is
+the only workflow that creates the optional file, starting from the null example
+and writing only operator-approved selections. It never saves the runtime
+default as an inferred choice. Keep the file out of version control if it names
+your own models.
 
-Keep that file out of version control if it names your own models. Until it is
-filled in, skills that need a role stop and tell you to run setup.
+A present file is honoured exactly. Malformed JSON, schema, identities, budget
+pairs or shapes are explicit errors. A needed missing/null role is also an
+error, never a fallback or a reason to fill panel seats from core roles. Panel
+order and duplicates stay unchanged. Review capacity and family-diversity
+requirements still apply, even when every role resolves to the same Pi default.
 
 ## How this works in Pi
 
@@ -79,10 +83,10 @@ filled in, skills that need a role stop and tell you to run setup.
   for a local checkout. The `pi` field in `package.json` lists the 58 skill
   folders. The package ships no extensions and no install scripts.
 - **Model roles.** Retained source text includes upstream examples, not Pi defaults.
-  Actual execution looks up `development` and
-  `independent-review` in `.pi/pstack-model-roles.v1.json`. Copy
-  `config/pstack-model-roles.v1.example.json` (placeholders only) or run
-  `/skill:setup-pstack-pi`. Setup also previews approved native reasoning budgets
+  Actual execution resolves Pi's current default for every role when
+  `.pi/pstack-model-roles.v1.json` is absent. A present file supplies exact
+  approved roles and errors on malformed configuration or needed missing/null
+  keys. Optional `/skill:setup-pstack-pi` also previews native reasoning budgets
   (`medium` means `high`) and ordered panel seats in the same project-local map.
   See [the setup contract](skills/setup-pstack-pi/SKILL.md) for role shapes.
 - **Sync script.** `node scripts/sync-upstream.mjs <path-to-upstream-pstack>`
