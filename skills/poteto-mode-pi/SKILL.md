@@ -10,7 +10,7 @@ license: MIT; see ../how/LICENSE
 
 Read [shared boundaries](../how/WORKFLOW_BOUNDARIES.md) and [the source-name mapping](../how/UPSTREAM_MAPPING.md) before the procedure. Source: pstack 0.15.36; file and body hashes in [UPSTREAM.lock.json](../../UPSTREAM.lock.json). The source wording below is retained verbatim; the additive Pi boundaries constrain its effects. This is an instruction port with declared policy and capability differences, not a claim of runtime equivalence.
 
-Model roles for delegated work come only from project-local `.pi/pstack-model-roles.v1.json` after setup-pstack-pi; source `(default …)` slugs are historical and must not be used. Missing roles block that work.
+Without project-local `.pi/pstack-model-roles.v1.json`, every role uses the Pi default model resolved at run time. Do not stop or require setup for a missing file. Only `/skill:setup-pstack-pi` creates this optional file from approved selections. A present file is authoritative: malformed configuration or a needed missing/null role is an explicit error, never a fallback. Source `(default …)` slugs, guessed identities and parent inheritance are not Pi defaults.
 
 Restate the goal in the first message. Load the matched playbook file and copy its source steps verbatim into the existing session task list before task-specific items. Keep Pi boundary notes beside those steps. Source autonomy, model defaults and fallback slugs do not override the shared Pi boundaries.
 

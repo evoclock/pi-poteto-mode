@@ -36,7 +36,10 @@ test('setup starts with null core roles and previews only explicit available cho
   // Why: neither package examples nor preview may supply a live model choice.
   const example = JSON.parse(readFileSync(new URL('../config/pstack-model-roles.v1.example.json', import.meta.url)));
   assert.deepEqual(Object.values(example.roles), [null, null]);
-  assert.throws(() => previewSetup(example, {}, available), /not configured/);
+  assert.deepEqual(previewSetup(example, {}, available), example);
+  const partial = previewSetup(example, { roles: { development: available[0] } }, available);
+  assert.equal(partial.roles['independent-review'], null);
+  assert.throws(() => roleModels(partial, 'independent-review', available), /not configured/);
   const result = previewSetup(example, {
     roles: { development: available[0], 'independent-review': available[1], 'arena runners': available },
     budget: { label: 'medium', effort: 'high' },
@@ -61,7 +64,7 @@ test('budget changes preserve unknown fields and do not rewrite selected identit
   assert.equal(budgetSetting({}), null);
 });
 
-test('missing, empty, malformed and unavailable roles block without fallback', () => {
+test('present maps reject missing, empty, malformed and unavailable needed roles without fallback', () => {
   // Why: a core role or parent session must never fill a missing panel seat.
   for (const value of [undefined, null, [], '', available[0], [null], ['auto'], ['inherit-parent'], ['provider/missing']]) {
     const invalid = { ...config, roles: { ...config.roles, 'arena runners': value } };
