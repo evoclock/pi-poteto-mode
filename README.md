@@ -53,6 +53,13 @@ pi install npm:@evoclock/pi-poteto-mode
 Add `-l` to install it for the current project only. Remove it with
 `pi remove npm:@evoclock/pi-poteto-mode`.
 
+## What's new in 0.4.0
+
+With no `.pi/pstack-model-roles.v1.json`, every role uses the Pi default model
+resolved at run time. `/skill:setup-pstack-pi` is optional, only for customising
+roles. A present file is honoured exactly. A malformed file, or a null/missing
+needed key, is an explicit error, never a fallback.
+
 ## Optional role setup
 
 Without `.pi/pstack-model-roles.v1.json`, every role uses the Pi default model
