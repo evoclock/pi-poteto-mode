@@ -4,6 +4,12 @@ All notable changes to this package are documented here. This project follows [K
 
 ## Unreleased
 
+## [0.4.0] - 2026-11-26
+
+### Changed
+- Every role now uses the Pi default model resolved at run time when `.pi/pstack-model-roles.v1.json` is absent. A present file is honoured exactly; malformed configuration or needed null/missing keys are explicit errors, never a fallback.
+- Documented the default-model fallback and optional `/skill:setup-pstack-pi` role customisation in the README.
+
 ## [0.3.0] - 2026-11-22
 
 ### Changed
